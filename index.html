@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <title>بورتفوليو بشير</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0e7e7;
+      direction: rtl;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slider img {
+  display: none;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.slider img.active {
+  display: block;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.controls button {
+  background: #3498db;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+    .skills, .projects {
+      display: grid;
+      gap: 20px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills-list span {
+      background: #3498db;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .project {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>bachir toaba</h1>
+  </header>
+
+  <section>
+    <img src="images/WhatsApp Image 2025-02-06 at 3.13.44 PM.jpeg" 
+    alt="صورة دائرية" 
+    style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
+
+    <h2>من أنا</h2>
+    <p>أنا مطور تطبيقات محترف أملك خبرة في تطوير تطبيقات Android باستخدام Flutter وربطها بواجهات Laravel API. شغوف ببناء تطبيقات سريعة وسهلة الاستخدام، أبحث عن فرص جديدة للتطوير والانضمام إلى فرق مبدعة.</p>
+  </section>
+
+  <section>
+    <h2>المهارات</h2>
+    <div class="skills-list">
+      <span>Flutter</span>
+      <span>Dart</span>
+      <span>Laravel</span>
+      <span>PHP</span>
+      <span>MySQL</span>
+      <span>API</span>
+      <span>Git</span>
+      <span>Firebase</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>مشاريعي</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>موقع المكتبة الجامعية</h3>
+      
+        <div class="slider">
+          <img class="slide active" src="images/Screenshot_18-6-2025_62713_elitelibrarydz12.com.jpeg" alt="صورة 1" />
+          <img class="slide" src="images/Screenshot_18-6-2025_62928_elitelibrarydz12.com.jpeg" alt="صورة 2" />
+          <img class="slide" src="images/Screenshot_18-6-2025_62914_elitelibrarydz12.com.jpeg" alt="صورة 3" />
+          <div class="controls">
+            <button onclick="prevSlide(this)">⟨</button>
+            <button onclick="nextSlide(this)">⟩</button>
+          </div>
+        </div>
+      
+        <p>موقع ويب يتيح للطلاب تحميل البحوث والمحاضرات، تم تطويره باستخدام Laravel لعرض المحتوى وتسجيل الدخول.</p>
+        <a href="https://elitelibrarydz12.com" target="_blank">رابط المشروع</a>
+      </div>
+      
+          
+
+      <div class="project">
+        <h3>تطبيق تجارة إلكترونية للحرفيين</h3>
+        <div class="slider">
+          <img class="slide active" src="images/Screenshot (125).png" alt="صورة 1" />
+          <img class="slide" src="images/Screenshot (124).png" alt="صورة 2" />
+          <img class="slide" src="images/Screenshot (121).png" alt="صورة 3" />
+          <img class="slide" src="images/Screenshot (119).png" alt="صورة 4" />
+          <img class="slide" src="images/Screenshot (15).png" alt="صورة 4" />
+          <img class="slide" src="images/Screenshot (11).png" alt="صورة 4" />
+          <div class="controls">
+            <button onclick="prevSlide(this)">⟨</button>
+            <button onclick="nextSlide(this)">⟩</button>
+          </div>
+        </div>
+        <p>تطبيق مخصص لتمكين الحرفيين من عرض منتجاتهم وبيعها عبر الإنترنت. يتميز بواجهة مستخدم مبنية باستخدام Flutter، ولوحة تحكم لإدارة المنتجات والطلبات تم تطويرها باستخدام Laravel.</p>
+        <p><strong>ملاحظة:</strong> المشروع حالياً <span style="color: #e67e22; font-weight: bold;">قيد التطوير</span>.</p>
+      </div>
+
+      <div class="project">
+        <h3>تطبيق اختبارات تفاعلية أونلاين</h3>
+        <div class="slider">
+          <img class="slide active" src="images/Screenshot (320).png" alt="واجهة الاختبار" />
+          <img class="slide" src="images/Screenshot (317).png" alt="نتائج الإجابة" />
+          <img class="slide" src="images/Screenshot (315).png" alt="صفحة المستخدم" />
+          <div class="controls">
+            <button onclick="prevSlide(this)">⟨</button>
+            <button onclick="nextSlide(this)">⟩</button>
+          </div>
+        </div>
+        <p>
+          تطبيق يتيح للمستخدمين إجراء اختبارات أونلاين مع تصحيح فوري للأسئلة وعرض النتائج مباشرة. يدعم اللغة العربية بواجهة بسيطة وسلسة، ويُستخدم من طرف المعلمين والطلاب على حد سواء. تم تطوير الواجهة باستخدام Flutter مع لوحة تحكم مبنية بـ Laravel لإدارة المحتوى والأسئلة.
+        </p>
+        <p><strong>ملاحظة:</strong> المشروع حالياً <span style="color: #e67e22; font-weight: bold;">قيد التطوير</span>.</p>
+      </div>
+      
+      <div class="project">
+        <h3>تطبيق الموارد الحيوانية</h3>
+        <div class="slider">
+          <img class="slide active" src="images/Screenshot (167).png"واجهة التطبيق" />
+          <img class="slide" src="images/Screenshot (157).png" alt="عروض الحيوانات" />
+          <img class="slide" src="images/Screenshot (152).png" alt="صفحة التواصل" />
+          <div class="controls">
+            <button onclick="prevSlide(this)">⟨</button>
+            <button onclick="nextSlide(this)">⟩</button>
+          </div>
+        </div>
+        <p>
+          تطبيق مخصص لتسهيل بيع وشراء الموارد الحيوانية مثل المواشي والطيور والمنتجات المرتبطة بها. يمكن للمستخدمين إضافة عروضهم، تصفح إعلانات الآخرين، والتواصل المباشر مع البائعين. يدعم اللغة العربية بواجهة بسيطة، وتم تطويره باستخدام Flutter، مع لوحة تحكم بلغة Laravel لإدارة المستخدمين والعروض.
+        </p>
+        <p><strong>ملاحظة:</strong> المشروع حالياً <span style="color: #e67e22; font-weight: bold;">قيد التطوير</span>.</p>
+      </div>
+      
+      
+    </div>
+  </section>
+
+  <section>
+    <h2>تواصل معي</h2>
+    <p>📧 البريد: <a href="bachirtoaba@gmail.com">bachirtoaba@gmail.com</a></p>
+    <p>🔗 GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  </section>
+
+  <footer>
+    © 2025 بشير توابة - جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    function nextSlide(btn) {
+      const slides = btn.closest('.slider').querySelectorAll('.slide');
+      let current = [...slides].findIndex(s => s.classList.contains('active'));
+      slides[current].classList.remove('active');
+      let next = (current + 1) % slides.length;
+      slides[next].classList.add('active');
+    }
+  
+    function prevSlide(btn) {
+      const slides = btn.closest('.slider').querySelectorAll('.slide');
+      let current = [...slides].findIndex(s => s.classList.contains('active'));
+      slides[current].classList.remove('active');
+      let prev = (current - 1 + slides.length) % slides.length;
+      slides[prev].classList.add('active');
+    }
+  </script>
+  
+</body>
+</html>
