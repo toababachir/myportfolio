@@ -120,21 +120,25 @@ a:hover {
   
 
   <section>
- <div style="position: relative; width: 200px; height: 200px; margin: auto;">
-  
-  <!-- GIF في الخلفية خلف الصورة الدائرية فقط -->
+<!-- GIF كخلفية للشاشة بالكامل -->
+<div style="position: relative; width: 100%; height: 100vh;">
+
+  <!-- خلفية GIF تغطي كل الشاشة -->
   <img src="images/gif.gif"
        alt="خلفية GIF"
        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" />
 
-  <!-- صورة المستخدم داخل دائرة فوق الـ GIF -->
-  <div style="position: relative; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; z-index: 2;">
-    <img src="images/WhatsApp Image 2025-02-06 at 3.13.44 PM.jpeg"
-         alt="صورة شخصية"
-         style="width: 100%; height: 100%; object-fit: cover;" />
+  <!-- الصورة الدائرية في الوسط -->
+  <div style="position: relative; width: 200px; height: 200px; margin: auto; top: 50%; transform: translateY(-50%); z-index: 2;">
+    <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden;">
+      <img src="images/WhatsApp Image 2025-02-06 at 3.13.44 PM.jpeg"
+           alt="صورة شخصية"
+           style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
   </div>
 
 </div>
+
 
 
     
