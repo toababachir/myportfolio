@@ -113,6 +113,28 @@ a:hover {
   text-decoration: underline;
 }
 
+     .code {
+      font-family: monospace;
+      background: black;
+      color: lime;
+      padding: 10px;
+      display: inline-block;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background: lime;
+      margin-left: 3px;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
   </style>
 </head>
 <body>
@@ -160,7 +182,9 @@ a:hover {
   شغوف ببناء تطبيقات سريعة، آمنة، وسهلة الاستخدام.
 </p>
 
-
+<div class="code">
+  <span id="text"></span><span class="cursor"></span>
+</div>
 
 
 
