@@ -468,6 +468,33 @@ a:hover {
   function closePopup() {
     document.getElementById('popup').style.display = 'none';
   }
+
+    let text = "console.log('bachir')";
+let i = 0;
+let deleting = false;
+
+function typeEffect() {
+  const el = document.getElementById("text");
+
+  if (!deleting) {
+    el.textContent = text.substring(0, i++);
+    if (i > text.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1000);
+      return;
+    }
+  } else {
+    el.textContent = text.substring(0, i--);
+    if (i < 0) {
+      deleting = false;
+      i = 0;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? 50 : 100);
+}
+
+typeEffect();
   </script>
   
 </body>
