@@ -143,6 +143,39 @@ a:hover {
 }
 
 
+    .certificates {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.certificates::-webkit-scrollbar {
+  height: 8px;
+}
+
+.certificate {
+  min-width: 220px;
+  max-width: 220px;
+  background: #36393f;
+  border-radius: 10px;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.certificate h3 {
+  font-size: 14px;
+  text-align: center;
+}
+
+.certificate img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 
 
   </style>
@@ -216,25 +249,25 @@ a:hover {
   </section>
 
 
- <section>
+<section>
   <h2>الشهادات</h2>
 
-  <div class="projects">
+  <div class="certificates">
 
-    <div class="project">
-      <h3> حل المشكلات (Problem Solving)</h3>
-      <img src="images/fgfg.PNG" alt="شهادة حل المشكلات" />
+    <div class="certificate">
+      <h3>Problem Solving</h3>
+      <img src="images/fgfg.PNG" alt="شهادة حل المشكلات">
     </div>
 
-    <div class="project">
-      <h3> C++ Level 2</h3>
-      <img src="images/ccpsc.PNG" alt="شهادة C++ Level 2" />
+    <div class="certificate">
+      <h3>C++ Level 2</h3>
+      <img src="images/ccpsc.PNG" alt="شهادة C++ Level 2">
     </div>
+
+    <!-- أضف شهادات أخرى هنا -->
 
   </div>
 </section>
-
-  <section>
     <h2>مشاريعي</h2>
 
 
