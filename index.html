@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 
 <head>
 
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Bachir Toaba - Flutter & Laravel Developer">
 
-<meta name="description"
-      content="Bachir Toaba - Flutter & Laravel Developer">
+    <meta name="author"
+          content="Bachir Toaba">
 
-<meta name="author"
-      content="Bachir Toaba">
+    <meta name="theme-color"
+          content="#101114">
 
-<title>
-    Bachir Toaba | Flutter & Laravel Developer
-</title>
+    <title>
+        Bachir Toaba | Flutter & Laravel Developer
+    </title>
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
 
 <style>
 
 /* =========================================================
-   GENERAL
+   VARIABLES
 ========================================================= */
 
 :root {
@@ -65,6 +66,10 @@
 }
 
 
+/* =========================================================
+   RESET
+========================================================= */
+
 * {
 
     margin: 0;
@@ -80,10 +85,18 @@ html {
 
     scroll-behavior: smooth;
 
+    scroll-padding-top: 80px;
+
 }
 
 
 body {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
 
     font-family: 'Cairo', sans-serif;
 
@@ -96,7 +109,7 @@ body {
 }
 
 
-body::selection {
+::selection {
 
     background: var(--primary);
 
@@ -110,6 +123,13 @@ a {
     color: inherit;
 
     text-decoration: none;
+
+}
+
+
+button {
+
+    font-family: inherit;
 
 }
 
@@ -130,7 +150,353 @@ img {
         calc(100% - 40px)
     );
 
-    margin: auto;
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   ANIMATED SPACE BACKGROUND
+========================================================= */
+
+.space-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(114, 137, 218, 0.10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(87, 214, 141, 0.05),
+            transparent 30%
+        ),
+
+        #101114;
+
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars {
+
+    position: absolute;
+
+    width: 300%;
+
+    height: 300%;
+
+    left: -100%;
+
+    top: -100%;
+
+    background-repeat: repeat;
+
+    animation-name: spaceMove;
+
+    animation-timing-function: linear;
+
+    animation-iteration-count: infinite;
+
+}
+
+
+/* =========================================================
+   SMALL STARS
+========================================================= */
+
+.stars-small {
+
+    opacity: .55;
+
+    background-image:
+
+        radial-gradient(
+            1px 1px at 20px 30px,
+            rgba(255,255,255,.9),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 90px 120px,
+            rgba(255,255,255,.8),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 160px 70px,
+            rgba(255,255,255,.7),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 250px 180px,
+            rgba(255,255,255,.8),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 110px 240px,
+            rgba(114,137,218,.7),
+            transparent
+        );
+
+    background-size: 280px 280px;
+
+    animation-duration: 70s;
+
+}
+
+
+/* =========================================================
+   MEDIUM STARS
+========================================================= */
+
+.stars-medium {
+
+    opacity: .35;
+
+    background-image:
+
+        radial-gradient(
+            2px 2px at 40px 80px,
+            rgba(255,255,255,.9),
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 130px 40px,
+            rgba(255,255,255,.8),
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 200px 150px,
+            rgba(114,137,218,1),
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 300px 280px,
+            rgba(255,255,255,.7),
+            transparent
+        );
+
+    background-size: 420px 420px;
+
+    animation-duration: 110s;
+
+}
+
+
+/* =========================================================
+   LARGE STARS
+========================================================= */
+
+.stars-large {
+
+    opacity: .25;
+
+    background-image:
+
+        radial-gradient(
+            3px 3px at 80px 100px,
+            rgba(255,255,255,1),
+            transparent
+        ),
+
+        radial-gradient(
+            3px 3px at 220px 180px,
+            rgba(114,137,218,1),
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 400px 300px,
+            rgba(255,255,255,.9),
+            transparent
+        );
+
+    background-size: 600px 600px;
+
+    animation-duration: 160s;
+
+}
+
+
+/* =========================================================
+   SPACE MOVEMENT
+========================================================= */
+
+@keyframes spaceMove {
+
+    from {
+
+        transform:
+            translate3d(0, 0, 0);
+
+    }
+
+    to {
+
+        transform:
+            translate3d(180px, 220px, 0);
+
+    }
+
+}
+
+
+/* =========================================================
+   BLUE GLOW
+========================================================= */
+
+.space-background::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    left: 5%;
+
+    top: 10%;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(114,137,218,.10),
+            transparent 65%
+        );
+
+    filter: blur(50px);
+
+    animation:
+        glowMove
+        12s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+/* =========================================================
+   GREEN GLOW
+========================================================= */
+
+.space-background::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    right: 5%;
+
+    bottom: 5%;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(87,214,141,.05),
+            transparent 65%
+        );
+
+    filter: blur(50px);
+
+    animation:
+        glowMove2
+        16s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes glowMove {
+
+    from {
+
+        transform:
+            translate(0, 0);
+
+    }
+
+    to {
+
+        transform:
+            translate(120px, 80px);
+
+    }
+
+}
+
+
+@keyframes glowMove2 {
+
+    from {
+
+        transform:
+            translate(0, 0);
+
+    }
+
+    to {
+
+        transform:
+            translate(-100px, -70px);
+
+    }
+
+}
+
+
+/* =========================================================
+   CONTENT ABOVE SPACE
+========================================================= */
+
+.navbar,
+.hero,
+main,
+footer {
+
+    position: relative;
+
+    z-index: 1;
 
 }
 
@@ -147,9 +513,17 @@ img {
 
     z-index: 100;
 
-    background: rgba(16,17,20,.96);
+    background:
+        rgba(16,17,20,.88);
 
-    border-bottom: 1px solid var(--border);
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    border-bottom:
+        1px solid rgba(41,45,52,.85);
 
 }
 
@@ -169,11 +543,16 @@ img {
 
 .logo {
 
-    font-family: 'JetBrains Mono', monospace;
+    font-family:
+        'JetBrains Mono',
+        monospace;
 
     font-size: 20px;
 
     font-weight: 600;
+
+    transition:
+        color .2s ease;
 
 }
 
@@ -181,6 +560,13 @@ img {
 .logo span {
 
     color: var(--primary);
+
+}
+
+
+.logo:hover {
+
+    color: var(--primary-hover);
 
 }
 
@@ -200,11 +586,38 @@ img {
 
 .nav-links a {
 
+    position: relative;
+
     color: var(--muted);
 
     font-size: 14px;
 
-    transition: color .2s ease;
+    transition:
+        color .2s ease;
+
+}
+
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    transition:
+        width .25s ease;
 
 }
 
@@ -216,26 +629,43 @@ img {
 }
 
 
+.nav-links a:hover::after {
+
+    width: 100%;
+
+}
+
+
 .nav-cv {
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    padding: 7px 13px;
+    padding:
+        7px 13px;
 
-    border-radius: 6px;
+    border-radius:
+        6px;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    transition: .2s;
+    transition:
+        .2s;
 
 }
 
 
 .nav-cv:hover {
 
-    border-color: var(--primary);
+    border-color:
+        var(--primary);
 
-    color: var(--primary-hover);
+    color:
+        var(--primary-hover);
+
+    background:
+        rgba(114,137,218,.06);
 
 }
 
@@ -246,9 +676,11 @@ img {
 
 .hero {
 
-    padding: 85px 0 75px;
+    padding:
+        85px 0 75px;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
 
 }
 
@@ -257,7 +689,8 @@ img {
 
     display: grid;
 
-    grid-template-columns: 1fr 300px;
+    grid-template-columns:
+        1fr 300px;
 
     gap: 70px;
 
@@ -277,6 +710,10 @@ img {
 
     order: 2;
 
+    display: flex;
+
+    justify-content: center;
+
 }
 
 
@@ -288,127 +725,197 @@ img {
 
     object-fit: cover;
 
-    border-radius: 12px;
+    border-radius: 16px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 0 0 8px rgba(114,137,218,.025),
+        0 25px 70px rgba(0,0,0,.25);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.hero-photo img:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(114,137,218,.45);
+
+    box-shadow:
+        0 0 0 8px rgba(114,137,218,.05),
+        0 30px 80px rgba(0,0,0,.35);
 
 }
 
 
 .small-intro {
 
-    color: var(--primary-hover);
+    color:
+        var(--primary-hover);
 
-    font-family: 'JetBrains Mono', monospace;
+    font-family:
+        'JetBrains Mono',
+        monospace;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
 
 }
 
 
 .hero h1 {
 
-    font-size: clamp(
-        40px,
-        6vw,
-        62px
-    );
+    font-size:
+        clamp(40px, 6vw, 62px);
 
-    line-height: 1.25;
+    line-height:
+        1.25;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
 
 }
 
 
 .hero-title {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 20px;
+    font-size:
+        20px;
 
-    margin-bottom: 22px;
+    margin-bottom:
+        22px;
 
 }
 
 
 .hero-description {
 
-    max-width: 650px;
+    max-width:
+        650px;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    line-height: 2;
+    line-height:
+        2;
 
-    margin-bottom: 27px;
+    margin-bottom:
+        27px;
 
 }
 
 
 .hero-actions {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 10px;
+    gap:
+        10px;
 
 }
 
 
 .btn {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    padding: 10px 17px;
+    padding:
+        10px 17px;
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    font-weight: 600;
+    font-weight:
+        600;
 
-    transition: .2s;
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-2px);
 
 }
 
 
 .btn-primary {
 
-    background: var(--primary);
+    background:
+        var(--primary);
 
-    color: white;
+    color:
+        white;
 
 }
 
 
 .btn-primary:hover {
 
-    background: var(--primary-hover);
+    background:
+        var(--primary-hover);
 
 }
 
 
 .btn-secondary {
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    color: var(--text);
+    color:
+        var(--text);
+
+    background:
+        rgba(23,25,30,.35);
 
 }
 
 
 .btn-secondary:hover {
 
-    background: var(--surface);
+    background:
+        var(--surface);
+
+    border-color:
+        #3d424c;
 
 }
 
@@ -419,47 +926,59 @@ img {
 
 section {
 
-    padding: 75px 0;
+    padding:
+        75px 0;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
 
 }
 
 
 .section-heading {
 
-    margin-bottom: 35px;
+    margin-bottom:
+        35px;
 
 }
 
 
 .section-number {
 
-    color: var(--primary);
+    color:
+        var(--primary);
 
-    font-family: 'JetBrains Mono', monospace;
+    font-family:
+        'JetBrains Mono',
+        monospace;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    margin-bottom: 5px;
+    margin-bottom:
+        5px;
 
 }
 
 
 .section-heading h2 {
 
-    font-size: 28px;
+    font-size:
+        28px;
 
-    margin-bottom: 6px;
+    margin-bottom:
+        6px;
 
 }
 
 
 .section-heading p {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        14px;
 
 }
 
@@ -470,71 +989,89 @@ section {
 
 .about {
 
-    display: grid;
+    display:
+        grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
-    gap: 50px;
+    gap:
+        50px;
 
 }
 
 
 .about p {
 
-    color: #c4c8d0;
+    color:
+        #c4c8d0;
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    line-height: 2;
+    line-height:
+        2;
 
 }
 
 
 .about strong {
 
-    color: white;
+    color:
+        white;
 
 }
 
 
 .about-info {
 
-    border-right: 1px solid var(--border);
+    border-right:
+        1px solid var(--border);
 
-    padding-right: 30px;
+    padding-right:
+        30px;
 
 }
 
 
 .info-row {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    gap: 20px;
+    gap:
+        20px;
 
-    padding: 12px 0;
+    padding:
+        12px 0;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
 
-    font-size: 14px;
+    font-size:
+        14px;
 
 }
 
 
 .info-row span:first-child {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
 }
 
 
 .info-row span:last-child {
 
-    color: white;
+    color:
+        white;
 
-    text-align: left;
+    text-align:
+        left;
 
 }
 
@@ -545,39 +1082,57 @@ section {
 
 .skills {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 9px;
+    gap:
+        9px;
 
 }
 
 
 .skill {
 
-    background: var(--surface);
+    background:
+        rgba(23,25,30,.82);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    color: #d5d8de;
+    color:
+        #d5d8de;
 
-    padding: 8px 13px;
+    padding:
+        8px 13px;
 
-    border-radius: 6px;
+    border-radius:
+        6px;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    transition: .2s;
+    transition:
+        .2s;
 
 }
 
 
 .skill:hover {
 
-    border-color: #454b55;
+    border-color:
+        #454b55;
 
-    color: white;
+    color:
+        white;
+
+    transform:
+        translateY(-2px);
+
+    background:
+        var(--surface-light);
 
 }
 
@@ -588,159 +1143,206 @@ section {
 
 .projects {
 
-    display: grid;
+    display:
+        grid;
 
-    grid-template-columns: repeat(
-        2,
-        minmax(0,1fr)
-    );
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
 
-    gap: 22px;
+    gap:
+        22px;
 
 }
 
 
 .project {
 
-    background: var(--surface);
+    background:
+        rgba(23,25,30,.92);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     transition:
         border-color .25s,
-        transform .25s;
+        transform .25s,
+        box-shadow .25s;
 
 }
 
 
 .project:hover {
 
-    border-color: #3b414b;
+    border-color:
+        #3b414b;
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.18);
 
 }
 
 
 .project-content {
 
-    padding: 20px;
+    padding:
+        20px;
 
 }
 
 
 .project h3 {
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
 
 }
 
 
 .project-description {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    line-height: 1.9;
+    line-height:
+        1.9;
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 
 }
 
 
 .project-tech {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 6px;
+    gap:
+        6px;
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 
 }
 
 
 .tech {
 
-    color: #aeb6c5;
+    color:
+        #aeb6c5;
 
-    background: #111318;
+    background:
+        #111318;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    padding: 3px 8px;
+    padding:
+        3px 8px;
 
-    border-radius: 4px;
+    border-radius:
+        4px;
 
-    font-family: 'JetBrains Mono', monospace;
+    font-family:
+        'JetBrains Mono',
+        monospace;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
 }
 
 
 .project-footer {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 10px;
+    gap:
+        10px;
 
 }
 
 
 .project-link {
 
-    color: var(--primary-hover);
+    color:
+        var(--primary-hover);
 
-    font-size: 13px;
+    font-size:
+        13px;
 
 }
 
 
 .project-link:hover {
 
-    text-decoration: underline;
+    text-decoration:
+        underline;
 
 }
 
 
+/* =========================================================
+   STATUS
+========================================================= */
+
 .status {
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    padding: 3px 8px;
+    padding:
+        3px 8px;
 
-    border-radius: 4px;
+    border-radius:
+        4px;
 
 }
 
 
 .status-live {
 
-    color: var(--green);
+    color:
+        var(--green);
 
-    background: rgba(87,214,141,.08);
+    background:
+        rgba(87,214,141,.08);
 
 }
 
 
 .status-development {
 
-    color: var(--orange);
+    color:
+        var(--orange);
 
-    background: rgba(232,161,75,.08);
+    background:
+        rgba(232,161,75,.08);
 
 }
 
@@ -751,82 +1353,145 @@ section {
 
 .slider {
 
-    position: relative;
+    position:
+        relative;
 
-    aspect-ratio: 16 / 9;
+    aspect-ratio:
+        16 / 9;
 
-    background: #0c0d10;
+    background:
+        #0c0d10;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
 }
 
 
 .slide {
 
-    display: none;
+    display:
+        none;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
 }
 
 
 .slide.active {
 
-    display: block;
+    display:
+        block;
+
+    animation:
+        slideFade .35s ease;
+
+}
+
+
+@keyframes slideFade {
+
+    from {
+
+        opacity:
+            .35;
+
+        transform:
+            scale(1.015);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+
+    }
 
 }
 
 
 .slider-controls {
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 12px;
+    left:
+        12px;
 
-    right: 12px;
+    right:
+        12px;
 
-    bottom: 12px;
+    bottom:
+        12px;
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
 }
 
 
 .slider-button {
 
-    pointer-events: auto;
+    pointer-events:
+        auto;
 
-    width: 34px;
+    width:
+        34px;
 
-    height: 34px;
+    height:
+        34px;
 
-    border-radius: 6px;
+    border-radius:
+        6px;
 
-    border: 1px solid rgba(255,255,255,.15);
+    border:
+        1px solid rgba(255,255,255,.15);
 
-    background: rgba(0,0,0,.65);
+    background:
+        rgba(0,0,0,.65);
 
-    color: white;
+    color:
+        white;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    font-size: 16px;
+    font-size:
+        16px;
+
+    transition:
+        .2s;
 
 }
 
 
 .slider-button:hover {
 
-    background: var(--primary);
+    background:
+        var(--primary);
+
+    border-color:
+        var(--primary);
+
+    transform:
+        scale(1.05);
 
 }
 
@@ -837,49 +1502,76 @@ section {
 
 .certificates {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        repeat(3,minmax(0,1fr));
+        repeat(4,minmax(0,1fr));
 
-    gap: 18px;
+    gap:
+        18px;
 
 }
 
 
 .certificate {
 
-    background: var(--surface);
+    background:
+        rgba(23,25,30,.92);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 9px;
+    border-radius:
+        9px;
 
-    padding: 9px;
+    padding:
+        9px;
+
+    transition:
+        .25s;
+
+}
+
+
+.certificate:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #3b414b;
 
 }
 
 
 .certificate img {
 
-    width: 100%;
+    width:
+        100%;
 
-    aspect-ratio: 4 / 3;
+    aspect-ratio:
+        4 / 3;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
-    border-radius: 5px;
+    border-radius:
+        5px;
 
 }
 
 
 .certificate h3 {
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 600;
+    font-weight:
+        600;
 
-    padding: 11px 4px 5px;
+    padding:
+        11px 4px 5px;
 
 }
 
@@ -890,70 +1582,93 @@ section {
 
 .contact {
 
-    display: grid;
+    display:
+        grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
-    gap: 50px;
+    gap:
+        50px;
 
 }
 
 
 .contact-text h2 {
 
-    font-size: 30px;
+    font-size:
+        30px;
 
-    margin-bottom: 10px;
+    margin-bottom:
+        10px;
 
 }
 
 
 .contact-text p {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    line-height: 2;
+    line-height:
+        2;
 
 }
 
 
 .contact-links {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 10px;
+    gap:
+        10px;
 
 }
 
 
 .contact-link {
 
-    background: var(--surface);
+    background:
+        rgba(23,25,30,.92);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    padding: 13px 16px;
+    padding:
+        13px 16px;
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
-    color: #d8dbe1;
+    color:
+        #d8dbe1;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    transition: .2s;
+    transition:
+        .2s;
 
 }
 
 
 .contact-link:hover {
 
-    border-color: #454b55;
+    border-color:
+        #454b55;
 
-    color: white;
+    color:
+        white;
+
+    transform:
+        translateX(-3px);
 
 }
 
@@ -964,426 +1679,325 @@ section {
 
 footer {
 
-    padding: 30px 0;
+    padding:
+        30px 0;
 
-    color: #737984;
+    color:
+        #737984;
 
-    font-size: 12px;
+    font-size:
+        12px;
 
 }
 
 
 .footer-inner {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    align-items: center;
+    align-items:
+        center;
 
 }
 
 
 .footer-code {
 
-    font-family: 'JetBrains Mono', monospace;
-
-}
-
-      .space-background {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(114, 137, 218, 0.08),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(87, 214, 141, 0.04),
-            transparent 30%
-        ),
-        #101114;
-}
-
-/* النجوم */
-
-.stars {
-    position: absolute;
-    inset: -100%;
-    width: 300%;
-    height: 300%;
-
-    background-repeat: repeat;
-
-    animation: spaceMove linear infinite;
-}
-
-/* نجوم صغيرة */
-
-.stars-small {
-    opacity: .45;
-
-    background-image:
-        radial-gradient(
-            1px 1px at 20px 30px,
-            rgba(255,255,255,.8),
-            transparent
-        ),
-        radial-gradient(
-            1px 1px at 90px 120px,
-            rgba(255,255,255,.7),
-            transparent
-        ),
-        radial-gradient(
-            1px 1px at 160px 70px,
-            rgba(255,255,255,.6),
-            transparent
-        );
-
-    background-size: 180px 180px;
-
-    animation-duration: 90s;
-}
-
-/* نجوم متوسطة */
-
-.stars-medium {
-    opacity: .30;
-
-    background-image:
-        radial-gradient(
-            1.5px 1.5px at 40px 80px,
-            rgba(255,255,255,.9),
-            transparent
-        ),
-        radial-gradient(
-            1.5px 1.5px at 130px 40px,
-            rgba(255,255,255,.7),
-            transparent
-        ),
-        radial-gradient(
-            1.5px 1.5px at 200px 150px,
-            rgba(114,137,218,.9),
-            transparent
-        );
-
-    background-size: 250px 250px;
-
-    animation-duration: 150s;
-}
-
-/* نجوم كبيرة */
-
-.stars-large {
-    opacity: .18;
-
-    background-image:
-        radial-gradient(
-            2px 2px at 80px 100px,
-            rgba(255,255,255,1),
-            transparent
-        ),
-        radial-gradient(
-            2px 2px at 220px 180px,
-            rgba(114,137,218,1),
-            transparent
-        );
-
-    background-size: 350px 350px;
-
-    animation-duration: 220s;
-}
-
-
-/* حركة الفضاء */
-
-@keyframes spaceMove {
-
-    from {
-        transform:
-            translate3d(0, 0, 0)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate3d(-120px, -180px, 0)
-            rotate(2deg);
-    }
+    font-family:
+        'JetBrains Mono',
+        monospace;
 
 }
 
 
 /* =========================================================
-   LIGHT GLOW
+   MOBILE 850
 ========================================================= */
 
-.space-background::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    left: 10%;
-    top: 15%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(114,137,218,.08),
-            transparent 65%
-        );
-
-    filter: blur(40px);
-
-    animation: glowMove 12s ease-in-out infinite alternate;
-}
-
-
-.space-background::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-    height: 450px;
-
-    right: 5%;
-    bottom: 5%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(87,214,141,.035),
-            transparent 65%
-        );
-
-    filter: blur(50px);
-
-    animation: glowMove2 16s ease-in-out infinite alternate;
-}
-
-
-@keyframes glowMove {
-
-    from {
-        transform: translate(0, 0);
-    }
-
-    to {
-        transform: translate(120px, 80px);
-    }
-
-}
-
-
-@keyframes glowMove2 {
-
-    from {
-        transform: translate(0, 0);
-    }
-
-    to {
-        transform: translate(-100px, -70px);
-    }
-
-}
-
-
-/* =========================================================
-   REDUCE MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .stars,
-    .space-background::before,
-    .space-background::after {
-
-        animation: none;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:850px) {
+@media (max-width: 850px) {
 
     .hero-layout {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 35px;
+        gap:
+            35px;
 
-        text-align: center;
+        text-align:
+            center;
 
     }
 
 
     .hero-photo {
 
-        order: 1;
-
-        display: flex;
-
-        justify-content: center;
+        order:
+            1;
 
     }
 
 
     .hero-text {
 
-        order: 2;
+        order:
+            2;
 
     }
 
 
     .hero-photo img {
 
-        width: 210px;
+        width:
+            210px;
 
-        height: 210px;
+        height:
+            210px;
 
     }
 
 
     .hero-description {
 
-        margin-left: auto;
+        margin-left:
+            auto;
 
-        margin-right: auto;
+        margin-right:
+            auto;
 
     }
 
 
     .hero-actions {
 
-        justify-content: center;
+        justify-content:
+            center;
 
     }
 
 
     .about {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 30px;
+        gap:
+            30px;
 
     }
 
 
     .about-info {
 
-        border-right: none;
+        border-right:
+            none;
 
-        border-top: 1px solid var(--border);
+        border-top:
+            1px solid var(--border);
 
-        padding-right: 0;
+        padding-right:
+            0;
 
-        padding-top: 20px;
+        padding-top:
+            20px;
 
     }
 
 
     .contact {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 30px;
-
-    }
-
-}
-
-
-@media(max-width:650px) {
-
-    .container {
-
-        width: min(
-            var(--max-width),
-            calc(100% - 28px)
-        );
-
-    }
-
-
-    .navbar-inner {
-
-        min-height: 60px;
-
-    }
-
-
-    .nav-links {
-
-        display: none;
-
-    }
-
-
-    .hero {
-
-        padding: 55px 0;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 38px;
-
-    }
-
-
-    .hero-title {
-
-        font-size: 17px;
-
-    }
-
-
-    section {
-
-        padding: 55px 0;
-
-    }
-
-
-    .projects {
-
-        grid-template-columns: 1fr;
+        gap:
+            30px;
 
     }
 
 
     .certificates {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE 650
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+
+        width:
+            min(
+                var(--max-width),
+                calc(100% - 28px)
+            );
+
+    }
+
+
+    .navbar-inner {
+
+        min-height:
+            60px;
+
+    }
+
+
+    .nav-links {
+
+        display:
+            none;
+
+    }
+
+
+    .hero {
+
+        padding:
+            55px 0;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            38px;
+
+    }
+
+
+    .hero-title {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .hero-description {
+
+        font-size:
+            14px;
+
+    }
+
+
+    section {
+
+        padding:
+            55px 0;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .projects {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .certificates {
+
+        grid-template-columns:
+            1fr;
 
     }
 
 
     .footer-inner {
 
-        flex-direction: column;
+        flex-direction:
+            column;
 
-        gap: 5px;
+        gap:
+            5px;
 
-        text-align: center;
+        text-align:
+            center;
+
+    }
+
+
+    .space-background::before {
+
+        width:
+            300px;
+
+        height:
+            300px;
+
+    }
+
+
+    .space-background::after {
+
+        width:
+            280px;
+
+        height:
+            280px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+
+    .stars,
+    .space-background::before,
+    .space-background::after,
+    .slide.active {
+
+        animation:
+            none;
+
+    }
+
+
+    .project,
+    .certificate,
+    .skill,
+    .btn,
+    .contact-link,
+    .hero-photo img {
+
+        transition:
+            none;
 
     }
 
@@ -1393,13 +2007,25 @@ footer {
 
 </head>
 
+
 <body>
 
-      <div class="space-background">
+
+<!-- =========================================================
+     ANIMATED SPACE BACKGROUND
+========================================================= -->
+
+<div class="space-background"
+     aria-hidden="true">
+
     <div class="stars stars-small"></div>
+
     <div class="stars stars-medium"></div>
+
     <div class="stars stars-large"></div>
+
 </div>
+
 
 <!-- =========================================================
      NAVIGATION
@@ -1407,62 +2033,64 @@ footer {
 
 <nav class="navbar">
 
+    <div class="container navbar-inner">
 
-<div class="container navbar-inner">
+        <a href="#"
+           class="logo">
 
-    <a href="#" class="logo">
-        bachir<span>.</span>
-    </a>
+            bachir<span>.</span>
 
-
-    <ul class="nav-links">
-
-     <li>
-    <a href="#about">
-        <strong>من أنا</strong>
-    </a>
-</li>
-
-        <li>
-            <a href="#skills">
-                المهارات
-            </a>
-        </li>
-
-        <li>
-            <a href="#projects">
-                المشاريع
-            </a>
-        </li>
-
-        <li>
-            <a href="#certificates">
-                الشهادات
-            </a>
-        </li>
-
-        <li>
-            <a href="#contact">
-                تواصل
-            </a>
-        </li>
-
-    </ul>
+        </a>
 
 
-    <a
-        href="files/Bachir_Toaba_CV (1).pdf"
-        download
-        class="nav-cv">
+        <ul class="nav-links">
 
-        تحميل CV
+            <li>
+                <a href="#about">
+                    <strong>من أنا</strong>
+                </a>
+            </li>
 
-    </a>
+            <li>
+                <a href="#skills">
+                    المهارات
+                </a>
+            </li>
 
-</div>
+            <li>
+                <a href="#projects">
+                    المشاريع
+                </a>
+            </li>
 
+            <li>
+                <a href="#certificates">
+                    الشهادات
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    تواصل
+                </a>
+            </li>
+
+        </ul>
+
+
+        <a
+            href="files/Bachir_Toaba_CV (1).pdf"
+            download
+            class="nav-cv">
+
+            تحميل CV
+
+        </a>
+
+    </div>
 
 </nav>
+
 
 <!-- =========================================================
      HERO
@@ -1470,79 +2098,81 @@ footer {
 
 <header class="hero">
 
-
-<div class="container hero-layout">
-
-
-    <div class="hero-text">
-
-     
+    <div class="container hero-layout">
 
 
-        <h1>
-            Bachir Toaba
-        </h1>
+        <div class="hero-text">
 
 
-        <div class="hero-title">
-            Flutter & Laravel Developer
+            <div class="small-intro">
+                Software Developer
+            </div>
+
+
+            <h1>
+                Bachir Toaba
+            </h1>
+
+
+            <div class="hero-title">
+                Flutter & Laravel Developer
+            </div>
+
+
+            <p class="hero-description">
+
+                أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي
+                باستخدام Flutter و Laravel.
+
+                لدي خبرة في بناء تطبيقات الموبايل،
+                أنظمة الإدارة، REST APIs ومشاريع SaaS،
+                بالإضافة إلى التعامل مع قواعد البيانات
+                والخوادم.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#projects"
+                    class="btn btn-primary">
+
+                    مشاهدة المشاريع
+
+                </a>
+
+
+                <a
+                    href="files/Bachir_Toaba_CV (1).pdf"
+                    download
+                    class="btn btn-secondary">
+
+                    تحميل السيرة الذاتية
+
+                </a>
+
+            </div>
+
         </div>
 
 
-        <p class="hero-description">
+        <div class="hero-photo">
 
-            أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي
-            باستخدام Flutter و Laravel.
-
-            لدي خبرة في بناء تطبيقات الموبايل،
-            أنظمة الإدارة، REST APIs ومشاريع SaaS،
-            بالإضافة إلى التعامل مع قواعد البيانات
-            والخوادم.
-
-        </p>
-
-
-        <div class="hero-actions">
-
-            <a
-                href="#projects"
-                class="btn btn-primary">
-
-                مشاهدة المشاريع
-
-            </a>
-
-
-            <a
-                href="files/Bachir_Toaba_CV (1).pdf"
-                download
-                class="btn btn-secondary">
-
-                تحميل السيرة الذاتية
-
-            </a>
+            <img
+                src="images/WhatsApp Image 2025-02-06 at 3.13.44 PM.jpeg"
+                alt="Bachir Toaba">
 
         </div>
 
-    </div>
-
-
-
-    <div class="hero-photo">
-
-        <img
-            src="images/WhatsApp Image 2025-02-06 at 3.13.44 PM.jpeg"
-            alt="Bachir Toaba">
 
     </div>
-
-
-</div>
-
 
 </header>
 
+
 <main>
+
 
 <!-- =========================================================
      ABOUT
@@ -1550,131 +2180,134 @@ footer {
 
 <section id="about">
 
-
-<div class="container">
-
-    <div class="section-heading">
-
-        <div class="section-number">
-            01 / ABOUT
-        </div>
-
-        <h2>
-            من أنا
-        </h2>
-
-        <p>
-            نبذة مختصرة عني وعن الأشياء التي أعمل عليها.
-        </p>
-
-    </div>
+    <div class="container">
 
 
-    <div class="about">
+        <div class="section-heading">
 
+            <div class="section-number">
+                01 / ABOUT
+            </div>
 
-        <div>
+            <h2>
+                من أنا
+            </h2>
 
             <p>
-
-                بدأت العمل في تطوير البرمجيات منذ عدة سنوات،
-                وركزت بشكل أساسي على
-                <strong>Laravel</strong>
-                و
-                <strong>Flutter</strong>.
-
-                <br><br>
-
-                أعمل على تطوير تطبيقات الموبايل
-                وأنظمة الويب ولوحات التحكم وربط
-                التطبيقات مع REST APIs.
-
-                <br><br>
-
-                خلال الفترة الماضية عملت على مشاريع
-                مختلفة، منها أنظمة نقاط البيع،
-                منصات تعليمية، أنظمة SaaS،
-                التجارة الإلكترونية وأنظمة إدارة الموظفين.
-
+                نبذة مختصرة عني وعن الأشياء التي أعمل عليها.
             </p>
 
         </div>
 
 
-        <div class="about-info">
-
-            <div class="info-row">
-
-                <span>
-                    التخصص
-                </span>
-
-                <span>
-                    Flutter / Laravel
-                </span>
-
-            </div>
+        <div class="about">
 
 
-            <div class="info-row">
+            <div>
 
-                <span>
-                    Laravel
-                </span>
+                <p>
 
-                <span>
-                    3+ سنوات
-                </span>
+                    بدأت العمل في تطوير البرمجيات منذ عدة سنوات،
+                    وركزت بشكل أساسي على
+                    <strong>Laravel</strong>
+                    و
+                    <strong>Flutter</strong>.
 
-            </div>
+                    <br><br>
 
+                    أعمل على تطوير تطبيقات الموبايل
+                    وأنظمة الويب ولوحات التحكم وربط
+                    التطبيقات مع REST APIs.
 
-            <div class="info-row">
+                    <br><br>
 
-                <span>
-                    Flutter
-                </span>
+                    خلال الفترة الماضية عملت على مشاريع
+                    مختلفة، منها أنظمة نقاط البيع،
+                    منصات تعليمية، أنظمة SaaS،
+                    التجارة الإلكترونية وأنظمة إدارة الموظفين.
 
-                <span>
-                    2+ سنوات
-                </span>
+                </p>
 
             </div>
 
 
-            <div class="info-row">
+            <div class="about-info">
 
-                <span>
-                    قواعد البيانات
-                </span>
 
-                <span>
-                    MySQL / PostgreSQL / SQLite
-                </span>
+                <div class="info-row">
+
+                    <span>
+                        التخصص
+                    </span>
+
+                    <span>
+                        Flutter / Laravel
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Laravel
+                    </span>
+
+                    <span>
+                        3+ سنوات
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Flutter
+                    </span>
+
+                    <span>
+                        2+ سنوات
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        قواعد البيانات
+                    </span>
+
+                    <span>
+                        MySQL / PostgreSQL / SQLite
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        العمل
+                    </span>
+
+                    <span>
+                        Freelance
+                    </span>
+
+                </div>
+
 
             </div>
 
-
-            <div class="info-row">
-
-                <span>
-                    العمل
-                </span>
-
-                <span>
-                    Freelance
-                </span>
-
-            </div>
 
         </div>
 
     </div>
 
-</div>
-
-
 </section>
+
 
 <!-- =========================================================
      SKILLS
@@ -1682,66 +2315,66 @@ footer {
 
 <section id="skills">
 
+    <div class="container">
 
-<div class="container">
 
-    <div class="section-heading">
+        <div class="section-heading">
 
-        <div class="section-number">
-            02 / SKILLS
+            <div class="section-number">
+                02 / SKILLS
+            </div>
+
+            <h2>
+                المهارات
+            </h2>
+
+            <p>
+                أهم التقنيات التي أستخدمها في عملي.
+            </p>
+
         </div>
 
-        <h2>
-            المهارات
-        </h2>
 
-        <p>
-            أهم التقنيات التي أستخدمها في عملي.
-        </p>
+        <div class="skills">
 
-    </div>
+            <span class="skill">Flutter</span>
 
+            <span class="skill">Dart</span>
 
-    <div class="skills">
+            <span class="skill">Laravel</span>
 
-        <span class="skill">Flutter</span>
+            <span class="skill">PHP</span>
 
-        <span class="skill">Dart</span>
+            <span class="skill">Django</span>
 
-        <span class="skill">Laravel</span>
+            <span class="skill">Python</span>
 
-        <span class="skill">PHP</span>
+            <span class="skill">MySQL</span>
 
-        <span class="skill">Django</span>
+            <span class="skill">PostgreSQL</span>
 
-        <span class="skill">Python</span>
+            <span class="skill">SQLite</span>
 
-        <span class="skill">MySQL</span>
+            <span class="skill">REST API</span>
 
-        <span class="skill">PostgreSQL</span>
+            <span class="skill">Firebase</span>
 
-        <span class="skill">SQLite</span>
+            <span class="skill">Git</span>
 
-        <span class="skill">REST API</span>
+            <span class="skill">GitHub</span>
 
-        <span class="skill">Firebase</span>
+            <span class="skill">Linux</span>
 
-        <span class="skill">Git</span>
+            <span class="skill">
+                Server Management
+            </span>
 
-        <span class="skill">GitHub</span>
-
-        <span class="skill">Linux</span>
-
-        <span class="skill">
-            Server Management
-        </span>
+        </div>
 
     </div>
-
-</div>
-
 
 </section>
+
 
 <!-- =========================================================
      PROJECTS
@@ -1749,840 +2382,888 @@ footer {
 
 <section id="projects">
 
+    <div class="container">
 
-<div class="container">
 
-    <div class="section-heading">
+        <div class="section-heading">
 
-        <div class="section-number">
-            03 / PROJECTS
+            <div class="section-number">
+                03 / PROJECTS
+            </div>
+
+            <h2>
+                المشاريع
+            </h2>
+
+            <p>
+                بعض المشاريع التي عملت عليها خلال الفترة الماضية.
+            </p>
+
         </div>
 
-        <h2>
-            المشاريع
-        </h2>
 
-        <p>
-            بعض المشاريع التي عملت عليها خلال الفترة الماضية.
-        </p>
+        <div class="projects">
+
+
+            <!-- POS -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/1==.PNG"
+                        alt="نظام نقاط البيع"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/2==.PNG"
+                        alt="نظام نقاط البيع"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/3==.PNG"
+                        alt="نظام نقاط البيع"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/4==.PNG"
+                        alt="نظام نقاط البيع"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/5==.PNG"
+                        alt="نظام نقاط البيع"
+                        loading="lazy">
+
+
+                    <div class="slider-controls">
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="prevSlide(this)"
+                            aria-label="الصورة السابقة">
+
+                            ❮
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="nextSlide(this)"
+                            aria-label="الصورة التالية">
+
+                            ❯
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        نظام كاشير ونقاط بيع POS
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        نظام لإدارة المبيعات والمنتجات
+                        والمخزون والفواتير.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Flutter
+                        </span>
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                        <span class="tech">
+                            MySQL
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <span class="status status-live">
+                            مكتمل
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BAC -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/bacdz_collage.png"
+                        alt="منصة البكالوريا"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        منصة SaaS لطلبة البكالوريا
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        منصة مخصصة لطلبة البكالوريا
+                        لتوفير المحتوى والموارد التعليمية.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                        <span class="tech">
+                            SaaS
+                        </span>
+
+                        <span class="tech">
+                            MySQL
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <a
+                            href="https://dz-bac.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            زيارة المشروع →
+
+                        </a>
+
+
+                        <span class="status status-live">
+                            متاح
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- FLEXI -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/flexi_fath_collage.png"
+                        alt="نظام إدارة بطاقات الشحن"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        SaaS لإدارة بطاقات الشحن
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        نظام لإدارة بطاقات الشحن
+                        والمبيعات والمخزون.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Flutter
+                        </span>
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- EMPLOYEES -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/3.PNG"
+                        alt="إدارة الموظفين"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/4.PNG"
+                        alt="إدارة الموظفين"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/5.PNG"
+                        alt="تفاصيل الموظف"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/photo_2026-06-08_13-33-47.jpg"
+                        alt="الموظفين"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/7.PNG"
+                        alt="إحصائيات النظام"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/9.PNG"
+                        alt="إعدادات النظام"
+                        loading="lazy">
+
+
+                    <div class="slider-controls">
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="prevSlide(this)"
+                            aria-label="الصورة السابقة">
+
+                            ❮
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="nextSlide(this)"
+                            aria-label="الصورة التالية">
+
+                            ❯
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        SaaS لإدارة الموظفين
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        نظام لإدارة الموظفين والبيانات
+                        والإحصائيات والإعدادات.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                        <span class="tech">
+                            PHP
+                        </span>
+
+                        <span class="tech">
+                            MySQL
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <a
+                            href="https://optipaie-dz.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            زيارة المشروع →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- MULTI SERVICE -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/Screenshot_28-7-2025_34625_127.0.0.1.jpeg"
+                        alt="المنصة متعددة الخدمات"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot_28-7-2025_33212_127.0.0.1.jpeg"
+                        alt="واجهة المستخدم"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot_28-7-2025_33228_127.0.0.1.jpeg"
+                        alt="نظام الأخبار"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot_28-7-2025_3337_127.0.0.1.jpeg"
+                        alt="لوحة التحكم"
+                        loading="lazy">
+
+
+                    <div class="slider-controls">
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="prevSlide(this)"
+                            aria-label="الصورة السابقة">
+
+                            ❮
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="nextSlide(this)"
+                            aria-label="الصورة التالية">
+
+                            ❯
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        منصة متعددة الخدمات
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        منصة تجمع التعليم والتجارة
+                        والتواصل داخل نظام واحد.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                        <span class="tech">
+                            Flutter
+                        </span>
+
+                        <span class="tech">
+                            API
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- LIBRARY -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/Screenshot_18-6-2025_62713_elitelibrarydz12.com.jpeg"
+                        alt="المكتبة الجامعية"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot_18-6-2025_62928_elitelibrarydz12.com.jpeg"
+                        alt="المكتبة الجامعية"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot_18-6-2025_62914_elitelibrarydz12.com.jpeg"
+                        alt="المكتبة الجامعية"
+                        loading="lazy">
+
+
+                    <div class="slider-controls">
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="prevSlide(this)"
+                            aria-label="الصورة السابقة">
+
+                            ❮
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="nextSlide(this)"
+                            aria-label="الصورة التالية">
+
+                            ❯
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        موقع المكتبة الجامعية
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        موقع يسمح للطلاب بتحميل
+                        البحوث والمحاضرات والمحتوى الدراسي.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                        <span class="tech">
+                            PHP
+                        </span>
+
+                        <span class="tech">
+                            MySQL
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <a
+                            href="https://elitelibrarydz12.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            زيارة الموقع →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CRAFT -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/Screenshot (125).png"
+                        alt="تجارة الحرفيين"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (124).png"
+                        alt="المنتجات"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (121).png"
+                        alt="التجارة الإلكترونية"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (119).png"
+                        alt="الطلبات"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (15).png"
+                        alt="الحرفيين"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (11).png"
+                        alt="الحرفيين"
+                        loading="lazy">
+
+
+                    <div class="slider-controls">
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="prevSlide(this)"
+                            aria-label="الصورة السابقة">
+
+                            ❮
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="nextSlide(this)"
+                            aria-label="الصورة التالية">
+
+                            ❯
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        تطبيق تجارة إلكترونية للحرفيين
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        تطبيق يسمح للحرفيين بعرض
+                        منتجاتهم وبيعها عبر الإنترنت،
+                        مع لوحة تحكم لإدارة المنتجات والطلبات.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Flutter
+                        </span>
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                        <span class="tech">
+                            REST API
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <span class="status status-development">
+                            قيد التطوير
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- QUIZ -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/Screenshot (320).png"
+                        alt="الاختبارات"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (317).png"
+                        alt="نتائج الاختبارات"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (315).png"
+                        alt="صفحة المستخدم"
+                        loading="lazy">
+
+
+                    <div class="slider-controls">
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="prevSlide(this)"
+                            aria-label="الصورة السابقة">
+
+                            ❮
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="nextSlide(this)"
+                            aria-label="الصورة التالية">
+
+                            ❯
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        تطبيق اختبارات تفاعلية
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        تطبيق لإجراء الاختبارات أونلاين
+                        مع التصحيح الفوري وعرض النتائج.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Flutter
+                        </span>
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <span class="status status-development">
+                            قيد التطوير
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ANIMALS -->
+
+            <article class="project">
+
+                <div class="slider">
+
+                    <img
+                        class="slide active"
+                        src="images/Screenshot (167).png"
+                        alt="تطبيق الموارد الحيوانية"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (157).png"
+                        alt="عروض الحيوانات"
+                        loading="lazy">
+
+                    <img
+                        class="slide"
+                        src="images/Screenshot (152).png"
+                        alt="صفحة التواصل"
+                        loading="lazy">
+
+
+                    <div class="slider-controls">
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="prevSlide(this)"
+                            aria-label="الصورة السابقة">
+
+                            ❮
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="slider-button"
+                            onclick="nextSlide(this)"
+                            aria-label="الصورة التالية">
+
+                            ❯
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        تطبيق الموارد الحيوانية
+                    </h3>
+
+
+                    <p class="project-description">
+
+                        تطبيق لبيع وشراء المواشي والطيور
+                        والمنتجات المرتبطة بها، مع إمكانية
+                        إضافة الإعلانات والتواصل مع البائعين.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span class="tech">
+                            Flutter
+                        </span>
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                        <span class="tech">
+                            API
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <span class="status status-development">
+                            قيد التطوير
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
 
     </div>
-
-
-    <div class="projects">
-
-
-        <!-- POS -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/1==.PNG"
-                    alt="نظام نقاط البيع">
-
-                <img
-                    class="slide"
-                    src="images/2==.PNG"
-                    alt="نظام نقاط البيع">
-
-                <img
-                    class="slide"
-                    src="images/3==.PNG"
-                    alt="نظام نقاط البيع">
-
-                <img
-                    class="slide"
-                    src="images/4==.PNG"
-                    alt="نظام نقاط البيع">
-
-                <img
-                    class="slide"
-                    src="images/5==.PNG"
-                    alt="نظام نقاط البيع">
-
-
-                <div class="slider-controls">
-
-                    <button
-                        class="slider-button"
-                        onclick="prevSlide(this)"
-                        aria-label="الصورة السابقة">
-
-                        ❮
-
-                    </button>
-
-
-                    <button
-                        class="slider-button"
-                        onclick="nextSlide(this)"
-                        aria-label="الصورة التالية">
-
-                        ❯
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    نظام كاشير ونقاط بيع POS
-                </h3>
-
-
-                <p class="project-description">
-
-                    نظام لإدارة المبيعات والمنتجات
-                    والمخزون والفواتير.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Flutter
-                    </span>
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                    <span class="tech">
-                        MySQL
-                    </span>
-
-                </div>
-
-
-                <div class="project-footer">
-
-                    <span class="status status-live">
-                        مكتمل
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- BAC -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/bacdz_collage.png"
-                    alt="منصة البكالوريا">
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    منصة SaaS لطلبة البكالوريا
-                </h3>
-
-
-                <p class="project-description">
-
-                    منصة مخصصة لطلبة البكالوريا
-                    لتوفير المحتوى والموارد التعليمية.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                    <span class="tech">
-                        SaaS
-                    </span>
-
-                    <span class="tech">
-                        MySQL
-                    </span>
-
-                </div>
-
-
-                <div class="project-footer">
-
-                    <a
-                        href="https://dz-bac.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link">
-
-                        زيارة المشروع →
-
-                    </a>
-
-
-                    <span class="status status-live">
-                        متاح
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- FLEXI -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/flexi_fath_collage.png"
-                    alt="نظام إدارة بطاقات الشحن">
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    SaaS لإدارة بطاقات الشحن
-                </h3>
-
-
-                <p class="project-description">
-
-                    نظام لإدارة بطاقات الشحن
-                    والمبيعات والمخزون.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Flutter
-                    </span>
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- EMPLOYEES -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/3.PNG"
-                    alt="إدارة الموظفين">
-
-                <img
-                    class="slide"
-                    src="images/4.PNG"
-                    alt="إدارة الموظفين">
-
-                <img
-                    class="slide"
-                    src="images/5.PNG"
-                    alt="تفاصيل الموظف">
-
-                <img
-                    class="slide"
-                    src="images/photo_2026-06-08_13-33-47.jpg"
-                    alt="الموظفين">
-
-                <img
-                    class="slide"
-                    src="images/7.PNG"
-                    alt="إحصائيات النظام">
-
-                <img
-                    class="slide"
-                    src="images/9.PNG"
-                    alt="إعدادات النظام">
-
-            
-
-
-                <div class="slider-controls">
-
-                    <button
-                        class="slider-button"
-                        onclick="prevSlide(this)">
-
-                        ❮
-
-                    </button>
-
-                    <button
-                        class="slider-button"
-                        onclick="nextSlide(this)">
-
-                        ❯
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    SaaS لإدارة الموظفين
-                </h3>
-
-
-                <p class="project-description">
-
-                    نظام لإدارة الموظفين والبيانات
-                    والإحصائيات والإعدادات.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                    <span class="tech">
-                        PHP
-                    </span>
-
-                    <span class="tech">
-                        MySQL
-                    </span>
-
-                </div>
-
-
-                <div class="project-footer">
-
-                    <a
-                        href="https://optipaie-dz.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link">
-
-                        زيارة المشروع →
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- MULTI SERVICE -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/Screenshot_28-7-2025_34625_127.0.0.1.jpeg"
-                    alt="المنصة متعددة الخدمات">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot_28-7-2025_33212_127.0.0.1.jpeg"
-                    alt="واجهة المستخدم">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot_28-7-2025_33228_127.0.0.1.jpeg"
-                    alt="نظام الأخبار">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot_28-7-2025_3337_127.0.0.1.jpeg"
-                    alt="لوحة التحكم">
-
-
-                <div class="slider-controls">
-
-                    <button
-                        class="slider-button"
-                        onclick="prevSlide(this)">
-
-                        ❮
-
-                    </button>
-
-                    <button
-                        class="slider-button"
-                        onclick="nextSlide(this)">
-
-                        ❯
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    منصة متعددة الخدمات
-                </h3>
-
-
-                <p class="project-description">
-
-                    منصة تجمع التعليم والتجارة
-                    والتواصل داخل نظام واحد.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                    <span class="tech">
-                        Flutter
-                    </span>
-
-                    <span class="tech">
-                        API
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- LIBRARY -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/Screenshot_18-6-2025_62713_elitelibrarydz12.com.jpeg"
-                    alt="المكتبة الجامعية">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot_18-6-2025_62928_elitelibrarydz12.com.jpeg"
-                    alt="المكتبة الجامعية">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot_18-6-2025_62914_elitelibrarydz12.com.jpeg"
-                    alt="المكتبة الجامعية">
-
-
-                <div class="slider-controls">
-
-                    <button
-                        class="slider-button"
-                        onclick="prevSlide(this)">
-
-                        ❮
-
-                    </button>
-
-                    <button
-                        class="slider-button"
-                        onclick="nextSlide(this)">
-
-                        ❯
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    موقع المكتبة الجامعية
-                </h3>
-
-
-                <p class="project-description">
-
-                    موقع يسمح للطلاب بتحميل
-                    البحوث والمحاضرات والمحتوى الدراسي.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                    <span class="tech">
-                        PHP
-                    </span>
-
-                    <span class="tech">
-                        MySQL
-                    </span>
-
-                </div>
-
-
-                <div class="project-footer">
-
-                    <a
-                        href="https://elitelibrarydz12.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link">
-
-                        زيارة الموقع →
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- CRAFT -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/Screenshot (125).png"
-                    alt="تجارة الحرفيين">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (124).png"
-                    alt="المنتجات">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (121).png"
-                    alt="التجارة الإلكترونية">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (119).png"
-                    alt="الطلبات">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (15).png"
-                    alt="الحرفيين">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (11).png"
-                    alt="الحرفيين">
-
-
-                <div class="slider-controls">
-
-                    <button
-                        class="slider-button"
-                        onclick="prevSlide(this)">
-
-                        ❮
-
-                    </button>
-
-                    <button
-                        class="slider-button"
-                        onclick="nextSlide(this)">
-
-                        ❯
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    تطبيق تجارة إلكترونية للحرفيين
-                </h3>
-
-
-                <p class="project-description">
-
-                    تطبيق يسمح للحرفيين بعرض
-                    منتجاتهم وبيعها عبر الإنترنت،
-                    مع لوحة تحكم لإدارة المنتجات والطلبات.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Flutter
-                    </span>
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                    <span class="tech">
-                        REST API
-                    </span>
-
-                </div>
-
-
-                <div class="project-footer">
-
-                    <span class="status status-development">
-                        قيد التطوير
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- QUIZ -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/Screenshot (320).png"
-                    alt="الاختبارات">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (317).png"
-                    alt="نتائج الاختبارات">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (315).png"
-                    alt="صفحة المستخدم">
-
-
-                <div class="slider-controls">
-
-                    <button
-                        class="slider-button"
-                        onclick="prevSlide(this)">
-
-                        ❮
-
-                    </button>
-
-                    <button
-                        class="slider-button"
-                        onclick="nextSlide(this)">
-
-                        ❯
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    تطبيق اختبارات تفاعلية
-                </h3>
-
-
-                <p class="project-description">
-
-                    تطبيق لإجراء الاختبارات أونلاين
-                    مع التصحيح الفوري وعرض النتائج.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Flutter
-                    </span>
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                </div>
-
-
-                <div class="project-footer">
-
-                    <span class="status status-development">
-                        قيد التطوير
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- ANIMALS -->
-
-        <article class="project">
-
-            <div class="slider">
-
-                <img
-                    class="slide active"
-                    src="images/Screenshot (167).png"
-                    alt="تطبيق الموارد الحيوانية">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (157).png"
-                    alt="عروض الحيوانات">
-
-                <img
-                    class="slide"
-                    src="images/Screenshot (152).png"
-                    alt="صفحة التواصل">
-
-
-                <div class="slider-controls">
-
-                    <button
-                        class="slider-button"
-                        onclick="prevSlide(this)">
-
-                        ❮
-
-                    </button>
-
-                    <button
-                        class="slider-button"
-                        onclick="nextSlide(this)">
-
-                        ❯
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    تطبيق الموارد الحيوانية
-                </h3>
-
-
-                <p class="project-description">
-
-                    تطبيق لبيع وشراء المواشي والطيور
-                    والمنتجات المرتبطة بها، مع إمكانية
-                    إضافة الإعلانات والتواصل مع البائعين.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span class="tech">
-                        Flutter
-                    </span>
-
-                    <span class="tech">
-                        Laravel
-                    </span>
-
-                    <span class="tech">
-                        API
-                    </span>
-
-                </div>
-
-
-                <div class="project-footer">
-
-                    <span class="status status-development">
-                        قيد التطوير
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</div>
-
 
 </section>
+
 
 <!-- =========================================================
      CERTIFICATES
@@ -2590,82 +3271,91 @@ footer {
 
 <section id="certificates">
 
+    <div class="container">
 
-<div class="container">
 
-    <div class="section-heading">
+        <div class="section-heading">
 
-        <div class="section-number">
-            04 / CERTIFICATES
+            <div class="section-number">
+                04 / CERTIFICATES
+            </div>
+
+            <h2>
+                الشهادات
+            </h2>
+
+            <p>
+                بعض الشهادات والدورات التي حصلت عليها.
+            </p>
+
         </div>
 
-        <h2>
-            الشهادات
-        </h2>
+
+        <div class="certificates">
+
+
+            <div class="certificate">
+
+                <img
+                    src="images/fgfg.PNG"
+                    alt="Problem Solving Level 2"
+                    loading="lazy">
+
+                <h3>
+                    Problem Solving Level 2
+                </h3>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <img
+                    src="images/ccpsc.PNG"
+                    alt="C++ Level 2"
+                    loading="lazy">
+
+                <h3>
+                    C++ Level 2
+                </h3>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <img
+                    src="images/alg.PNG"
+                    alt="Problem Solving Level 3"
+                    loading="lazy">
+
+                <h3>
+                    Problem Solving Level 3
+                </h3>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <img
+                    src="images/1.PNG"
+                    alt="Problem Solving Level 4"
+                    loading="lazy">
+
+                <h3>
+                    Problem Solving Level 4
+                </h3>
+
+            </div>
+
+
+        </div>
 
     </div>
-
-
-    <div class="certificates">
-
-
-        <div class="certificate">
-
-            <img
-                src="images/fgfg.PNG"
-                alt="Problem Solving Level 2">
-
-            <h3>
-                Problem Solving Level 2
-            </h3>
-
-        </div>
-
-
-        <div class="certificate">
-
-            <img
-                src="images/ccpsc.PNG"
-                alt="C++ Level 2">
-
-            <h3>
-                C++ Level 2
-            </h3>
-
-        </div>
-
-
-        <div class="certificate">
-
-            <img
-                src="images/alg.PNG"
-                alt="Problem Solving Level 3">
-
-            <h3>
-                Problem Solving Level 3
-            </h3>
-
-        </div>
-
-          <div class="certificate">
-
-            <img
-                src="images/1.PNG"
-                alt="Problem Solving Level 3">
-
-            <h3>
-                Problem Solving Level 4
-            </h3>
-
-        </div>
-
-
-    </div>
-
-</div>
-
 
 </section>
+
 
 <!-- =========================================================
      CONTACT
@@ -2673,78 +3363,79 @@ footer {
 
 <section id="contact">
 
-
-<div class="container">
-
-    <div class="contact">
+    <div class="container">
 
 
-        <div class="contact-text">
+        <div class="contact">
 
-            <div class="section-number">
-                05 / CONTACT
+
+            <div class="contact-text">
+
+                <div class="section-number">
+                    05 / CONTACT
+                </div>
+
+
+                <h2>
+                    تواصل معي
+                </h2>
+
+
+                <p>
+
+                    إذا كنت تعمل على مشروع وتحتاج
+                    إلى تطوير تطبيق أو موقع أو API،
+                    يمكنك التواصل معي عبر البريد
+                    الإلكتروني أو الهاتف.
+
+                </p>
+
             </div>
 
 
-            <h2>
-                تواصل معي
-            </h2>
+            <div class="contact-links">
 
 
-            <p>
+                <a
+                    href="mailto:bachirtoaba@gmail.com"
+                    class="contact-link">
 
-                إذا كنت تعمل على مشروع وتحتاج
-                إلى تطوير تطبيق أو موقع أو API،
-                يمكنك التواصل معي عبر البريد
-                الإلكتروني أو الهاتف.
+                    bachirtoaba@gmail.com
 
-            </p>
-
-        </div>
+                </a>
 
 
-        <div class="contact-links">
+                <a
+                    href="tel:0773990319"
+                    class="contact-link">
 
-            <a
-                href="mailto:bachirtoaba@gmail.com"
-                class="contact-link">
+                    0773990319
 
-               
-                bachirtoaba31@gmail.com
-
-            </a>
+                </a>
 
 
-            <a
-                href="tel:0773990319"
-                class="contact-link">
+                <a
+                    href="files/Bachir_Toaba_CV (1).pdf"
+                    download
+                    class="contact-link">
 
-               
-                0773990319
+                    تحميل السيرة الذاتية
 
-            </a>
+                </a>
 
 
-            <a
-                href="files/Bachir_Toaba_CV (1).pdf"
-                download
-                class="contact-link">
+            </div>
 
-               
-                تحميل السيرة الذاتية
-
-            </a>
 
         </div>
 
     </div>
 
-</div>
-
-
 </section>
 
+
 </main>
+
 
 <!-- =========================================================
      FOOTER
@@ -2752,21 +3443,20 @@ footer {
 
 <footer>
 
+    <div class="container footer-inner">
 
-<div class="container footer-inner">
+        <span>
+            © 2026 Bachir Toaba
+        </span>
 
-    <span>
-        © 2026 Bachir Toaba
-    </span>
+        <span class="footer-code">
+            Flutter · Laravel · PHP
+        </span>
 
-    <span class="footer-code">
-        Flutter · Laravel · PHP
-    </span>
-
-</div>
-
+    </div>
 
 </footer>
+
 
 <script>
 
@@ -2774,13 +3464,23 @@ footer {
    SLIDER
 ========================================================= */
 
-function nextSlide(button) {
+function changeSlide(button, direction) {
 
     const slider =
         button.closest('.slider');
 
+    if (!slider) {
+        return;
+    }
+
+
     const slides =
         slider.querySelectorAll('.slide');
+
+    if (slides.length <= 1) {
+        return;
+    }
+
 
     let currentIndex = 0;
 
@@ -2804,56 +3504,41 @@ function nextSlide(button) {
         .classList.remove('active');
 
 
-    const nextIndex =
-        (currentIndex + 1) % slides.length;
+    let newIndex =
+        currentIndex + direction;
 
 
-    slides[nextIndex]
+    if (newIndex >= slides.length) {
+
+        newIndex = 0;
+
+    }
+
+
+    if (newIndex < 0) {
+
+        newIndex =
+            slides.length - 1;
+
+    }
+
+
+    slides[newIndex]
         .classList.add('active');
+
+}
+
+
+function nextSlide(button) {
+
+    changeSlide(button, 1);
 
 }
 
 
 function prevSlide(button) {
 
-    const slider =
-        button.closest('.slider');
-
-    const slides =
-        slider.querySelectorAll('.slide');
-
-    let currentIndex = 0;
-
-
-    slides.forEach(
-        (slide, index) => {
-
-            if (
-                slide.classList.contains('active')
-            ) {
-
-                currentIndex = index;
-
-            }
-
-        }
-    );
-
-
-    slides[currentIndex]
-        .classList.remove('active');
-
-
-    const previousIndex =
-        (
-            currentIndex -
-            1 +
-            slides.length
-        ) % slides.length;
-
-
-    slides[previousIndex]
-        .classList.add('active');
+    changeSlide(button, -1);
 
 }
 
@@ -2861,6 +3546,34 @@ function prevSlide(button) {
 /* =========================================================
    KEYBOARD SUPPORT
 ========================================================= */
+
+let activeSlider = null;
+
+
+document.querySelectorAll('.slider')
+    .forEach(slider => {
+
+        slider.addEventListener(
+            'mouseenter',
+            () => {
+
+                activeSlider = slider;
+
+            }
+        );
+
+
+        slider.addEventListener(
+            'mouseleave',
+            () => {
+
+                activeSlider = null;
+
+            }
+        );
+
+    });
+
 
 document.addEventListener(
     'keydown',
@@ -2875,24 +3588,52 @@ document.addEventListener(
 
         }
 
-        const sliders =
-            document.querySelectorAll('.slider');
 
-        if (!sliders.length) {
+        if (!activeSlider) {
+
             return;
+
+        }
+
+
+        const button =
+            activeSlider.querySelector(
+                event.key === 'ArrowLeft'
+                    ? '.slider-button:last-child'
+                    : '.slider-button:first-child'
+            );
+
+
+        if (button) {
+
+            button.click();
+
         }
 
     }
 );
 
+
+/* =========================================================
+   AUTO UPDATE ACTIVE SLIDER
+========================================================= */
+
+document.querySelectorAll('.slider')
+    .forEach(slider => {
+
+        slider.addEventListener(
+            'focusin',
+            () => {
+
+                activeSlider = slider;
+
+            }
+        );
+
+    });
+
+
 </script>
-
-
- 
-
-
-
-
 
 
 </body>
