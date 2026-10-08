@@ -1963,6 +1963,53 @@ footer {
 
 }
 
+    .nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.language-switch {
+
+    border: 1px solid var(--border);
+
+    padding: 7px 13px;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-family:
+        'JetBrains Mono',
+        monospace;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+.language-switch:hover {
+
+    color: white;
+
+    border-color: var(--primary);
+
+    background:
+        rgba(114,137,218,.06);
+
+}
+
 
 /* =========================================================
    REDUCED MOTION
@@ -2078,14 +2125,35 @@ footer {
         </ul>
 
 
-        <a
-            href="files/Bachir_Toaba_CV (1).pdf"
-            download
-            class="nav-cv">
+       <div class="nav-actions">
+
+    <button
+        type="button"
+        class="language-switch"
+        onclick="toggleLanguage()">
+
+        <span id="languageText">
+            English
+        </span>
+
+    </button>
+
+    <a
+        href="files/Bachir_Toaba_CV (1).pdf"
+        download
+        class="nav-cv">
+
+        <span
+            data-ar="تحميل CV"
+            data-en="Download CV">
 
             تحميل CV
 
-        </a>
+        </span>
+
+    </a>
+
+</div>
 
     </div>
 
@@ -2104,9 +2172,14 @@ footer {
         <div class="hero-text">
 
 
-            <div class="small-intro">
-                Software Developer
-            </div>
+         <div
+    class="small-intro"
+    data-ar="مطور برمجيات"
+    data-en="Software Developer">
+
+    Software Developer
+
+</div>
 
 
             <h1>
@@ -2114,22 +2187,24 @@ footer {
             </h1>
 
 
-            <div class="hero-title">
-                Flutter & Laravel Developer
-            </div>
+        <div
+    class="hero-title"
+    data-ar="مطور Flutter و Laravel"
+    data-en="Flutter & Laravel Developer">
+
+    Flutter & Laravel Developer
+
+</div>
 
 
-            <p class="hero-description">
+         <p
+    class="hero-description"
+    data-ar="أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي باستخدام Flutter و Laravel. لدي خبرة في بناء تطبيقات الموبايل، أنظمة الإدارة، REST APIs ومشاريع SaaS، بالإضافة إلى التعامل مع قواعد البيانات والخوادم."
+    data-en="I am a software developer specializing in Flutter and Laravel. I build mobile applications, web systems, REST APIs and SaaS products, with experience in databases and server management.">
 
-                أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي
-                باستخدام Flutter و Laravel.
+    أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي باستخدام Flutter و Laravel.
 
-                لدي خبرة في بناء تطبيقات الموبايل،
-                أنظمة الإدارة، REST APIs ومشاريع SaaS،
-                بالإضافة إلى التعامل مع قواعد البيانات
-                والخوادم.
-
-            </p>
+</p>
 
 
             <div class="hero-actions">
@@ -3632,6 +3707,79 @@ document.querySelectorAll('.slider')
 
     });
 
+
+    /* =========================================================
+   LANGUAGE SWITCHER
+========================================================= */
+
+let currentLanguage =
+    localStorage.getItem('language') || 'ar';
+
+
+function applyLanguage(language) {
+
+    currentLanguage = language;
+
+    document.documentElement.lang = language;
+
+    document.documentElement.dir =
+        language === 'ar'
+            ? 'rtl'
+            : 'ltr';
+
+
+    document
+        .querySelectorAll('[data-ar][data-en]')
+        .forEach(element => {
+
+            element.textContent =
+                element.dataset[language];
+
+        });
+
+
+    const languageText =
+        document.getElementById('languageText');
+
+
+    if (languageText) {
+
+        languageText.textContent =
+            language === 'ar'
+                ? 'English'
+                : 'العربية';
+
+    }
+
+
+    localStorage.setItem(
+        'language',
+        language
+    );
+
+}
+
+
+function toggleLanguage() {
+
+    const newLanguage =
+        currentLanguage === 'ar'
+            ? 'en'
+            : 'ar';
+
+    applyLanguage(newLanguage);
+
+}
+
+
+document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+
+        applyLanguage(currentLanguage);
+
+    }
+);
 
 </script>
 
