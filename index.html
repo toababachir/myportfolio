@@ -8,25 +8,30 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Bachir Toaba - Flutter & Laravel Developer">
+    <meta
+        name="description"
+        content="Bachir Toaba - مطور Flutter و Laravel">
 
-    <meta name="author"
-          content="Bachir Toaba">
+    <meta
+        name="author"
+        content="Bachir Toaba">
 
-    <meta name="theme-color"
-          content="#101114">
+    <meta
+        name="theme-color"
+        content="#101114">
 
     <title>
-        Bachir Toaba | Flutter & Laravel Developer
+        Bachir Toaba | مطور Flutter و Laravel
     </title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
@@ -42,23 +47,17 @@
 :root {
 
     --background: #101114;
-
     --surface: #17191e;
-
     --surface-light: #1d2026;
-
     --border: #292d34;
 
     --text: #f3f4f6;
-
     --muted: #9ca3af;
 
     --primary: #7289da;
-
     --primary-hover: #8298e5;
 
     --green: #57d68d;
-
     --orange: #e8a14b;
 
     --max-width: 1100px;
@@ -73,9 +72,7 @@
 * {
 
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
 
 }
@@ -84,7 +81,6 @@
 html {
 
     scroll-behavior: smooth;
-
     scroll-padding-top: 80px;
 
 }
@@ -100,92 +96,111 @@ body {
 
     font-family: 'Cairo', sans-serif;
 
-    background: var(--background);
+    background:
+        var(--background);
 
-    color: var(--text);
+    color:
+        var(--text);
 
-    line-height: 1.8;
+    line-height:
+        1.8;
 
 }
 
 
 ::selection {
 
-    background: var(--primary);
+    background:
+        var(--primary);
 
-    color: white;
+    color:
+        white;
 
 }
 
 
 a {
 
-    color: inherit;
+    color:
+        inherit;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
 }
 
 
 button {
 
-    font-family: inherit;
+    font-family:
+        inherit;
 
 }
 
 
 img {
 
-    max-width: 100%;
+    max-width:
+        100%;
 
-    display: block;
+    display:
+        block;
 
 }
 
 
 .container {
 
-    width: min(
-        var(--max-width),
-        calc(100% - 40px)
-    );
+    width:
+        min(
+            var(--max-width),
+            calc(100% - 40px)
+        );
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
 }
 
 
 /* =========================================================
-   ANIMATED SPACE BACKGROUND
+   SPACE BACKGROUND
 ========================================================= */
 
 .space-background {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
-    z-index: 0;
+    z-index:
+        0;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
     background:
 
         radial-gradient(
             circle at 20% 20%,
-            rgba(114, 137, 218, 0.10),
+            rgba(114,137,218,.10),
             transparent 30%
         ),
 
         radial-gradient(
             circle at 80% 70%,
-            rgba(87, 214, 141, 0.05),
+            rgba(87,214,141,.05),
             transparent 30%
         ),
 
@@ -194,40 +209,42 @@ img {
 }
 
 
-/* =========================================================
-   STARS
-========================================================= */
-
 .stars {
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 300%;
+    width:
+        300%;
 
-    height: 300%;
+    height:
+        300%;
 
-    left: -100%;
+    left:
+        -100%;
 
-    top: -100%;
+    top:
+        -100%;
 
-    background-repeat: repeat;
+    background-repeat:
+        repeat;
 
-    animation-name: spaceMove;
+    animation-name:
+        spaceMove;
 
-    animation-timing-function: linear;
+    animation-timing-function:
+        linear;
 
-    animation-iteration-count: infinite;
+    animation-iteration-count:
+        infinite;
 
 }
 
 
-/* =========================================================
-   SMALL STARS
-========================================================= */
-
 .stars-small {
 
-    opacity: .55;
+    opacity:
+        .55;
 
     background-image:
 
@@ -261,20 +278,19 @@ img {
             transparent
         );
 
-    background-size: 280px 280px;
+    background-size:
+        280px 280px;
 
-    animation-duration: 70s;
+    animation-duration:
+        70s;
 
 }
 
 
-/* =========================================================
-   MEDIUM STARS
-========================================================= */
-
 .stars-medium {
 
-    opacity: .35;
+    opacity:
+        .35;
 
     background-image:
 
@@ -302,20 +318,19 @@ img {
             transparent
         );
 
-    background-size: 420px 420px;
+    background-size:
+        420px 420px;
 
-    animation-duration: 110s;
+    animation-duration:
+        110s;
 
 }
 
 
-/* =========================================================
-   LARGE STARS
-========================================================= */
-
 .stars-large {
 
-    opacity: .25;
+    opacity:
+        .25;
 
     background-image:
 
@@ -337,55 +352,52 @@ img {
             transparent
         );
 
-    background-size: 600px 600px;
+    background-size:
+        600px 600px;
 
-    animation-duration: 160s;
+    animation-duration:
+        160s;
 
 }
 
-
-/* =========================================================
-   SPACE MOVEMENT
-========================================================= */
 
 @keyframes spaceMove {
 
     from {
-
         transform:
-            translate3d(0, 0, 0);
-
+            translate3d(0,0,0);
     }
 
     to {
-
         transform:
-            translate3d(180px, 220px, 0);
-
+            translate3d(180px,220px,0);
     }
 
 }
 
 
-/* =========================================================
-   BLUE GLOW
-========================================================= */
-
 .space-background::before {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 500px;
+    width:
+        500px;
 
-    height: 500px;
+    height:
+        500px;
 
-    left: 5%;
+    left:
+        5%;
 
-    top: 10%;
+    top:
+        10%;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
 
@@ -395,7 +407,8 @@ img {
             transparent 65%
         );
 
-    filter: blur(50px);
+    filter:
+        blur(50px);
 
     animation:
         glowMove
@@ -407,25 +420,28 @@ img {
 }
 
 
-/* =========================================================
-   GREEN GLOW
-========================================================= */
-
 .space-background::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 450px;
+    width:
+        450px;
 
-    height: 450px;
+    height:
+        450px;
 
-    right: 5%;
+    right:
+        5%;
 
-    bottom: 5%;
+    bottom:
+        5%;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
 
@@ -435,7 +451,8 @@ img {
             transparent 65%
         );
 
-    filter: blur(50px);
+    filter:
+        blur(50px);
 
     animation:
         glowMove2
@@ -450,17 +467,13 @@ img {
 @keyframes glowMove {
 
     from {
-
         transform:
-            translate(0, 0);
-
+            translate(0,0);
     }
 
     to {
-
         transform:
-            translate(120px, 80px);
-
+            translate(120px,80px);
     }
 
 }
@@ -469,24 +482,20 @@ img {
 @keyframes glowMove2 {
 
     from {
-
         transform:
-            translate(0, 0);
-
+            translate(0,0);
     }
 
     to {
-
         transform:
-            translate(-100px, -70px);
-
+            translate(-100px,-70px);
     }
 
 }
 
 
 /* =========================================================
-   CONTENT ABOVE SPACE
+   CONTENT
 ========================================================= */
 
 .navbar,
@@ -494,24 +503,29 @@ img {
 main,
 footer {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 1;
+    z-index:
+        1;
 
 }
 
 
 /* =========================================================
-   NAVIGATION
+   NAVBAR
 ========================================================= */
 
 .navbar {
 
-    position: sticky;
+    position:
+        sticky;
 
-    top: 0;
+    top:
+        0;
 
-    z-index: 100;
+    z-index:
+        100;
 
     background:
         rgba(16,17,20,.88);
@@ -530,26 +544,38 @@ footer {
 
 .navbar-inner {
 
-    min-height: 68px;
+    min-height:
+        68px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
 
 }
 
 
 .logo {
 
+    flex-shrink:
+        0;
+
     font-family:
         'JetBrains Mono',
         monospace;
 
-    font-size: 20px;
+    font-size:
+        20px;
 
-    font-weight: 600;
+    font-weight:
+        600;
 
     transition:
         color .2s ease;
@@ -559,38 +585,50 @@ footer {
 
 .logo span {
 
-    color: var(--primary);
+    color:
+        var(--primary);
 
 }
 
 
 .logo:hover {
 
-    color: var(--primary-hover);
+    color:
+        var(--primary-hover);
 
 }
 
 
 .nav-links {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 25px;
+    justify-content:
+        center;
 
-    list-style: none;
+    gap:
+        25px;
+
+    list-style:
+        none;
 
 }
 
 
 .nav-links a {
 
-    position: relative;
+    position:
+        relative;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        14px;
 
     transition:
         color .2s ease;
@@ -600,21 +638,29 @@ footer {
 
 .nav-links a::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    right: 0;
+    inset-inline-start:
+        0;
 
-    bottom: -7px;
+    bottom:
+        -7px;
 
-    width: 0;
+    width:
+        0;
 
-    height: 2px;
+    height:
+        2px;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
-    background: var(--primary);
+    background:
+        var(--primary);
 
     transition:
         width .25s ease;
@@ -624,18 +670,38 @@ footer {
 
 .nav-links a:hover {
 
-    color: white;
+    color:
+        white;
 
 }
 
 
 .nav-links a:hover::after {
 
-    width: 100%;
+    width:
+        100%;
 
 }
 
 
+.nav-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    flex-shrink:
+        0;
+
+}
+
+
+.language-switch,
 .nav-cv {
 
     border:
@@ -648,7 +714,7 @@ footer {
         6px;
 
     font-size:
-        13px;
+        12px;
 
     transition:
         .2s;
@@ -656,16 +722,104 @@ footer {
 }
 
 
+.language-switch {
+
+    background:
+        transparent;
+
+    color:
+        var(--muted);
+
+    cursor:
+        pointer;
+
+    font-family:
+        'JetBrains Mono',
+        monospace;
+
+}
+
+
+.language-switch:hover,
 .nav-cv:hover {
+
+    color:
+        white;
 
     border-color:
         var(--primary);
 
-    color:
-        var(--primary-hover);
-
     background:
         rgba(114,137,218,.06);
+
+}
+
+
+.menu-toggle {
+
+    display:
+        none;
+
+    width:
+        40px;
+
+    height:
+        38px;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        6px;
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    cursor:
+        pointer;
+
+}
+
+
+.menu-toggle span {
+
+    width:
+        18px;
+
+    height:
+        2px;
+
+    border-radius:
+        5px;
+
+    background:
+        currentColor;
+
+    transition:
+        .2s;
+
+}
+
+
+.mobile-menu {
+
+    display:
+        none;
 
 }
 
@@ -687,45 +841,62 @@ footer {
 
 .hero-layout {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         1fr 300px;
 
-    gap: 70px;
+    gap:
+        70px;
 
-    align-items: center;
+    align-items:
+        center;
 
 }
 
 
 .hero-text {
 
-    order: 1;
+    order:
+        1;
 
 }
 
 
 .hero-photo {
 
-    order: 2;
+    order:
+        2;
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        18px;
 
 }
 
 
 .hero-photo img {
 
-    width: 270px;
+    width:
+        270px;
 
-    height: 270px;
+    height:
+        270px;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
-    border-radius: 16px;
+    border-radius:
+        16px;
 
     border:
         1px solid var(--border);
@@ -757,6 +928,187 @@ footer {
 }
 
 
+/* =========================================================
+   PROFILE STATUS
+========================================================= */
+
+.profile-status {
+
+    width:
+        270px;
+
+    height:
+        38px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(23,25,30,.88);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+}
+
+
+.status-dot {
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    margin-inline:
+        12px 8px;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--green);
+
+    box-shadow:
+        0 0 10px rgba(87,214,141,.7);
+
+    animation:
+        statusPulse
+        1.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+.status-track {
+
+    flex:
+        1;
+
+    overflow:
+        hidden;
+
+    white-space:
+        nowrap;
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+
+}
+
+
+.status-content {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+    padding-inline:
+        10px;
+
+    animation:
+        statusScroll
+        22s
+        linear
+        infinite;
+
+}
+
+
+.status-content span {
+
+    color:
+        #c9ced8;
+
+    font-family:
+        'JetBrains Mono',
+        monospace;
+
+    font-size:
+        10px;
+
+    flex-shrink:
+        0;
+
+}
+
+
+.status-content span:first-child {
+
+    color:
+        var(--green);
+
+}
+
+
+@keyframes statusScroll {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(-50%);
+    }
+
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity:
+            .6;
+
+        transform:
+            scale(.9);
+    }
+
+    50% {
+        opacity:
+            1;
+
+        transform:
+            scale(1.1);
+    }
+
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
 .small-intro {
 
     color:
@@ -778,7 +1130,7 @@ footer {
 .hero h1 {
 
     font-size:
-        clamp(40px, 6vw, 62px);
+        clamp(40px,6vw,62px);
 
     line-height:
         1.25;
@@ -1025,10 +1377,10 @@ section {
 
 .about-info {
 
-    border-right:
+    border-inline-start:
         1px solid var(--border);
 
-    padding-right:
+    padding-inline-start:
         30px;
 
 }
@@ -1071,7 +1423,7 @@ section {
         white;
 
     text-align:
-        left;
+        end;
 
 }
 
@@ -1147,7 +1499,7 @@ section {
         grid;
 
     grid-template-columns:
-        repeat(2, minmax(0,1fr));
+        repeat(2,minmax(0,1fr));
 
     gap:
         22px;
@@ -1715,7 +2067,7 @@ footer {
 
 
 /* =========================================================
-   MOBILE 850
+   TABLET
 ========================================================= */
 
 @media (max-width: 850px) {
@@ -1761,12 +2113,17 @@ footer {
     }
 
 
+    .profile-status {
+
+        width:
+            230px;
+
+    }
+
+
     .hero-description {
 
-        margin-left:
-            auto;
-
-        margin-right:
+        margin-inline:
             auto;
 
     }
@@ -1793,13 +2150,13 @@ footer {
 
     .about-info {
 
-        border-right:
+        border-inline-start:
             none;
 
         border-top:
             1px solid var(--border);
 
-        padding-right:
+        padding-inline-start:
             0;
 
         padding-top:
@@ -1830,7 +2187,7 @@ footer {
 
 
 /* =========================================================
-   MOBILE 650
+   MOBILE
 ========================================================= */
 
 @media (max-width: 650px) {
@@ -1858,6 +2215,104 @@ footer {
 
         display:
             none;
+
+    }
+
+
+    .menu-toggle {
+
+        display:
+            flex;
+
+    }
+
+
+    .nav-actions {
+
+        margin-inline-start:
+            auto;
+
+    }
+
+
+    .nav-cv {
+
+        display:
+            none;
+
+    }
+
+
+    .mobile-menu {
+
+        position:
+            absolute;
+
+        top:
+            calc(100% + 1px);
+
+        left:
+            14px;
+
+        right:
+            14px;
+
+        display:
+            none;
+
+        padding:
+            10px;
+
+        background:
+            rgba(23,25,30,.97);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            8px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.35);
+
+    }
+
+
+    .mobile-menu.open {
+
+        display:
+            block;
+
+    }
+
+
+    .mobile-menu a {
+
+        display:
+            block;
+
+        padding:
+            10px 12px;
+
+        color:
+            var(--muted);
+
+        border-radius:
+            5px;
+
+        font-size:
+            14px;
+
+    }
+
+
+    .mobile-menu a:hover {
+
+        color:
+            white;
+
+        background:
+            var(--surface-light);
 
     }
 
@@ -1890,6 +2345,25 @@ footer {
 
         font-size:
             14px;
+
+    }
+
+
+    .hero-photo img {
+
+        width:
+            190px;
+
+        height:
+            190px;
+
+    }
+
+
+    .profile-status {
+
+        width:
+            210px;
 
     }
 
@@ -1963,53 +2437,6 @@ footer {
 
 }
 
-    .nav-actions {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-}
-
-
-.language-switch {
-
-    border: 1px solid var(--border);
-
-    padding: 7px 13px;
-
-    border-radius: 6px;
-
-    background: transparent;
-
-    color: var(--muted);
-
-    font-family:
-        'JetBrains Mono',
-        monospace;
-
-    font-size: 12px;
-
-    cursor: pointer;
-
-    transition: .2s;
-
-}
-
-
-.language-switch:hover {
-
-    color: white;
-
-    border-color: var(--primary);
-
-    background:
-        rgba(114,137,218,.06);
-
-}
-
 
 /* =========================================================
    REDUCED MOTION
@@ -2028,7 +2455,9 @@ footer {
     .stars,
     .space-background::before,
     .space-background::after,
-    .slide.active {
+    .slide.active,
+    .status-content,
+    .status-dot {
 
         animation:
             none;
@@ -2059,11 +2488,12 @@ footer {
 
 
 <!-- =========================================================
-     ANIMATED SPACE BACKGROUND
+   BACKGROUND
 ========================================================= -->
 
-<div class="space-background"
-     aria-hidden="true">
+<div
+    class="space-background"
+    aria-hidden="true">
 
     <div class="stars stars-small"></div>
 
@@ -2075,15 +2505,16 @@ footer {
 
 
 <!-- =========================================================
-     NAVIGATION
+   NAVBAR
 ========================================================= -->
 
 <nav class="navbar">
 
     <div class="container navbar-inner">
 
-        <a href="#"
-           class="logo">
+        <a
+            href="#"
+            class="logo">
 
             bachir<span>.</span>
 
@@ -2093,67 +2524,168 @@ footer {
         <ul class="nav-links">
 
             <li>
-                <a href="#about">
-                    <strong>من أنا</strong>
+                <a
+                    href="#about"
+                    data-ar="من أنا"
+                    data-en="About">
+
+                    من أنا
+
                 </a>
             </li>
 
             <li>
-                <a href="#skills">
+                <a
+                    href="#skills"
+                    data-ar="المهارات"
+                    data-en="Skills">
+
                     المهارات
+
                 </a>
             </li>
 
             <li>
-                <a href="#projects">
+                <a
+                    href="#projects"
+                    data-ar="المشاريع"
+                    data-en="Projects">
+
                     المشاريع
+
                 </a>
             </li>
 
             <li>
-                <a href="#certificates">
+                <a
+                    href="#certificates"
+                    data-ar="الشهادات"
+                    data-en="Certificates">
+
                     الشهادات
+
                 </a>
             </li>
 
             <li>
-                <a href="#contact">
+                <a
+                    href="#contact"
+                    data-ar="تواصل"
+                    data-en="Contact">
+
                     تواصل
+
                 </a>
             </li>
 
         </ul>
 
 
-       <div class="nav-actions">
+        <div class="nav-actions">
 
-    <button
-        type="button"
-        class="language-switch"
-        onclick="toggleLanguage()">
+            <button
+                type="button"
+                class="language-switch"
+                onclick="toggleLanguage()">
 
-        <span id="languageText">
-            English
-        </span>
+                <span id="languageText">
+                    English
+                </span>
 
-    </button>
+            </button>
 
-    <a
-        href="files/Bachir_Toaba_CV (1).pdf"
-        download
-        class="nav-cv">
 
-        <span
-            data-ar="تحميل CV"
-            data-en="Download CV">
+            <a
+                href="files/Bachir_Toaba_CV (1).pdf"
+                download
+                class="nav-cv"
+                data-ar="تحميل CV"
+                data-en="Download CV">
 
-            تحميل CV
+                تحميل CV
 
-        </span>
+            </a>
 
-    </a>
 
-</div>
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="فتح القائمة"
+                data-aria-ar="فتح القائمة"
+                data-aria-en="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu">
+
+            <a
+                href="#about"
+                data-ar="من أنا"
+                data-en="About">
+
+                من أنا
+
+            </a>
+
+            <a
+                href="#skills"
+                data-ar="المهارات"
+                data-en="Skills">
+
+                المهارات
+
+            </a>
+
+            <a
+                href="#projects"
+                data-ar="المشاريع"
+                data-en="Projects">
+
+                المشاريع
+
+            </a>
+
+            <a
+                href="#certificates"
+                data-ar="الشهادات"
+                data-en="Certificates">
+
+                الشهادات
+
+            </a>
+
+            <a
+                href="#contact"
+                data-ar="تواصل"
+                data-en="Contact">
+
+                تواصل
+
+            </a>
+
+            <a
+                href="files/Bachir_Toaba_CV (1).pdf"
+                download
+                data-ar="تحميل السيرة الذاتية"
+                data-en="Download CV">
+
+                تحميل السيرة الذاتية
+
+            </a>
+
+        </div>
 
     </div>
 
@@ -2161,7 +2693,7 @@ footer {
 
 
 <!-- =========================================================
-     HERO
+   HERO
 ========================================================= -->
 
 <header class="hero">
@@ -2172,14 +2704,14 @@ footer {
         <div class="hero-text">
 
 
-         <div
-    class="small-intro"
-    data-ar="مطور برمجيات"
-    data-en="Software Developer">
+            <div
+                class="small-intro"
+                data-ar="مطور برمجيات"
+                data-en="Software Developer">
 
-    Software Developer
+                مطور برمجيات
 
-</div>
+            </div>
 
 
             <h1>
@@ -2187,31 +2719,33 @@ footer {
             </h1>
 
 
-        <div
-    class="hero-title"
-    data-ar="مطور Flutter و Laravel"
-    data-en="Flutter & Laravel Developer">
+            <div
+                class="hero-title"
+                data-ar="مطور Flutter و Laravel"
+                data-en="Flutter & Laravel Developer">
 
-    Flutter & Laravel Developer
+                مطور Flutter و Laravel
 
-</div>
+            </div>
 
 
-         <p
-    class="hero-description"
-    data-ar="أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي باستخدام Flutter و Laravel. لدي خبرة في بناء تطبيقات الموبايل، أنظمة الإدارة، REST APIs ومشاريع SaaS، بالإضافة إلى التعامل مع قواعد البيانات والخوادم."
-    data-en="I am a software developer specializing in Flutter and Laravel. I build mobile applications, web systems, REST APIs and SaaS products, with experience in databases and server management.">
+            <p
+                class="hero-description"
+                data-ar="أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي باستخدام Flutter و Laravel. لدي خبرة في بناء تطبيقات الموبايل، أنظمة الإدارة، REST APIs ومشاريع SaaS، بالإضافة إلى التعامل مع قواعد البيانات والخوادم."
+                data-en="I am a software developer specializing in Flutter and Laravel. I build mobile applications, web systems, REST APIs and SaaS products, with experience in databases and server management.">
 
-    أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي باستخدام Flutter و Laravel.
+                أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي باستخدام Flutter و Laravel.
 
-</p>
+            </p>
 
 
             <div class="hero-actions">
 
                 <a
                     href="#projects"
-                    class="btn btn-primary">
+                    class="btn btn-primary"
+                    data-ar="مشاهدة المشاريع"
+                    data-en="View Projects">
 
                     مشاهدة المشاريع
 
@@ -2221,7 +2755,9 @@ footer {
                 <a
                     href="files/Bachir_Toaba_CV (1).pdf"
                     download
-                    class="btn btn-secondary">
+                    class="btn btn-secondary"
+                    data-ar="تحميل السيرة الذاتية"
+                    data-en="Download CV">
 
                     تحميل السيرة الذاتية
 
@@ -2234,9 +2770,83 @@ footer {
 
         <div class="hero-photo">
 
+
             <img
                 src="images/WhatsApp Image 2025-02-06 at 3.13.44 PM.jpeg"
                 alt="Bachir Toaba">
+
+
+            <div class="profile-status">
+
+                <div class="status-dot"></div>
+
+
+                <div class="status-track">
+
+                    <div class="status-content">
+
+                        <span
+                            data-ar="● متاح للعمل"
+                            data-en="● Available for work">
+
+                            ● متاح للعمل
+
+                        </span>
+
+                        <span>
+                            Flutter Developer
+                        </span>
+
+                        <span>
+                            Laravel Developer
+                        </span>
+
+                        <span>
+                            SaaS Builder
+                        </span>
+
+                        <span
+                            data-ar="الجزائر 🇩🇿"
+                            data-en="Algeria 🇩🇿">
+
+                            الجزائر 🇩🇿
+
+                        </span>
+
+
+                        <span
+                            data-ar="● متاح للعمل"
+                            data-en="● Available for work">
+
+                            ● متاح للعمل
+
+                        </span>
+
+                        <span>
+                            Flutter Developer
+                        </span>
+
+                        <span>
+                            Laravel Developer
+                        </span>
+
+                        <span>
+                            SaaS Builder
+                        </span>
+
+                        <span
+                            data-ar="الجزائر 🇩🇿"
+                            data-en="Algeria 🇩🇿">
+
+                            الجزائر 🇩🇿
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -2250,7 +2860,7 @@ footer {
 
 
 <!-- =========================================================
-     ABOUT
+   ABOUT
 ========================================================= -->
 
 <section id="about">
@@ -2260,16 +2870,31 @@ footer {
 
         <div class="section-heading">
 
-            <div class="section-number">
-                01 / ABOUT
+            <div
+                class="section-number"
+                data-ar="01 / من أنا"
+                data-en="01 / ABOUT">
+
+                01 / من أنا
+
             </div>
 
-            <h2>
+
+            <h2
+                data-ar="من أنا"
+                data-en="About Me">
+
                 من أنا
+
             </h2>
 
-            <p>
+
+            <p
+                data-ar="نبذة مختصرة عني وعن الأشياء التي أعمل عليها."
+                data-en="A short introduction about me and what I work on.">
+
                 نبذة مختصرة عني وعن الأشياء التي أعمل عليها.
+
             </p>
 
         </div>
@@ -2282,24 +2907,61 @@ footer {
 
                 <p>
 
-                    بدأت العمل في تطوير البرمجيات منذ عدة سنوات،
-                    وركزت بشكل أساسي على
-                    <strong>Laravel</strong>
-                    و
-                    <strong>Flutter</strong>.
+                    <span
+                        data-ar="بدأت العمل في تطوير البرمجيات منذ عدة سنوات، وركزت بشكل أساسي على"
+                        data-en="I started working in software development several years ago, focusing mainly on">
 
-                    <br><br>
+                        بدأت العمل في تطوير البرمجيات منذ عدة سنوات،
+                        وركزت بشكل أساسي على
 
-                    أعمل على تطوير تطبيقات الموبايل
-                    وأنظمة الويب ولوحات التحكم وربط
-                    التطبيقات مع REST APIs.
+                    </span>
 
-                    <br><br>
+                    <strong>
+                        Laravel
+                    </strong>
 
-                    خلال الفترة الماضية عملت على مشاريع
-                    مختلفة، منها أنظمة نقاط البيع،
-                    منصات تعليمية، أنظمة SaaS،
-                    التجارة الإلكترونية وأنظمة إدارة الموظفين.
+                    <span
+                        data-ar="و"
+                        data-en="and">
+
+                        و
+
+                    </span>
+
+                    <strong>
+                        Flutter
+                    </strong>.
+
+
+                    <br>
+                    <br>
+
+
+                    <span
+                        data-ar="أعمل على تطوير تطبيقات الموبايل وأنظمة الويب ولوحات التحكم وربط التطبيقات مع REST APIs."
+                        data-en="I develop mobile applications, web systems, dashboards and integrations with REST APIs.">
+
+                        أعمل على تطوير تطبيقات الموبايل
+                        وأنظمة الويب ولوحات التحكم وربط
+                        التطبيقات مع REST APIs.
+
+                    </span>
+
+
+                    <br>
+                    <br>
+
+
+                    <span
+                        data-ar="خلال الفترة الماضية عملت على مشاريع مختلفة، منها أنظمة نقاط البيع، منصات تعليمية، أنظمة SaaS، التجارة الإلكترونية وأنظمة إدارة الموظفين."
+                        data-en="I have worked on different projects, including point-of-sale systems, educational platforms, SaaS products, e-commerce applications and employee management systems.">
+
+                        خلال الفترة الماضية عملت على مشاريع
+                        مختلفة، منها أنظمة نقاط البيع،
+                        منصات تعليمية، أنظمة SaaS،
+                        التجارة الإلكترونية وأنظمة إدارة الموظفين.
+
+                    </span>
 
                 </p>
 
@@ -2311,8 +2973,12 @@ footer {
 
                 <div class="info-row">
 
-                    <span>
+                    <span
+                        data-ar="التخصص"
+                        data-en="Specialization">
+
                         التخصص
+
                     </span>
 
                     <span>
@@ -2328,8 +2994,12 @@ footer {
                         Laravel
                     </span>
 
-                    <span>
+                    <span
+                        data-ar="3+ سنوات"
+                        data-en="3+ years">
+
                         3+ سنوات
+
                     </span>
 
                 </div>
@@ -2341,8 +3011,12 @@ footer {
                         Flutter
                     </span>
 
-                    <span>
+                    <span
+                        data-ar="2+ سنوات"
+                        data-en="2+ years">
+
                         2+ سنوات
+
                     </span>
 
                 </div>
@@ -2350,8 +3024,12 @@ footer {
 
                 <div class="info-row">
 
-                    <span>
+                    <span
+                        data-ar="قواعد البيانات"
+                        data-en="Databases">
+
                         قواعد البيانات
+
                     </span>
 
                     <span>
@@ -2363,8 +3041,12 @@ footer {
 
                 <div class="info-row">
 
-                    <span>
+                    <span
+                        data-ar="العمل"
+                        data-en="Work">
+
                         العمل
+
                     </span>
 
                     <span>
@@ -2385,7 +3067,7 @@ footer {
 
 
 <!-- =========================================================
-     SKILLS
+   SKILLS
 ========================================================= -->
 
 <section id="skills">
@@ -2395,16 +3077,31 @@ footer {
 
         <div class="section-heading">
 
-            <div class="section-number">
-                02 / SKILLS
+            <div
+                class="section-number"
+                data-ar="02 / المهارات"
+                data-en="02 / SKILLS">
+
+                02 / المهارات
+
             </div>
 
-            <h2>
+
+            <h2
+                data-ar="المهارات"
+                data-en="Skills">
+
                 المهارات
+
             </h2>
 
-            <p>
+
+            <p
+                data-ar="أهم التقنيات التي أستخدمها في عملي."
+                data-en="The main technologies I use in my work.">
+
                 أهم التقنيات التي أستخدمها في عملي.
+
             </p>
 
         </div>
@@ -2412,36 +3109,69 @@ footer {
 
         <div class="skills">
 
-            <span class="skill">Flutter</span>
-
-            <span class="skill">Dart</span>
-
-            <span class="skill">Laravel</span>
-
-            <span class="skill">PHP</span>
-
-            <span class="skill">Django</span>
-
-            <span class="skill">Python</span>
-
-            <span class="skill">MySQL</span>
-
-            <span class="skill">PostgreSQL</span>
-
-            <span class="skill">SQLite</span>
-
-            <span class="skill">REST API</span>
-
-            <span class="skill">Firebase</span>
-
-            <span class="skill">Git</span>
-
-            <span class="skill">GitHub</span>
-
-            <span class="skill">Linux</span>
+            <span class="skill">
+                Flutter
+            </span>
 
             <span class="skill">
-                Server Management
+                Dart
+            </span>
+
+            <span class="skill">
+                Laravel
+            </span>
+
+            <span class="skill">
+                PHP
+            </span>
+
+            <span class="skill">
+                Django
+            </span>
+
+            <span class="skill">
+                Python
+            </span>
+
+            <span class="skill">
+                MySQL
+            </span>
+
+            <span class="skill">
+                PostgreSQL
+            </span>
+
+            <span class="skill">
+                SQLite
+            </span>
+
+            <span class="skill">
+                REST API
+            </span>
+
+            <span class="skill">
+                Firebase
+            </span>
+
+            <span class="skill">
+                Git
+            </span>
+
+            <span class="skill">
+                GitHub
+            </span>
+
+            <span class="skill">
+                Linux
+            </span>
+
+            <span
+                class="skill"
+                data-ar="إدارة الخوادم"
+                data-en="Server Management">
+
+                إدارة الخوادم
+
             </span>
 
         </div>
@@ -2452,7 +3182,7 @@ footer {
 
 
 <!-- =========================================================
-     PROJECTS
+   PROJECTS
 ========================================================= -->
 
 <section id="projects">
@@ -2462,16 +3192,31 @@ footer {
 
         <div class="section-heading">
 
-            <div class="section-number">
-                03 / PROJECTS
+            <div
+                class="section-number"
+                data-ar="03 / المشاريع"
+                data-en="03 / PROJECTS">
+
+                03 / المشاريع
+
             </div>
 
-            <h2>
+
+            <h2
+                data-ar="المشاريع"
+                data-en="Projects">
+
                 المشاريع
+
             </h2>
 
-            <p>
+
+            <p
+                data-ar="بعض المشاريع التي عملت عليها خلال الفترة الماضية."
+                data-en="Some of the projects I have worked on.">
+
                 بعض المشاريع التي عملت عليها خلال الفترة الماضية.
+
             </p>
 
         </div>
@@ -2489,31 +3234,31 @@ footer {
                     <img
                         class="slide active"
                         src="images/1==.PNG"
-                        alt="نظام نقاط البيع"
+                        alt="POS System"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/2==.PNG"
-                        alt="نظام نقاط البيع"
+                        alt="POS System"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/3==.PNG"
-                        alt="نظام نقاط البيع"
+                        alt="POS System"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/4==.PNG"
-                        alt="نظام نقاط البيع"
+                        alt="POS System"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/5==.PNG"
-                        alt="نظام نقاط البيع"
+                        alt="POS System"
                         loading="lazy">
 
 
@@ -2523,7 +3268,9 @@ footer {
                             type="button"
                             class="slider-button"
                             onclick="prevSlide(this)"
-                            aria-label="الصورة السابقة">
+                            aria-label="Previous image"
+                            data-aria-ar="الصورة السابقة"
+                            data-aria-en="Previous image">
 
                             ❮
 
@@ -2534,7 +3281,9 @@ footer {
                             type="button"
                             class="slider-button"
                             onclick="nextSlide(this)"
-                            aria-label="الصورة التالية">
+                            aria-label="Next image"
+                            data-aria-ar="الصورة التالية"
+                            data-aria-en="Next image">
 
                             ❯
 
@@ -2547,12 +3296,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="نظام كاشير ونقاط بيع POS"
+                        data-en="POS & Cashier System">
+
                         نظام كاشير ونقاط بيع POS
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="نظام لإدارة المبيعات والمنتجات والمخزون والفواتير."
+                        data-en="A system for managing sales, products, inventory and invoices.">
 
                         نظام لإدارة المبيعات والمنتجات
                         والمخزون والفواتير.
@@ -2579,8 +3335,13 @@ footer {
 
                     <div class="project-footer">
 
-                        <span class="status status-live">
+                        <span
+                            class="status status-live"
+                            data-ar="مكتمل"
+                            data-en="Completed">
+
                             مكتمل
+
                         </span>
 
                     </div>
@@ -2599,7 +3360,7 @@ footer {
                     <img
                         class="slide active"
                         src="images/bacdz_collage.png"
-                        alt="منصة البكالوريا"
+                        alt="Baccalaureate Platform"
                         loading="lazy">
 
                 </div>
@@ -2607,12 +3368,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="منصة SaaS لطلبة البكالوريا"
+                        data-en="SaaS Platform for Baccalaureate Students">
+
                         منصة SaaS لطلبة البكالوريا
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="منصة مخصصة لطلبة البكالوريا لتوفير المحتوى والموارد التعليمية."
+                        data-en="A platform for baccalaureate students providing educational content and learning resources.">
 
                         منصة مخصصة لطلبة البكالوريا
                         لتوفير المحتوى والموارد التعليمية.
@@ -2643,15 +3411,22 @@ footer {
                             href="https://dz-bac.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-link">
+                            class="project-link"
+                            data-ar="زيارة المشروع ←"
+                            data-en="Visit Project →">
 
-                            زيارة المشروع →
+                            زيارة المشروع ←
 
                         </a>
 
 
-                        <span class="status status-live">
+                        <span
+                            class="status status-live"
+                            data-ar="متاح"
+                            data-en="Available">
+
                             متاح
+
                         </span>
 
                     </div>
@@ -2670,7 +3445,7 @@ footer {
                     <img
                         class="slide active"
                         src="images/flexi_fath_collage.png"
-                        alt="نظام إدارة بطاقات الشحن"
+                        alt="Recharge Card Management"
                         loading="lazy">
 
                 </div>
@@ -2678,12 +3453,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="SaaS لإدارة بطاقات الشحن"
+                        data-en="SaaS Recharge Card Management">
+
                         SaaS لإدارة بطاقات الشحن
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="نظام لإدارة بطاقات الشحن والمبيعات والمخزون."
+                        data-en="A system for managing recharge cards, sales and inventory.">
 
                         نظام لإدارة بطاقات الشحن
                         والمبيعات والمخزون.
@@ -2717,37 +3499,37 @@ footer {
                     <img
                         class="slide active"
                         src="images/3.PNG"
-                        alt="إدارة الموظفين"
+                        alt="Employee Management"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/4.PNG"
-                        alt="إدارة الموظفين"
+                        alt="Employee Management"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/5.PNG"
-                        alt="تفاصيل الموظف"
+                        alt="Employee Details"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/photo_2026-06-08_13-33-47.jpg"
-                        alt="الموظفين"
+                        alt="Employees"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/7.PNG"
-                        alt="إحصائيات النظام"
+                        alt="System Statistics"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/9.PNG"
-                        alt="إعدادات النظام"
+                        alt="System Settings"
                         loading="lazy">
 
 
@@ -2757,17 +3539,22 @@ footer {
                             type="button"
                             class="slider-button"
                             onclick="prevSlide(this)"
-                            aria-label="الصورة السابقة">
+                            aria-label="Previous image"
+                            data-aria-ar="الصورة السابقة"
+                            data-aria-en="Previous image">
 
                             ❮
 
                         </button>
 
+
                         <button
                             type="button"
                             class="slider-button"
                             onclick="nextSlide(this)"
-                            aria-label="الصورة التالية">
+                            aria-label="Next image"
+                            data-aria-ar="الصورة التالية"
+                            data-aria-en="Next image">
 
                             ❯
 
@@ -2780,12 +3567,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="SaaS لإدارة الموظفين"
+                        data-en="Employee Management SaaS">
+
                         SaaS لإدارة الموظفين
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="نظام لإدارة الموظفين والبيانات والإحصائيات والإعدادات."
+                        data-en="A system for managing employees, data, statistics and settings.">
 
                         نظام لإدارة الموظفين والبيانات
                         والإحصائيات والإعدادات.
@@ -2816,9 +3610,11 @@ footer {
                             href="https://optipaie-dz.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-link">
+                            class="project-link"
+                            data-ar="زيارة المشروع ←"
+                            data-en="Visit Project →">
 
-                            زيارة المشروع →
+                            زيارة المشروع ←
 
                         </a>
 
@@ -2838,25 +3634,25 @@ footer {
                     <img
                         class="slide active"
                         src="images/Screenshot_28-7-2025_34625_127.0.0.1.jpeg"
-                        alt="المنصة متعددة الخدمات"
+                        alt="Multi Service Platform"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot_28-7-2025_33212_127.0.0.1.jpeg"
-                        alt="واجهة المستخدم"
+                        alt="User Interface"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot_28-7-2025_33228_127.0.0.1.jpeg"
-                        alt="نظام الأخبار"
+                        alt="News System"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot_28-7-2025_3337_127.0.0.1.jpeg"
-                        alt="لوحة التحكم"
+                        alt="Dashboard"
                         loading="lazy">
 
 
@@ -2866,17 +3662,22 @@ footer {
                             type="button"
                             class="slider-button"
                             onclick="prevSlide(this)"
-                            aria-label="الصورة السابقة">
+                            aria-label="Previous image"
+                            data-aria-ar="الصورة السابقة"
+                            data-aria-en="Previous image">
 
                             ❮
 
                         </button>
 
+
                         <button
                             type="button"
                             class="slider-button"
                             onclick="nextSlide(this)"
-                            aria-label="الصورة التالية">
+                            aria-label="Next image"
+                            data-aria-ar="الصورة التالية"
+                            data-aria-en="Next image">
 
                             ❯
 
@@ -2889,12 +3690,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="منصة متعددة الخدمات"
+                        data-en="Multi-Service Platform">
+
                         منصة متعددة الخدمات
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="منصة تجمع التعليم والتجارة والتواصل داخل نظام واحد."
+                        data-en="A platform combining education, commerce and communication in one system.">
 
                         منصة تجمع التعليم والتجارة
                         والتواصل داخل نظام واحد.
@@ -2932,19 +3740,19 @@ footer {
                     <img
                         class="slide active"
                         src="images/Screenshot_18-6-2025_62713_elitelibrarydz12.com.jpeg"
-                        alt="المكتبة الجامعية"
+                        alt="University Library"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot_18-6-2025_62928_elitelibrarydz12.com.jpeg"
-                        alt="المكتبة الجامعية"
+                        alt="University Library"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot_18-6-2025_62914_elitelibrarydz12.com.jpeg"
-                        alt="المكتبة الجامعية"
+                        alt="University Library"
                         loading="lazy">
 
 
@@ -2954,17 +3762,22 @@ footer {
                             type="button"
                             class="slider-button"
                             onclick="prevSlide(this)"
-                            aria-label="الصورة السابقة">
+                            aria-label="Previous image"
+                            data-aria-ar="الصورة السابقة"
+                            data-aria-en="Previous image">
 
                             ❮
 
                         </button>
 
+
                         <button
                             type="button"
                             class="slider-button"
                             onclick="nextSlide(this)"
-                            aria-label="الصورة التالية">
+                            aria-label="Next image"
+                            data-aria-ar="الصورة التالية"
+                            data-aria-en="Next image">
 
                             ❯
 
@@ -2977,12 +3790,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="موقع المكتبة الجامعية"
+                        data-en="University Library Website">
+
                         موقع المكتبة الجامعية
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="موقع يسمح للطلاب بتحميل البحوث والمحاضرات والمحتوى الدراسي."
+                        data-en="A website where students can download research papers, lectures and educational content.">
 
                         موقع يسمح للطلاب بتحميل
                         البحوث والمحاضرات والمحتوى الدراسي.
@@ -3013,9 +3833,11 @@ footer {
                             href="https://elitelibrarydz12.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-link">
+                            class="project-link"
+                            data-ar="زيارة الموقع ←"
+                            data-en="Visit Website →">
 
-                            زيارة الموقع →
+                            زيارة الموقع ←
 
                         </a>
 
@@ -3035,37 +3857,37 @@ footer {
                     <img
                         class="slide active"
                         src="images/Screenshot (125).png"
-                        alt="تجارة الحرفيين"
+                        alt="Craftsmen E-Commerce"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (124).png"
-                        alt="المنتجات"
+                        alt="Products"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (121).png"
-                        alt="التجارة الإلكترونية"
+                        alt="E-Commerce"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (119).png"
-                        alt="الطلبات"
+                        alt="Orders"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (15).png"
-                        alt="الحرفيين"
+                        alt="Craftsmen"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (11).png"
-                        alt="الحرفيين"
+                        alt="Craftsmen"
                         loading="lazy">
 
 
@@ -3075,17 +3897,22 @@ footer {
                             type="button"
                             class="slider-button"
                             onclick="prevSlide(this)"
-                            aria-label="الصورة السابقة">
+                            aria-label="Previous image"
+                            data-aria-ar="الصورة السابقة"
+                            data-aria-en="Previous image">
 
                             ❮
 
                         </button>
 
+
                         <button
                             type="button"
                             class="slider-button"
                             onclick="nextSlide(this)"
-                            aria-label="الصورة التالية">
+                            aria-label="Next image"
+                            data-aria-ar="الصورة التالية"
+                            data-aria-en="Next image">
 
                             ❯
 
@@ -3098,12 +3925,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="تطبيق تجارة إلكترونية للحرفيين"
+                        data-en="E-Commerce App for Craftsmen">
+
                         تطبيق تجارة إلكترونية للحرفيين
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="تطبيق يسمح للحرفيين بعرض منتجاتهم وبيعها عبر الإنترنت، مع لوحة تحكم لإدارة المنتجات والطلبات."
+                        data-en="An application that allows craftsmen to showcase and sell their products online, with a dashboard for managing products and orders.">
 
                         تطبيق يسمح للحرفيين بعرض
                         منتجاتهم وبيعها عبر الإنترنت،
@@ -3131,8 +3965,13 @@ footer {
 
                     <div class="project-footer">
 
-                        <span class="status status-development">
+                        <span
+                            class="status status-development"
+                            data-ar="قيد التطوير"
+                            data-en="In Development">
+
                             قيد التطوير
+
                         </span>
 
                     </div>
@@ -3151,19 +3990,19 @@ footer {
                     <img
                         class="slide active"
                         src="images/Screenshot (320).png"
-                        alt="الاختبارات"
+                        alt="Interactive Quiz"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (317).png"
-                        alt="نتائج الاختبارات"
+                        alt="Quiz Results"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (315).png"
-                        alt="صفحة المستخدم"
+                        alt="User Page"
                         loading="lazy">
 
 
@@ -3173,17 +4012,22 @@ footer {
                             type="button"
                             class="slider-button"
                             onclick="prevSlide(this)"
-                            aria-label="الصورة السابقة">
+                            aria-label="Previous image"
+                            data-aria-ar="الصورة السابقة"
+                            data-aria-en="Previous image">
 
                             ❮
 
                         </button>
 
+
                         <button
                             type="button"
                             class="slider-button"
                             onclick="nextSlide(this)"
-                            aria-label="الصورة التالية">
+                            aria-label="Next image"
+                            data-aria-ar="الصورة التالية"
+                            data-aria-en="Next image">
 
                             ❯
 
@@ -3196,12 +4040,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="تطبيق اختبارات تفاعلية"
+                        data-en="Interactive Quiz App">
+
                         تطبيق اختبارات تفاعلية
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="تطبيق لإجراء الاختبارات أونلاين مع التصحيح الفوري وعرض النتائج."
+                        data-en="An application for taking online quizzes with instant correction and results.">
 
                         تطبيق لإجراء الاختبارات أونلاين
                         مع التصحيح الفوري وعرض النتائج.
@@ -3224,8 +4075,13 @@ footer {
 
                     <div class="project-footer">
 
-                        <span class="status status-development">
+                        <span
+                            class="status status-development"
+                            data-ar="قيد التطوير"
+                            data-en="In Development">
+
                             قيد التطوير
+
                         </span>
 
                     </div>
@@ -3244,19 +4100,19 @@ footer {
                     <img
                         class="slide active"
                         src="images/Screenshot (167).png"
-                        alt="تطبيق الموارد الحيوانية"
+                        alt="Livestock Marketplace"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (157).png"
-                        alt="عروض الحيوانات"
+                        alt="Animal Listings"
                         loading="lazy">
 
                     <img
                         class="slide"
                         src="images/Screenshot (152).png"
-                        alt="صفحة التواصل"
+                        alt="Contact Page"
                         loading="lazy">
 
 
@@ -3266,17 +4122,22 @@ footer {
                             type="button"
                             class="slider-button"
                             onclick="prevSlide(this)"
-                            aria-label="الصورة السابقة">
+                            aria-label="Previous image"
+                            data-aria-ar="الصورة السابقة"
+                            data-aria-en="Previous image">
 
                             ❮
 
                         </button>
 
+
                         <button
                             type="button"
                             class="slider-button"
                             onclick="nextSlide(this)"
-                            aria-label="الصورة التالية">
+                            aria-label="Next image"
+                            data-aria-ar="الصورة التالية"
+                            data-aria-en="Next image">
 
                             ❯
 
@@ -3289,12 +4150,19 @@ footer {
 
                 <div class="project-content">
 
-                    <h3>
+                    <h3
+                        data-ar="تطبيق الموارد الحيوانية"
+                        data-en="Livestock Marketplace App">
+
                         تطبيق الموارد الحيوانية
+
                     </h3>
 
 
-                    <p class="project-description">
+                    <p
+                        class="project-description"
+                        data-ar="تطبيق لبيع وشراء المواشي والطيور والمنتجات المرتبطة بها، مع إمكانية إضافة الإعلانات والتواصل مع البائعين."
+                        data-en="An application for buying and selling livestock, birds and related products, with the ability to publish listings and communicate with sellers.">
 
                         تطبيق لبيع وشراء المواشي والطيور
                         والمنتجات المرتبطة بها، مع إمكانية
@@ -3322,8 +4190,13 @@ footer {
 
                     <div class="project-footer">
 
-                        <span class="status status-development">
+                        <span
+                            class="status status-development"
+                            data-ar="قيد التطوير"
+                            data-en="In Development">
+
                             قيد التطوير
+
                         </span>
 
                     </div>
@@ -3341,7 +4214,7 @@ footer {
 
 
 <!-- =========================================================
-     CERTIFICATES
+   CERTIFICATES
 ========================================================= -->
 
 <section id="certificates">
@@ -3351,16 +4224,31 @@ footer {
 
         <div class="section-heading">
 
-            <div class="section-number">
-                04 / CERTIFICATES
+            <div
+                class="section-number"
+                data-ar="04 / الشهادات"
+                data-en="04 / CERTIFICATES">
+
+                04 / الشهادات
+
             </div>
 
-            <h2>
+
+            <h2
+                data-ar="الشهادات"
+                data-en="Certificates">
+
                 الشهادات
+
             </h2>
 
-            <p>
+
+            <p
+                data-ar="بعض الشهادات والدورات التي حصلت عليها."
+                data-en="Some of the certificates and courses I have completed.">
+
                 بعض الشهادات والدورات التي حصلت عليها.
+
             </p>
 
         </div>
@@ -3376,8 +4264,12 @@ footer {
                     alt="Problem Solving Level 2"
                     loading="lazy">
 
-                <h3>
-                    Problem Solving Level 2
+                <h3
+                    data-ar="Problem Solving المستوى 2"
+                    data-en="Problem Solving Level 2">
+
+                    Problem Solving المستوى 2
+
                 </h3>
 
             </div>
@@ -3390,8 +4282,12 @@ footer {
                     alt="C++ Level 2"
                     loading="lazy">
 
-                <h3>
-                    C++ Level 2
+                <h3
+                    data-ar="C++ المستوى 2"
+                    data-en="C++ Level 2">
+
+                    C++ المستوى 2
+
                 </h3>
 
             </div>
@@ -3404,8 +4300,12 @@ footer {
                     alt="Problem Solving Level 3"
                     loading="lazy">
 
-                <h3>
-                    Problem Solving Level 3
+                <h3
+                    data-ar="Problem Solving المستوى 3"
+                    data-en="Problem Solving Level 3">
+
+                    Problem Solving المستوى 3
+
                 </h3>
 
             </div>
@@ -3418,8 +4318,12 @@ footer {
                     alt="Problem Solving Level 4"
                     loading="lazy">
 
-                <h3>
-                    Problem Solving Level 4
+                <h3
+                    data-ar="Problem Solving المستوى 4"
+                    data-en="Problem Solving Level 4">
+
+                    Problem Solving المستوى 4
+
                 </h3>
 
             </div>
@@ -3433,7 +4337,7 @@ footer {
 
 
 <!-- =========================================================
-     CONTACT
+   CONTACT
 ========================================================= -->
 
 <section id="contact">
@@ -3446,17 +4350,28 @@ footer {
 
             <div class="contact-text">
 
-                <div class="section-number">
-                    05 / CONTACT
+                <div
+                    class="section-number"
+                    data-ar="05 / تواصل"
+                    data-en="05 / CONTACT">
+
+                    05 / تواصل
+
                 </div>
 
 
-                <h2>
+                <h2
+                    data-ar="تواصل معي"
+                    data-en="Get In Touch">
+
                     تواصل معي
+
                 </h2>
 
 
-                <p>
+                <p
+                    data-ar="إذا كنت تعمل على مشروع وتحتاج إلى تطوير تطبيق أو موقع أو API، يمكنك التواصل معي عبر البريد الإلكتروني أو الهاتف."
+                    data-en="If you are working on a project and need an application, website or API, feel free to contact me by email or phone.">
 
                     إذا كنت تعمل على مشروع وتحتاج
                     إلى تطوير تطبيق أو موقع أو API،
@@ -3492,7 +4407,9 @@ footer {
                 <a
                     href="files/Bachir_Toaba_CV (1).pdf"
                     download
-                    class="contact-link">
+                    class="contact-link"
+                    data-ar="تحميل السيرة الذاتية"
+                    data-en="Download CV">
 
                     تحميل السيرة الذاتية
 
@@ -3513,7 +4430,7 @@ footer {
 
 
 <!-- =========================================================
-     FOOTER
+   FOOTER
 ========================================================= -->
 
 <footer>
@@ -3592,8 +4509,7 @@ function changeSlide(button, direction) {
 
     if (newIndex < 0) {
 
-        newIndex =
-            slides.length - 1;
+        newIndex = slides.length - 1;
 
     }
 
@@ -3606,33 +4522,42 @@ function changeSlide(button, direction) {
 
 function nextSlide(button) {
 
-    changeSlide(button, 1);
+    changeSlide(
+        button,
+        1
+    );
 
 }
 
 
 function prevSlide(button) {
 
-    changeSlide(button, -1);
+    changeSlide(
+        button,
+        -1
+    );
 
 }
 
 
 /* =========================================================
-   KEYBOARD SUPPORT
+   SLIDER KEYBOARD
 ========================================================= */
 
 let activeSlider = null;
 
 
-document.querySelectorAll('.slider')
+document
+    .querySelectorAll('.slider')
     .forEach(slider => {
+
 
         slider.addEventListener(
             'mouseenter',
             () => {
 
-                activeSlider = slider;
+                activeSlider =
+                    slider;
 
             }
         );
@@ -3642,7 +4567,19 @@ document.querySelectorAll('.slider')
             'mouseleave',
             () => {
 
-                activeSlider = null;
+                activeSlider =
+                    null;
+
+            }
+        );
+
+
+        slider.addEventListener(
+            'focusin',
+            () => {
+
+                activeSlider =
+                    slider;
 
             }
         );
@@ -3652,7 +4589,7 @@ document.querySelectorAll('.slider')
 
 document.addEventListener(
     'keydown',
-    function(event) {
+    event => {
 
         if (
             event.key !== 'ArrowLeft' &&
@@ -3690,27 +4627,33 @@ document.addEventListener(
 
 
 /* =========================================================
-   AUTO UPDATE ACTIVE SLIDER
+   LANGUAGE
 ========================================================= */
 
-document.querySelectorAll('.slider')
-    .forEach(slider => {
+const translations = {
 
-        slider.addEventListener(
-            'focusin',
-            () => {
+    ar: {
 
-                activeSlider = slider;
+        title:
+            'Bachir Toaba | مطور Flutter و Laravel',
 
-            }
-        );
+        description:
+            'Bachir Toaba - مطور Flutter و Laravel'
 
-    });
+    },
 
+    en: {
 
-    /* =========================================================
-   LANGUAGE SWITCHER
-========================================================= */
+        title:
+            'Bachir Toaba | Flutter & Laravel Developer',
+
+        description:
+            'Bachir Toaba - Flutter & Laravel Developer'
+
+    }
+
+};
+
 
 let currentLanguage =
     localStorage.getItem('language') || 'ar';
@@ -3718,9 +4661,13 @@ let currentLanguage =
 
 function applyLanguage(language) {
 
-    currentLanguage = language;
+    currentLanguage =
+        language;
 
-    document.documentElement.lang = language;
+
+    document.documentElement.lang =
+        language;
+
 
     document.documentElement.dir =
         language === 'ar'
@@ -3729,17 +4676,59 @@ function applyLanguage(language) {
 
 
     document
-        .querySelectorAll('[data-ar][data-en]')
+        .querySelectorAll(
+            '[data-ar][data-en]'
+        )
         .forEach(element => {
 
             element.textContent =
-                element.dataset[language];
+                language === 'ar'
+                    ? element.dataset.ar
+                    : element.dataset.en;
 
         });
 
 
+    document
+        .querySelectorAll(
+            '[data-aria-ar][data-aria-en]'
+        )
+        .forEach(element => {
+
+            element.setAttribute(
+                'aria-label',
+                language === 'ar'
+                    ? element.dataset.ariaAr
+                    : element.dataset.ariaEn
+            );
+
+        });
+
+
+    document.title =
+        translations[language].title;
+
+
+    const description =
+        document.querySelector(
+            'meta[name="description"]'
+        );
+
+
+    if (description) {
+
+        description.setAttribute(
+            'content',
+            translations[language].description
+        );
+
+    }
+
+
     const languageText =
-        document.getElementById('languageText');
+        document.getElementById(
+            'languageText'
+        );
 
 
     if (languageText) {
@@ -3762,21 +4751,107 @@ function applyLanguage(language) {
 
 function toggleLanguage() {
 
-    const newLanguage =
+    applyLanguage(
         currentLanguage === 'ar'
             ? 'en'
-            : 'ar';
-
-    applyLanguage(newLanguage);
+            : 'ar'
+    );
 
 }
 
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuToggle =
+    document.getElementById(
+        'menuToggle'
+    );
+
+
+const mobileMenu =
+    document.getElementById(
+        'mobileMenu'
+    );
+
+
+if (
+    menuToggle &&
+    mobileMenu
+) {
+
+    menuToggle.addEventListener(
+        'click',
+        () => {
+
+            const isOpen =
+                mobileMenu.classList.toggle(
+                    'open'
+                );
+
+
+            menuToggle.setAttribute(
+                'aria-expanded',
+                String(isOpen)
+            );
+
+
+            menuToggle.setAttribute(
+                'aria-label',
+                isOpen
+                    ? (
+                        currentLanguage === 'ar'
+                            ? 'إغلاق القائمة'
+                            : 'Close menu'
+                    )
+                    : (
+                        currentLanguage === 'ar'
+                            ? 'فتح القائمة'
+                            : 'Open menu'
+                    )
+            );
+
+        }
+    );
+
+
+    mobileMenu
+        .querySelectorAll('a')
+        .forEach(link => {
+
+            link.addEventListener(
+                'click',
+                () => {
+
+                    mobileMenu.classList.remove(
+                        'open'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
 
 document.addEventListener(
     'DOMContentLoaded',
     () => {
 
-        applyLanguage(currentLanguage);
+        applyLanguage(
+            currentLanguage
+        );
 
     }
 );
