@@ -1,2604 +1,1192 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <meta name="description" content="Bachir Toaba | Personal Portfolio">
+    <title>Bachir Toaba | Software Developer</title>
 
-
+    <meta name="description" content="Bachir Toaba - Flutter and Laravel Developer. Mobile applications, web systems, REST APIs and SaaS solutions.">
     <meta name="author" content="Bachir Toaba">
+    <meta name="theme-color" content="#0d0f12">
 
-    <meta name="theme-color" content="#101114">
-
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-
-
+    <meta property="og:title" content="Bachir Toaba | Software Developer">
+    <meta property="og:description" content="Flutter & Laravel Developer Portfolio">
     <meta property="og:url" content="https://toababachir.github.io/myportfolio/">
- <meta property="og:image" content="https://toababachir.github.io/myportfolio/images/preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://toababachir.github.io/myportfolio/images/preview.jpg">
-<meta property="og:title" content="Bachir Toaba | Portfolio">
-<meta property="og:description" content="Personal Portfolio">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://toababachir.github.io/myportfolio/">
-<meta property="og:image" content="https://toababachir.github.io/myportfolio/images/preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-  
- 
-  
+    <meta property="og:image" content="https://toababachir.github.io/myportfolio/images/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <title>Bachir Toaba | Portfolio</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://toababachir.github.io/myportfolio/images/preview.jpg">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <style>
 
+    /* =========================================
+       VARIABLES
+    ========================================= */
 
-<style>
+    :root {
+        --background: #0d0f12;
+        --surface: #14171c;
+        --surface-light: #1a1e24;
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+        --border: #272c35;
 
-:root {
+        --text: #e8eaee;
+        --muted: #9299a5;
 
-    --background: #101114;
-    --surface: #17191e;
-    --surface-light: #1d2026;
-    --border: #292d34;
+        --primary: #a5b4c8;
+        --primary-hover: #d0d9e5;
 
-    --text: #f3f4f6;
-    --muted: #9ca3af;
+        --green: #57d68d;
+        --orange: #e8a14b;
 
-    --primary: #7289da;
-    --primary-hover: #8298e5;
-
-    --green: #57d68d;
-    --orange: #e8a14b;
-
-    --max-width: 1100px;
-
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-
-
-html {
-
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-
-}
-
-
-body {
-
-    position: relative;
-
-    min-height: 100vh;
-
-    overflow-x: hidden;
-
-    font-family: 'Cairo', sans-serif;
-
-    background:
-        var(--background);
-
-    color:
-        var(--text);
-
-    line-height:
-        1.8;
-
-}
-
-
-::selection {
-
-    background:
-        var(--primary);
-
-    color:
-        white;
-
-}
-
-
-a {
-
-    color:
-        inherit;
-
-    text-decoration:
-        none;
-
-}
-
-
-button {
-
-    font-family:
-        inherit;
-
-}
-
-
-img {
-
-    max-width:
-        100%;
-
-    display:
-        block;
-
-}
-
-
-.container {
-
-    width:
-        min(
-            var(--max-width),
-            calc(100% - 40px)
-        );
-
-    margin:
-        0 auto;
-
-}
-
-
-/* =========================================================
-   SPACE BACKGROUND
-========================================================= */
-
-.space-background {
-
-    position:
-        fixed;
-
-    inset:
-        0;
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    z-index:
-        0;
-
-    overflow:
-        hidden;
-
-    pointer-events:
-        none;
-
-    background:
-
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(114,137,218,.10),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(87,214,141,.05),
-            transparent 30%
-        ),
-
-        #101114;
-
-}
-
-
-.stars {
-
-    position:
-        absolute;
-
-    width:
-        300%;
-
-    height:
-        300%;
-
-    left:
-        -100%;
-
-    top:
-        -100%;
-
-    background-repeat:
-        repeat;
-
-    animation-name:
-        spaceMove;
-
-    animation-timing-function:
-        linear;
-
-    animation-iteration-count:
-        infinite;
-
-}
-
-
-.stars-small {
-
-    opacity:
-        .55;
-
-    background-image:
-
-        radial-gradient(
-            1px 1px at 20px 30px,
-            rgba(255,255,255,.9),
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 90px 120px,
-            rgba(255,255,255,.8),
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 160px 70px,
-            rgba(255,255,255,.7),
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 250px 180px,
-            rgba(255,255,255,.8),
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 110px 240px,
-            rgba(114,137,218,.7),
-            transparent
-        );
-
-    background-size:
-        280px 280px;
-
-    animation-duration:
-        70s;
-
-}
-
-
-.stars-medium {
-
-    opacity:
-        .35;
-
-    background-image:
-
-        radial-gradient(
-            2px 2px at 40px 80px,
-            rgba(255,255,255,.9),
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 130px 40px,
-            rgba(255,255,255,.8),
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 200px 150px,
-            rgba(114,137,218,1),
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 300px 280px,
-            rgba(255,255,255,.7),
-            transparent
-        );
-
-    background-size:
-        420px 420px;
-
-    animation-duration:
-        110s;
-
-}
-
-
-.stars-large {
-
-    opacity:
-        .25;
-
-    background-image:
-
-        radial-gradient(
-            3px 3px at 80px 100px,
-            rgba(255,255,255,1),
-            transparent
-        ),
-
-        radial-gradient(
-            3px 3px at 220px 180px,
-            rgba(114,137,218,1),
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 400px 300px,
-            rgba(255,255,255,.9),
-            transparent
-        );
-
-    background-size:
-        600px 600px;
-
-    animation-duration:
-        160s;
-
-}
-
-
-@keyframes spaceMove {
-
-    from {
-        transform:
-            translate3d(0,0,0);
-    }
-
-    to {
-        transform:
-            translate3d(180px,220px,0);
-    }
-
-}
-
-
-.space-background::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        500px;
-
-    height:
-        500px;
-
-    left:
-        5%;
-
-    top:
-        10%;
-
-    border-radius:
-        50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(114,137,218,.10),
-            transparent 65%
-        );
-
-    filter:
-        blur(50px);
-
-    animation:
-        glowMove
-        12s
-        ease-in-out
-        infinite
-        alternate;
-
-}
-
-
-.space-background::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        450px;
-
-    height:
-        450px;
-
-    right:
-        5%;
-
-    bottom:
-        5%;
-
-    border-radius:
-        50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(87,214,141,.05),
-            transparent 65%
-        );
-
-    filter:
-        blur(50px);
-
-    animation:
-        glowMove2
-        16s
-        ease-in-out
-        infinite
-        alternate;
-
-}
-
-
-@keyframes glowMove {
-
-    from {
-        transform:
-            translate(0,0);
-    }
-
-    to {
-        transform:
-            translate(120px,80px);
-    }
-
-}
-
-
-@keyframes glowMove2 {
-
-    from {
-        transform:
-            translate(0,0);
-    }
-
-    to {
-        transform:
-            translate(-100px,-70px);
-    }
-
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.navbar,
-.hero,
-main,
-footer {
-
-    position:
-        relative;
-
-    z-index:
-        1;
-
-}
-
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-.navbar {
-
-    position:
-        sticky;
-
-    top:
-        0;
-
-    z-index:
-        100;
-
-    background:
-        rgba(16,17,20,.88);
-
-    backdrop-filter:
-        blur(14px);
-
-    -webkit-backdrop-filter:
-        blur(14px);
-
-    border-bottom:
-        1px solid rgba(41,45,52,.85);
-
-}
-
-
-.navbar-inner {
-
-    min-height:
-        68px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        20px;
-
-}
-
-
-.logo {
-
-    flex-shrink:
-        0;
-
-    font-family:
-        'JetBrains Mono',
-        monospace;
-
-    font-size:
-        20px;
-
-    font-weight:
-        600;
-
-    transition:
-        color .2s ease;
-
-}
-
-
-.logo span {
-
-    color:
-        var(--primary);
-
-}
-
-
-.logo:hover {
-
-    color:
-        var(--primary-hover);
-
-}
-
-
-.nav-links {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap:
-        25px;
-
-    list-style:
-        none;
-
-}
-
-
-.nav-links a {
-
-    position:
-        relative;
-
-    color:
-        var(--muted);
-
-    font-size:
-        14px;
-
-    transition:
-        color .2s ease;
-
-}
-
-
-.nav-links a::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset-inline-start:
-        0;
-
-    bottom:
-        -7px;
-
-    width:
-        0;
-
-    height:
-        2px;
-
-    border-radius:
-        10px;
-
-    background:
-        var(--primary);
-
-    transition:
-        width .25s ease;
-
-}
-
-
-.nav-links a:hover {
-
-    color:
-        white;
-
-}
-
-
-.nav-links a:hover::after {
-
-    width:
-        100%;
-
-}
-
-
-.nav-actions {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        8px;
-
-    flex-shrink:
-        0;
-
-}
-
-
-.language-switch,
-.nav-cv {
-
-    border:
-        1px solid var(--border);
-
-    padding:
-        7px 13px;
-
-    border-radius:
-        6px;
-
-    font-size:
-        12px;
-
-    transition:
-        .2s;
-
-}
-
-
-.language-switch {
-
-    background:
-        transparent;
-
-    color:
-        var(--muted);
-
-    cursor:
-        pointer;
-
-    font-family:
-        'JetBrains Mono',
-        monospace;
-
-}
-
-
-.language-switch:hover,
-.nav-cv:hover {
-
-    color:
-        white;
-
-    border-color:
-        var(--primary);
-
-    background:
-        rgba(114,137,218,.06);
-
-}
-
-
-.menu-toggle {
-
-    display:
-        none;
-
-    width:
-        40px;
-
-    height:
-        38px;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    flex-direction:
-        column;
-
-    gap:
-        5px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        6px;
-
-    background:
-        transparent;
-
-    color:
-        white;
-
-    cursor:
-        pointer;
-
-}
-
-
-.menu-toggle span {
-
-    width:
-        18px;
-
-    height:
-        2px;
-
-    border-radius:
-        5px;
-
-    background:
-        currentColor;
-
-    transition:
-        .2s;
-
-}
-
-
-.mobile-menu {
-
-    display:
-        none;
-
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-
-    padding:
-        85px 0 75px;
-
-    border-bottom:
-        1px solid var(--border);
-
-}
-
-
-.hero-layout {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 300px;
-
-    gap:
-        70px;
-
-    align-items:
-        center;
-
-}
-
-
-.hero-text {
-
-    order:
-        1;
-
-}
-
-
-.hero-photo {
-
-    order:
-        2;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    gap:
-        18px;
-
-}
-
-
-.hero-photo img {
-
-    width:
-        270px;
-
-    height:
-        270px;
-
-    object-fit:
-        cover;
-
-    border-radius:
-        16px;
-
-    border:
-        1px solid var(--border);
-
-    box-shadow:
-        0 0 0 8px rgba(114,137,218,.025),
-        0 25px 70px rgba(0,0,0,.25);
-
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
-
-}
-
-
-.hero-photo img:hover {
-
-    transform:
-        translateY(-5px);
-
-    border-color:
-        rgba(114,137,218,.45);
-
-    box-shadow:
-        0 0 0 8px rgba(114,137,218,.05),
-        0 30px 80px rgba(0,0,0,.35);
-
-}
-
-
-/* =========================================================
-   PROFILE STATUS
-========================================================= */
-
-.profile-status {
-
-    width:
-        270px;
-
-    height:
-        38px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    overflow:
-        hidden;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        8px;
-
-    background:
-        rgba(23,25,30,.88);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.18);
-
-}
-
-
-.status-dot {
-
-    width:
-        8px;
-
-    height:
-        8px;
-
-    margin-inline:
-        12px 8px;
-
-    flex-shrink:
-        0;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--green);
-
-    box-shadow:
-        0 0 10px rgba(87,214,141,.7);
-
-    animation:
-        statusPulse
-        1.8s
-        ease-in-out
-        infinite;
-
-}
-
-
-.status-track {
-
-    flex:
-        1;
-
-    overflow:
-        hidden;
-
-    white-space:
-        nowrap;
-
-    mask-image:
-        linear-gradient(
-            to right,
-            transparent,
-            black 10%,
-            black 90%,
-            transparent
-        );
-
-}
-
-
-.status-content {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        28px;
-
-    padding-inline:
-        10px;
-
-    animation:
-        statusScroll
-        22s
-        linear
-        infinite;
-
-}
-
-
-.status-content span {
-
-    color:
-        #c9ced8;
-
-    font-family:
-        'JetBrains Mono',
-        monospace;
-
-    font-size:
-        10px;
-
-    flex-shrink:
-        0;
-
-}
-
-
-.status-content span:first-child {
-
-    color:
-        var(--green);
-
-}
-
-
-@keyframes statusScroll {
-
-    from {
-        transform:
-            translateX(0);
-    }
-
-    to {
-        transform: Flutter / Laravel 
-            translateX(-50%);
-    }
-
-}
-
-
-@keyframes statusPulse {
-
-    0%,
-    100% {
-        opacity:
-            .6;
-
-        transform:
-            scale(.9);
-    }
-
-    50% {
-        opacity:
-            1;
-
-        transform:
-            scale(1.1);
-    }
-
-}
-
-
-/* =========================================================
-   HERO TEXT
-========================================================= */
-
-.small-intro {
-
-    color:
-        var(--primary-hover);
-
-    font-family:
-        'JetBrains Mono',
-        monospace;
-
-    font-size:
-        14px;
-
-    margin-bottom:
-        12px;
-
-}
-
-
-.hero h1 {
-
-    font-size:
-        clamp(40px,6vw,62px);
-
-    line-height:
-        1.25;
-
-    margin-bottom:
-        8px;
-
-}
-
-
-.hero-title {
-
-    color:
-        var(--muted);
-
-    font-size:
-        20px;
-
-    margin-bottom:
-        22px;
-
-}
-
-
-.hero-description {
-
-    max-width:
-        650px;
-
-    color:
-        var(--muted);
-
-    font-size:
-        15px;
-
-    line-height:
-        2;
-
-    margin-bottom:
-        27px;
-
-}
-
-
-.hero-actions {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        10px;
-
-}
-
-
-.btn {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    padding:
-        10px 17px;
-
-    border-radius:
-        7px;
-
-    font-size:
-        14px;
-
-    font-weight:
-        600;
-
-    transition:
-        transform .2s ease,
-        background .2s ease,
-        border-color .2s ease;
-
-}
-
-
-.btn:hover {
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-.btn-primary {
-
-    background:
-        var(--primary);
-
-    color:
-        white;
-
-}
-
-
-.btn-primary:hover {
-
-    background:
-        var(--primary-hover);
-
-}
-
-
-.btn-secondary {
-
-    border:
-        1px solid var(--border);
-
-    color:
-        var(--text);
-
-    background:
-        rgba(23,25,30,.35);
-
-}
-
-
-.btn-secondary:hover {
-
-    background:
-        var(--surface);
-
-    border-color:
-        #3d424c;
-
-}
-
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-section {
-
-    padding:
-        75px 0;
-
-    border-bottom:
-        1px solid var(--border);
-
-}
-
-
-.section-heading {
-
-    margin-bottom:
-        35px;
-
-}
-
-
-.section-number {
-
-    color:
-        var(--primary);
-
-    font-family:
-        'JetBrains Mono',
-        monospace;
-
-    font-size:
-        13px;
-
-    margin-bottom:
-        5px;
-
-}
-
-
-.section-heading h2 {
-
-    font-size:
-        28px;
-
-    margin-bottom:
-        6px;
-
-}
-
-
-.section-heading p {
-
-    color:
-        var(--muted);
-
-    font-size:
-        14px;
-
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        50px;
-
-}
-
-
-.about p {
-
-    color:
-        #c4c8d0;
-
-    font-size:
-        15px;
-
-    line-height:
-        2;
-
-}
-
-
-.about strong {
-
-    color:
-        white;
-
-}
-
-
-.about-info {
-
-    border-inline-start:
-        1px solid var(--border);
-
-    padding-inline-start:
-        30px;
-
-}
-
-
-.info-row {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    gap:
-        20px;
-
-    padding:
-        12px 0;
-
-    border-bottom:
-        1px solid var(--border);
-
-    font-size:
-        14px;
-
-}
-
-
-.info-row span:first-child {
-
-    color:
-        var(--muted);
-
-}
-
-
-.info-row span:last-child {
-
-    color:
-        white;
-
-    text-align:
-        end;
-
-}
-
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skills {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        9px;
-
-}
-
-
-.skill {
-
-    background:
-        rgba(23,25,30,.82);
-
-    border:
-        1px solid var(--border);
-
-    color:
-        #d5d8de;
-
-    padding:
-        8px 13px;
-
-    border-radius:
-        6px;
-
-    font-size:
-        13px;
-
-    transition:
-        .2s;
-
-}
-
-
-.skill:hover {
-
-    border-color:
-        #454b55;
-
-    color:
-        white;
-
-    transform:
-        translateY(-2px);
-
-    background:
-        var(--surface-light);
-
-}
-
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.projects {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-    gap:
-        22px;
-
-}
-
-
-.project {
-
-    background:
-        rgba(23,25,30,.92);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        10px;
-
-    overflow:
-        hidden;
-
-    transition:
-        border-color .25s,
-        transform .25s,
-        box-shadow .25s;
-
-}
-
-
-.project:hover {
-
-    border-color:
-        #3b414b;
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.18);
-
-}
-
-
-.project-content {
-
-    padding:
-        20px;
-
-}
-
-
-.project h3 {
-
-    font-size:
-        18px;
-
-    margin-bottom:
-        8px;
-
-}
-
-
-.project-description {
-
-    color:
-        var(--muted);
-
-    font-size:
-        14px;
-
-    line-height:
-        1.9;
-
-    margin-bottom:
-        15px;
-
-}
-
-
-.project-tech {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        6px;
-
-    margin-bottom:
-        15px;
-
-}
-
-
-.tech {
-
-    color:
-        #aeb6c5;
-
-    background:
-        #111318;
-
-    border:
-        1px solid var(--border);
-
-    padding:
-        3px 8px;
-
-    border-radius:
-        4px;
-
-    font-family:
-        'JetBrains Mono',
-        monospace;
-
-    font-size:
-        11px;
-
-}
-
-
-.project-footer {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-
-}
-
-
-.project-link {
-
-    color:
-        var(--primary-hover);
-
-    font-size:
-        13px;
-
-}
-
-
-.project-link:hover {
-
-    text-decoration:
-        underline;
-
-}
-
-
-/* =========================================================
-   STATUS
-========================================================= */
-
-.status {
-
-    font-size:
-        11px;
-
-    padding:
-        3px 8px;
-
-    border-radius:
-        4px;
-
-}
-
-
-.status-live {
-
-    color:
-        var(--green);
-
-    background:
-        rgba(87,214,141,.08);
-
-}
-
-
-.status-development {
-
-    color:
-        var(--orange);
-
-    background:
-        rgba(232,161,75,.08);
-
-}
-
-
-/* =========================================================
-   SLIDER
-========================================================= */
-
-.slider {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #0c0d10;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-}
-
-.slide.active {
-    display: block;
-    animation: slideFade 0.35s ease;
-}
-
-@keyframes slideFade {
-    from {
-        opacity: 0.35;
-        transform: scale(1.005);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.slider-controls {
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-}
-
-.slider-button {
-    pointer-events: auto;
-    width: 34px;
-    height: 34px;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(0, 0, 0, 0.65);
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.2s;
-}
-
-.slider-button:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    transform: scale(1.05);
-}
-
-
-/* =========================================================
-   CERTIFICATES
-========================================================= */
-
-.certificates {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
-    gap:
-        18px;
-
-}
-
-
-.certificate {
-
-    background:
-        rgba(23,25,30,.92);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        9px;
-
-    padding:
-        9px;
-
-    transition:
-        .25s;
-
-}
-
-
-.certificate:hover {
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        #3b414b;
-
-}
-
-
-.certificate img {
-
-    width:
-        100%;
-
-    aspect-ratio:
-        4 / 3;
-
-    object-fit:
-        cover;
-
-    border-radius:
-        5px;
-
-}
-
-
-.certificate h3 {
-
-    font-size:
-        13px;
-
-    font-weight:
-        600;
-
-    padding:
-        11px 4px 5px;
-
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        50px;
-
-}
-
-
-.contact-text h2 {
-
-    font-size:
-        30px;
-
-    margin-bottom:
-        10px;
-
-}
-
-
-.contact-text p {
-
-    color:
-        var(--muted);
-
-    font-size:
-        14px;
-
-    line-height:
-        2;
-
-}
-
-
-.contact-links {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        10px;
-
-}
-
-
-.contact-link {
-
-    background:
-        rgba(23,25,30,.92);
-
-    border:
-        1px solid var(--border);
-
-    padding:
-        13px 16px;
-
-    border-radius:
-        7px;
-
-    color:
-        #d8dbe1;
-
-    font-size:
-        14px;
-
-    transition:
-        .2s;
-
-}
-
-
-.contact-link:hover {
-
-    border-color:
-        #454b55;
-
-    color:
-        white;
-
-    transform:
-        translateX(-3px);
-
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-
-    padding:
-        30px 0;
-
-    color:
-        #737984;
-
-    font-size:
-        12px;
-
-}
-
-
-.footer-inner {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-}
-
-
-.footer-code {
-
-    font-family:
-        'JetBrains Mono',
-        monospace;
-
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 850px) {
-
-    .hero-layout {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            35px;
-
-        text-align:
-            center;
-
+        --max-width: 1120px;
     }
 
 
-    .hero-photo {
+    /* =========================================
+       RESET
+    ========================================= */
 
-        order:
-            1;
-
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-
-
-    .hero-text {
-
-        order:
-            2;
-
-    }
-
-
-    .hero-photo img {
-
-        width:
-            210px;
-
-        height:
-            210px;
-
-    }
-
-
-    .profile-status {
-
-        width:
-            230px;
-
-    }
-
-
-    .hero-description {
-
-        margin-inline:
-            auto;
-
-    }
-
-
-    .hero-actions {
-
-        justify-content:
-            center;
-
-    }
-
-
-    .about {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            30px;
-
-    }
-
-
-    .about-info {
-
-        border-inline-start:
-            none;
-
-        border-top:
-            1px solid var(--border);
-
-        padding-inline-start:
-            0;
-
-        padding-top:
-            20px;
-
-    }
-
-
-    .contact {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            30px;
-
-    }
-
-
-    .certificates {
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
-    }
-
-}
-
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-    .container {
-
-        width:
-            min(
-                var(--max-width),
-                calc(100% - 28px)
-            );
-
-    }
-
-
-    .navbar-inner {
-
-        min-height:
-            60px;
-
-    }
-
-
-    .nav-links {
-
-        display:
-            none;
-
-    }
-
-
-    .menu-toggle {
-
-        display:
-            flex;
-
-    }
-
-
-    .nav-actions {
-
-        margin-inline-start:
-            auto;
-
-    }
-
-
-    .nav-cv {
-
-        display:
-            none;
-
-    }
-
-
-    .mobile-menu {
-
-        position:
-            absolute;
-
-        top:
-            calc(100% + 1px);
-
-        left:
-            14px;
-
-        right:
-            14px;
-
-        display:
-            none;
-
-        padding:
-            10px;
-
-        background:
-            rgba(23,25,30,.97);
-
-        border:
-            1px solid var(--border);
-
-        border-radius:
-            8px;
-
-        box-shadow:
-            0 20px 50px rgba(0,0,0,.35);
-
-    }
-
-
-    .mobile-menu.open {
-
-        display:
-            block;
-
-    }
-
-
-    .mobile-menu a {
-
-        display:
-            block;
-
-        padding:
-            10px 12px;
-
-        color:
-            var(--muted);
-
-        border-radius:
-            5px;
-
-        font-size:
-            14px;
-
-    }
-
-
-    .mobile-menu a:hover {
-
-        color:
-            white;
-
-        background:
-            var(--surface-light);
-
-    }
-
-
-    .hero {
-
-        padding:
-            55px 0;
-
-    }
-
-
-    .hero h1 {
-
-        font-size:
-            38px;
-
-    }
-
-
-    .hero-title {
-
-        font-size:
-            17px;
-
-    }
-
-
-    .hero-description {
-
-        font-size:
-            14px;
-
-    }
-
-
-    .hero-photo img {
-
-        width:
-            190px;
-
-        height:
-            190px;
-
-    }
-
-
-    .profile-status {
-
-        width:
-            210px;
-
-    }
-
-
-    section {
-
-        padding:
-            55px 0;
-
-    }
-
-
-    .section-heading h2 {
-
-        font-size:
-            25px;
-
-    }
-
-
-    .projects {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .certificates {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .footer-inner {
-
-        flex-direction:
-            column;
-
-        gap:
-            5px;
-
-        text-align:
-            center;
-
-    }
-
-
-    .space-background::before {
-
-        width:
-            300px;
-
-        height:
-            300px;
-
-    }
-
-
-    .space-background::after {
-
-        width:
-            280px;
-
-        height:
-            280px;
-
-    }
-
-}
-
-
-    .galaxy-name {
-    position: relative;
-    display: inline-block;
-    color: #ffffff;
-    font-weight: 800;
-    letter-spacing: 1px;
-    background: linear-gradient(
-        110deg,
-        #ffffff 15%,
-        #a7f3d0 35%,
-        #60a5fa 50%,
-        #ffffff 65%,
-        #a7f3d0 85%
-    );
-    background-size: 250% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.2));
-    animation: galaxyGlow 5s ease-in-out infinite,
-               galaxyShine 8s linear infinite;
-}
-
-@keyframes galaxyGlow {
-    0%, 100% {
-        filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.15));
-        transform: translateY(0);
-    }
-
-    50% {
-        filter: drop-shadow(0 0 20px rgba(87, 214, 141, 0.35));
-        transform: translateY(-3px);
-    }
-}
-
-@keyframes galaxyShine {
-    from {
-        background-position: 100% center;
-    }
-
-    to {
-        background-position: -150% center;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .galaxy-name {
-        animation: none;
-    }
-}
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
 
     html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 85px;
+    }
 
-        scroll-behavior:
-            auto;
+    body {
+        min-height: 100vh;
+        overflow-x: hidden;
 
+        font-family: 'Cairo', sans-serif;
+
+        background: var(--background);
+        color: var(--text);
+
+        line-height: 1.8;
+    }
+
+    html[lang="en"] body {
+        font-family: 'Inter', sans-serif;
+    }
+
+    ::selection {
+        background: #64748b;
+        color: white;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    button {
+        font-family: inherit;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+        width: min(var(--max-width), calc(100% - 40px));
+        margin-inline: auto;
+    }
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        background: rgba(13, 15, 18, .96);
+
+        border-bottom: 1px solid var(--border);
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .navbar-inner {
+        min-height: 72px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 25px;
+    }
+
+    .logo {
+        font-family: 'JetBrains Mono', monospace;
+
+        font-size: 20px;
+        font-weight: 600;
+
+        letter-spacing: -1px;
+        flex-shrink: 0;
+    }
+
+    .logo span {
+        color: var(--primary);
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--muted);
+        font-size: 13px;
+
+        transition: color .2s;
+    }
+
+    .nav-links a:hover {
+        color: white;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .language-switch,
+    .nav-cv {
+        padding: 7px 13px;
+
+        border: 1px solid var(--border);
+        border-radius: 4px;
+
+        font-size: 12px;
+        transition: .2s;
+    }
+
+    .language-switch {
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .language-switch:hover,
+    .nav-cv:hover {
+        color: white;
+        border-color: #65748a;
+    }
+
+    .menu-toggle {
+        display: none;
+
+        width: 39px;
+        height: 38px;
+
+        border: 1px solid var(--border);
+        border-radius: 4px;
+
+        background: transparent;
+        color: white;
+
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+
+        width: 17px;
+        height: 2px;
+
+        margin: 4px auto;
+
+        background: currentColor;
+        transition: .2s;
+    }
+
+    .mobile-menu {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 14px;
+        right: 14px;
+
+        padding: 10px;
+
+        background: #15181d;
+
+        border: 1px solid var(--border);
+        border-radius: 5px;
+    }
+
+    .mobile-menu.open {
+        display: block;
+    }
+
+    .mobile-menu a {
+        display: block;
+
+        padding: 11px 13px;
+
+        color: var(--muted);
+        font-size: 14px;
+
+        border-radius: 4px;
+    }
+
+    .mobile-menu a:hover {
+        color: white;
+        background: var(--surface-light);
     }
 
 
-    .stars,
-    .space-background::before,
-    .space-background::after,
-    .slide.active,
-    .status-content,
-    .status-dot {
+    /* =========================================
+       HERO
+    ========================================= */
 
-        animation:
-            none;
+    .hero {
+        padding: 105px 0 95px;
 
+        border-bottom: 1px solid var(--border);
     }
 
+    .hero-layout {
+        display: grid;
 
-    .project,
-    .certificate,
-    .skill,
-    .btn,
-    .contact-link,
+        grid-template-columns: 1fr 280px;
+
+        gap: 85px;
+        align-items: center;
+    }
+
+    .hero-text {
+        order: 1;
+    }
+
+    .hero-photo {
+        order: 2;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 16px;
+    }
+
     .hero-photo img {
+        width: 260px;
+        height: 290px;
 
-        transition:
-            none;
+        object-fit: cover;
+
+        border-radius: 5px;
+        border: 1px solid var(--border);
+
+        filter: saturate(.85);
+
+        transition: filter .3s, border-color .3s;
+    }
+
+    .hero-photo img:hover {
+        filter: saturate(1);
+        border-color: #65748a;
+    }
+
+    .hero h1 {
+        font-family: 'Inter', sans-serif;
+
+        font-size: clamp(48px, 6vw, 76px);
+        font-weight: 800;
+
+        line-height: 1.2;
+        letter-spacing: -3px;
+
+        margin-bottom: 14px;
+    }
+
+    .hero-title {
+        color: #b2bdca;
+        font-size: 19px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        max-width: 610px;
+
+        color: var(--muted);
+        font-size: 15px;
+
+        line-height: 2;
+
+        margin-bottom: 28px;
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 11px 19px;
+
+        border-radius: 4px;
+
+        font-size: 13px;
+        font-weight: 600;
+
+        transition: .2s;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-primary {
+        background: #e5e7eb;
+        color: #101114;
+    }
+
+    .btn-primary:hover {
+        background: white;
+    }
+
+    .btn-secondary {
+        background: transparent;
+
+        border: 1px solid var(--border);
+        color: var(--text);
+    }
+
+    .btn-secondary:hover {
+        border-color: #65748a;
+    }
+
+
+    /* =========================================
+       STATUS
+    ========================================= */
+
+    .profile-status {
+        width: 250px;
+        height: 38px;
+
+        display: flex;
+        align-items: center;
+
+        overflow: hidden;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 4px;
+    }
+
+    .status-dot {
+        width: 7px;
+        height: 7px;
+
+        margin-inline: 12px 8px;
+
+        flex-shrink: 0;
+
+        border-radius: 50%;
+        background: var(--green);
+    }
+
+    .status-track {
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .status-content {
+        display: inline-flex;
+        align-items: center;
+        gap: 25px;
+
+        padding-inline: 10px;
+
+        animation: statusScroll 25s linear infinite;
+    }
+
+    .status-content span {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+
+        color: #c4cbd5;
+        flex-shrink: 0;
+    }
+
+    .status-content span:first-child {
+        color: var(--green);
+    }
+
+    @keyframes statusScroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+
+    /* =========================================
+       SECTIONS
+    ========================================= */
+
+    section {
+        padding: 85px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-number {
+        font-family: 'JetBrains Mono', monospace;
+
+        color: var(--primary);
+
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+        margin-bottom: 5px;
+    }
+
+    .section-heading p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+
+    /* =========================================
+       ABOUT
+    ========================================= */
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 55px;
+    }
+
+    .about p {
+        color: #b7bec9;
+
+        font-size: 15px;
+        line-height: 2.1;
+    }
+
+    .about strong {
+        color: white;
+    }
+
+    .about-info {
+        border-inline-start: 1px solid var(--border);
+        padding-inline-start: 30px;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+
+        gap: 20px;
+
+        padding: 12px 0;
+
+        border-bottom: 1px solid var(--border);
+
+        font-size: 13px;
+    }
+
+    .info-row span:first-child {
+        color: var(--muted);
+    }
+
+    .info-row span:last-child {
+        color: white;
+        text-align: end;
+    }
+
+
+    /* =========================================
+       WHAT I DO
+    ========================================= */
+
+    .services {
+        display: grid;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+    .service {
+        padding: 24px;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 5px;
+
+        transition: border-color .2s;
+    }
+
+    .service:hover {
+        border-color: #566174;
+    }
+
+    .service-number {
+        font-family: 'JetBrains Mono', monospace;
+
+        color: var(--primary);
+
+        font-size: 12px;
+        margin-bottom: 17px;
+    }
+
+    .service h3 {
+        font-size: 17px;
+        margin-bottom: 9px;
+    }
+
+    .service p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+
+    /* =========================================
+       SKILLS
+    ========================================= */
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+
+    .skill {
+        padding: 8px 14px;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 4px;
+
+        color: #cbd1da;
+        font-size: 13px;
+
+        transition: .2s;
+    }
+
+    .skill:hover {
+        border-color: #65748a;
+        color: white;
+    }
+
+
+    /* =========================================
+       PROJECTS
+    ========================================= */
+
+    .projects {
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+    .project {
+        min-width: 0;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 5px;
+
+        overflow: hidden;
+
+        transition: border-color .25s, transform .25s;
+    }
+
+    .project:hover {
+        border-color: #566174;
+        transform: translateY(-3px);
+    }
+
+    .project-content {
+        padding: 22px;
+    }
+
+    .project h3 {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .project-description {
+        color: var(--muted);
+
+        font-size: 13px;
+        line-height: 1.9;
+
+        margin-bottom: 15px;
+    }
+
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 6px;
+        margin-bottom: 17px;
+    }
+
+    .tech {
+        padding: 4px 8px;
+
+        background: #101318;
+
+        border: 1px solid var(--border);
+        border-radius: 3px;
+
+        color: #aeb8c7;
+
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+    }
+
+    .project-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 12px;
+    }
+
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .project-link {
+        color: var(--primary-hover);
+        font-size: 12px;
+    }
+
+    .project-link:hover {
+        text-decoration: underline;
+    }
+
+    .status {
+        padding: 3px 8px;
+
+        border-radius: 3px;
+
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .status-live {
+        background: rgba(87,214,141,.08);
+        color: var(--green);
+    }
+
+    .status-development {
+        background: rgba(232,161,75,.08);
+        color: var(--orange);
+    }
+
+
+    /* =========================================
+       SLIDER
+    ========================================= */
+
+    .slider {
+        position: relative;
+
+        width: 100%;
+        aspect-ratio: 16 / 9;
+
+        background: #101216;
+
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slide {
+        display: none;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .slide.active {
+        display: block;
+        animation: slideFade .3s ease;
+    }
+
+    @keyframes slideFade {
+        from {
+            opacity: .5;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .slider-controls {
+        position: absolute;
+
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+
+        display: flex;
+        justify-content: space-between;
+
+        pointer-events: none;
+    }
+
+    .slider-button {
+        pointer-events: auto;
+
+        width: 34px;
+        height: 34px;
+
+        background: rgba(0,0,0,.75);
+
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 4px;
+
+        color: white;
+        cursor: pointer;
+
+        transition: .2s;
+    }
+
+    .slider-button:hover {
+        background: #65748a;
+    }
+
+
+    /* =========================================
+       CERTIFICATES
+    ========================================= */
+
+    .certificates {
+        display: grid;
+
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+    .certificate {
+        padding: 9px;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 5px;
+
+        transition: border-color .2s;
+    }
+
+    .certificate:hover {
+        border-color: #566174;
+    }
+
+    .certificate img {
+        width: 100%;
+
+        aspect-ratio: 4 / 3;
+
+        object-fit: cover;
+
+        border-radius: 3px;
+    }
+
+    .certificate h3 {
+        padding: 11px 4px 5px;
+
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+
+    .contact {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 60px;
+    }
+
+    .contact-text h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .contact-text p {
+        color: var(--muted);
+
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .contact-link {
+        display: block;
+
+        padding: 13px 16px;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 4px;
+
+        color: #cbd1da;
+        font-size: 13px;
+
+        transition: .2s;
+    }
+
+    .contact-link:hover {
+        border-color: #65748a;
+        color: white;
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+        padding: 28px 0;
+
+        color: #777f8b;
+        font-size: 12px;
+    }
+
+    .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footer-code {
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+
+    /* =========================================
+       TABLET
+    ========================================= */
+
+    @media (max-width: 900px) {
+
+        .hero-layout {
+            grid-template-columns: 1fr 230px;
+            gap: 35px;
+        }
+
+        .hero-photo img {
+            width: 220px;
+            height: 250px;
+        }
+
+        .about {
+            gap: 30px;
+        }
+
+        .certificates {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
 
     }
 
-}
 
-</style>
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 650px) {
+
+        .container {
+            width: calc(100% - 30px);
+        }
+
+        .navbar-inner {
+            min-height: 62px;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        .nav-cv {
+            display: none;
+        }
+
+        .nav-actions {
+            margin-inline-start: auto;
+        }
+
+        .hero {
+            padding: 65px 0;
+        }
+
+        .hero-layout {
+            grid-template-columns: 1fr;
+            gap: 35px;
+            text-align: center;
+        }
+
+        .hero-photo {
+            order: 1;
+        }
+
+        .hero-text {
+            order: 2;
+        }
+
+        .hero-photo img {
+            width: 190px;
+            height: 210px;
+        }
+
+        .hero h1 {
+            font-size: 47px;
+        }
+
+        .hero-title {
+            font-size: 17px;
+        }
+
+        .hero-description {
+            font-size: 14px;
+        }
+
+        .hero-actions {
+            justify-content: center;
+        }
+
+        .profile-status {
+            width: 230px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-heading h2 {
+            font-size: 25px;
+        }
+
+        .about {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .about-info {
+            border-inline-start: none;
+            border-top: 1px solid var(--border);
+
+            padding-inline-start: 0;
+            padding-top: 20px;
+        }
+
+        .services {
+            grid-template-columns: 1fr;
+        }
+
+        .projects {
+            grid-template-columns: 1fr;
+        }
+
+        .certificates {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .contact {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .footer-inner {
+            flex-direction: column;
+            gap: 7px;
+            text-align: center;
+        }
+
+    }
 
 
+    /* =========================================
+       SMALL MOBILE
+    ========================================= */
+
+    @media (max-width: 380px) {
+
+        .hero h1 {
+            font-size: 39px;
+        }
+
+        .certificates {
+            grid-template-columns: 1fr;
+        }
+
+        .info-row {
+            font-size: 12px;
+        }
+
+        .project-links {
+            gap: 9px;
+        }
+
+    }
+
+
+    /* =========================================
+       REDUCED MOTION
+    ========================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: .01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: .01ms !important;
+        }
+
+    }
+
+    </style>
 </head>
 
 
 <body>
 
-
-<!-- =========================================================
-   BACKGROUND
-========================================================= -->
-
-<div
-    class="space-background"
-    aria-hidden="true">
-
-    <div class="stars stars-small"></div>
-
-    <div class="stars stars-medium"></div>
-
-    <div class="stars stars-large"></div>
-
-</div>
-
-
-<!-- =========================================================
-   NAVBAR
-========================================================= -->
+<!-- =========================================
+     NAVBAR
+========================================= -->
 
 <nav class="navbar">
 
     <div class="container navbar-inner">
 
-        <a
-            href="#"
-            class="logo">
-
+        <a href="#" class="logo">
             bachir<span>.</span>
-
         </a>
-
 
         <ul class="nav-links">
 
-            <li>
-                <a
-                    href="#about"
-                    data-ar="من أنا"
-                    data-en="About">
+            <li><a href="#about" data-ar="من أنا" data-en="About">من أنا</a></li>
 
-                    من أنا
+            <li><a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a></li>
 
-                </a>
-            </li>
+            <li><a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a></li>
 
-            <li>
-                <a
-                    href="#skills"
-                    data-ar="المهارات"
-                    data-en="Skills">
+            <li><a href="#projects" data-ar="المشاريع" data-en="Projects">المشاريع</a></li>
 
-                    المهارات
+            <li><a href="#certificates" data-ar="الشهادات" data-en="Certificates">الشهادات</a></li>
 
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="#projects"
-                    data-ar="المشاريع"
-                    data-en="Projects">
-
-                    المشاريع
-
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="#certificates"
-                    data-ar="الشهادات"
-                    data-en="Certificates">
-
-                    الشهادات
-
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="#contact"
-                    data-ar="تواصل"
-                    data-en="Contact">
-
-                    تواصل
-
-                </a>
-            </li>
+            <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
 
         </ul>
 
-
         <div class="nav-actions">
 
-            <button
-                type="button"
-                class="language-switch"
-                onclick="toggleLanguage()">
-
-                <span id="languageText">
-                    English
-                </span>
-
+            <button type="button" class="language-switch" id="languageSwitch">
+                <span id="languageText">English</span>
             </button>
 
-
-            <a
-                href="files/Bachir_Toaba_CV (1).pdf"
-                download
-                class="nav-cv"
-                data-ar="تحميل CV"
-                data-en="Download CV">
-
+            <a href="files/Bachir_Toaba_CV (1).pdf"
+               download
+               class="nav-cv"
+               data-ar="تحميل CV"
+               data-en="Download CV">
                 تحميل CV
-
             </a>
 
-
-            <button
-                type="button"
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="فتح القائمة"
-                data-aria-ar="فتح القائمة"
-                data-aria-en="Open menu"
-                aria-expanded="false"
-                aria-controls="mobileMenu">
+            <button type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="فتح القائمة"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu">
 
                 <span></span>
                 <span></span>
@@ -2608,64 +1196,25 @@ footer {
 
         </div>
 
+        <div class="mobile-menu" id="mobileMenu">
 
-        <div
-            class="mobile-menu"
-            id="mobileMenu">
+            <a href="#about" data-ar="من أنا" data-en="About">من أنا</a>
 
-            <a
-                href="#about"
-                data-ar="من أنا"
-                data-en="About">
+            <a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a>
 
-                من أنا
+            <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
 
-            </a>
+            <a href="#projects" data-ar="المشاريع" data-en="Projects">المشاريع</a>
 
-            <a
-                href="#skills"
-                data-ar="المهارات"
-                data-en="Skills">
+            <a href="#certificates" data-ar="الشهادات" data-en="Certificates">الشهادات</a>
 
-                المهارات
+            <a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a>
 
-            </a>
-
-            <a
-                href="#projects"
-                data-ar="المشاريع"
-                data-en="Projects">
-
-                المشاريع
-
-            </a>
-
-            <a
-                href="#certificates"
-                data-ar="الشهادات"
-                data-en="Certificates">
-
-                الشهادات
-
-            </a>
-
-            <a
-                href="#contact"
-                data-ar="تواصل"
-                data-en="Contact">
-
-                تواصل
-
-            </a>
-
-            <a
-                href="files/Bachir_Toaba_CV (1).pdf"
-                download
-                data-ar="تحميل السيرة الذاتية"
-                data-en="Download CV">
-
+            <a href="files/Bachir_Toaba_CV (1).pdf"
+               download
+               data-ar="تحميل السيرة الذاتية"
+               data-en="Download CV">
                 تحميل السيرة الذاتية
-
             </a>
 
         </div>
@@ -2675,68 +1224,49 @@ footer {
 </nav>
 
 
-<!-- =========================================================
-   HERO
-========================================================= -->
+<!-- =========================================
+     HERO
+========================================= -->
 
 <header class="hero">
 
     <div class="container hero-layout">
 
-
         <div class="hero-text">
 
+            <h1>Bachir Toaba</h1>
 
-           
-
-
-<h1 class="galaxy-name">
-    Bachir
-</h1>
-
-
-            <div
-                class="hero-title"
-                data-ar="مطور Flutter و Laravel"
-                data-en="Flutter & Laravel Developer">
-
+            <div class="hero-title"
+                 data-ar="مطور Flutter و Laravel"
+                 data-en="Flutter & Laravel Developer">
                 مطور Flutter و Laravel
-
             </div>
 
+            <p class="hero-description"
+               data-ar="أنا مطوّر برمجيات أعمل بشكل أساسي باستخدام Flutter و Laravel. أطور تطبيقات الموبايل وأنظمة الويب ولوحات التحكم وواجهات REST APIs، مع التركيز على بناء حلول عملية تساعد الشركات والأعمال على إدارة عملياتها."
+               data-en="I am a software developer specializing in Flutter and Laravel. I build mobile applications, web systems, dashboards and REST APIs, focusing on practical solutions that help businesses manage their operations.">
 
-            <p
-                class="hero-description"
-                data-ar="أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي باستخدام Flutter و Laravel. لدي خبرة في بناء تطبيقات الموبايل، أنظمة الإدارة، REST APIs ومشاريع SaaS، بالإضافة إلى التعامل مع قواعد البيانات والخوادم."
-                data-en="I am a software developer specializing in Flutter and Laravel. I build mobile applications, web systems, REST APIs and SaaS products, with experience in databases and server management.">
-
-                أنا مطوّر تطبيقات ومواقع أعمل بشكل أساسي باستخدام Flutter و Laravel.
+                أنا مطوّر برمجيات أعمل بشكل أساسي باستخدام Flutter و Laravel.
+                أطور تطبيقات الموبايل وأنظمة الويب ولوحات التحكم وواجهات REST APIs،
+                مع التركيز على بناء حلول عملية تساعد الشركات والأعمال على إدارة عملياتها.
 
             </p>
 
-
             <div class="hero-actions">
 
-                <a
-                    href="#projects"
-                    class="btn btn-primary"
-                    data-ar="مشاهدة المشاريع"
-                    data-en="View Projects">
-
+                <a href="#projects"
+                   class="btn btn-primary"
+                   data-ar="مشاهدة المشاريع"
+                   data-en="View Projects">
                     مشاهدة المشاريع
-
                 </a>
 
-
-                <a
-                    href="files/Bachir_Toaba_CV (1).pdf"
-                    download
-                    class="btn btn-secondary"
-                    data-ar="تحميل السيرة الذاتية"
-                    data-en="Download CV">
-
+                <a href="files/Bachir_Toaba_CV (1).pdf"
+                   download
+                   class="btn btn-secondary"
+                   data-ar="تحميل السيرة الذاتية"
+                   data-en="Download CV">
                     تحميل السيرة الذاتية
-
                 </a>
 
             </div>
@@ -2746,11 +1276,30 @@ footer {
 
         <div class="hero-photo">
 
+            <img src="images/WhatsApp Image 2025-02-06 at 3.13.44 PM.jpeg"
+                 alt="Bachir Toaba"
+                 fetchpriority="high">
 
-            <img
-                src="images/WhatsApp Image 2025-02-06 at 3.13.44 PM.jpeg"
-                alt="Bachir Toaba">
+            <div class="profile-status">
 
+                <span class="status-dot"></span>
+
+                <div class="status-track">
+
+                    <div class="status-content">
+
+                        <span>Available for Projects</span>
+                        <span>Flutter / Laravel</span>
+                        <span>Available for Projects</span>
+                        <span>Flutter / Laravel</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -2760,42 +1309,27 @@ footer {
 <main>
 
 
-<!-- =========================================================
-   ABOUT
-========================================================= -->
+<!-- =========================================
+     ABOUT
+========================================= -->
 
 <section id="about">
 
     <div class="container">
 
-
         <div class="section-heading">
 
-            <div
-                class="section-number"
-                data-ar="01 / من أنا"
-                data-en="01 / ABOUT">
-
+            <div class="section-number"
+                 data-ar="01 / من أنا"
+                 data-en="01 / ABOUT">
                 01 / من أنا
-
             </div>
 
+            <h2 data-ar="من أنا" data-en="About Me">من أنا</h2>
 
-            <h2
-                data-ar="من أنا"
-                data-en="About Me">
-
-                من أنا
-
-            </h2>
-
-
-            <p
-                data-ar="نبذة مختصرة عني وعن الأشياء التي أعمل عليها."
-                data-en="A short introduction about me and what I work on.">
-
-                نبذة مختصرة عني وعن الأشياء التي أعمل عليها.
-
+            <p data-ar="نبذة عن خبرتي ومجالات عملي."
+               data-en="A little about my experience and work.">
+                نبذة عن خبرتي ومجالات عملي.
             </p>
 
         </div>
@@ -2803,65 +1337,36 @@ footer {
 
         <div class="about">
 
-
             <div>
 
                 <p>
 
-                    <span
-                        data-ar="بدأت العمل في تطوير البرمجيات منذ عدة سنوات، وركزت بشكل أساسي على"
-                        data-en="I started working in software development several years ago, focusing mainly on">
-
+                    <span data-ar="بدأت العمل في تطوير البرمجيات منذ عدة سنوات، وركزت بشكل أساسي على"
+                          data-en="I started working in software development several years ago, focusing mainly on">
                         بدأت العمل في تطوير البرمجيات منذ عدة سنوات،
                         وركزت بشكل أساسي على
-
                     </span>
 
-                    <strong>
-                        Laravel
-                    </strong>
+                    <strong>Laravel</strong>
 
-                    <span
-                        data-ar="و"
-                        data-en="and">
+                    <span data-ar="و" data-en="and">و</span>
 
-                        و
+                    <strong>Flutter</strong>.
 
+                    <br><br>
+
+                    <span data-ar="أعمل على تطوير تطبيقات الموبايل وأنظمة الويب ولوحات التحكم وربط التطبيقات مع REST APIs."
+                          data-en="I develop mobile applications, web systems, dashboards and integrations with REST APIs.">
+                        أعمل على تطوير تطبيقات الموبايل وأنظمة الويب
+                        ولوحات التحكم وربط التطبيقات مع REST APIs.
                     </span>
 
-                    <strong>
-                        Flutter
-                    </strong>.
+                    <br><br>
 
-
-                    <br>
-                    <br>
-
-
-                    <span
-                        data-ar="أعمل على تطوير تطبيقات الموبايل وأنظمة الويب ولوحات التحكم وربط التطبيقات مع REST APIs."
-                        data-en="I develop mobile applications, web systems, dashboards and integrations with REST APIs.">
-
-                        أعمل على تطوير تطبيقات الموبايل
-                        وأنظمة الويب ولوحات التحكم وربط
-                        التطبيقات مع REST APIs.
-
-                    </span>
-
-
-                    <br>
-                    <br>
-
-
-                    <span
-                        data-ar="خلال الفترة الماضية عملت على مشاريع مختلفة، منها أنظمة نقاط البيع، منصات تعليمية، أنظمة SaaS، التجارة الإلكترونية وأنظمة إدارة الموظفين."
-                        data-en="I have worked on different projects, including point-of-sale systems, educational platforms, SaaS products, e-commerce applications and employee management systems.">
-
-                        خلال الفترة الماضية عملت على مشاريع
-                        مختلفة، منها أنظمة نقاط البيع،
-                        منصات تعليمية، أنظمة SaaS،
-                        التجارة الإلكترونية وأنظمة إدارة الموظفين.
-
+                    <span data-ar="عملت على مشاريع مختلفة تشمل أنظمة نقاط البيع، المنصات التعليمية، أنظمة SaaS، التجارة الإلكترونية وإدارة الموظفين."
+                          data-en="I have worked on different projects including POS systems, educational platforms, SaaS products, e-commerce and employee management systems.">
+                        عملت على مشاريع مختلفة تشمل أنظمة نقاط البيع،
+                        المنصات التعليمية، أنظمة SaaS، التجارة الإلكترونية وإدارة الموظفين.
                     </span>
 
                 </p>
@@ -2871,94 +1376,47 @@ footer {
 
             <div class="about-info">
 
-
                 <div class="info-row">
 
-                    <span
-                        data-ar="التخصص"
-                        data-en="Specialization">
+                    <span data-ar="التخصص" data-en="Specialization">التخصص</span>
 
-                        التخصص
-
-                    </span>
-
-                    <span>
-                        Flutter / Laravel
-                    </span>
+                    <span>Flutter / Laravel</span>
 
                 </div>
 
-
                 <div class="info-row">
 
-                    <span>
-                        Laravel
-                    </span>
+                    <span>Laravel</span>
 
-                    <span
-                        data-ar="3+ سنوات"
-                        data-en="3+ years">
-
-                        3+ سنوات
-
-                    </span>
+                    <span data-ar="3+ سنوات" data-en="3+ Years">3+ سنوات</span>
 
                 </div>
 
-
                 <div class="info-row">
 
-                    <span>
-                        Flutter
-                    </span>
+                    <span>Flutter</span>
 
-                    <span
-                        data-ar="2+ سنوات"
-                        data-en="2+ years">
-
-                        2+ سنوات
-
-                    </span>
+                    <span data-ar="2+ سنوات" data-en="2+ Years">2+ سنوات</span>
 
                 </div>
 
-
                 <div class="info-row">
 
-                    <span
-                        data-ar="قواعد البيانات"
-                        data-en="Databases">
+                    <span data-ar="قواعد البيانات" data-en="Databases">قواعد البيانات</span>
 
-                        قواعد البيانات
-
-                    </span>
-
-                    <span>
-                        MySQL / PostgreSQL / SQLite
-                    </span>
+                    <span>MySQL / PostgreSQL / SQLite</span>
 
                 </div>
 
-
                 <div class="info-row">
 
-                    <span
-                        data-ar="العمل"
-                        data-en="Work">
+                    <span data-ar="نوع العمل" data-en="Work">نوع العمل</span>
 
-                        العمل
-
-                    </span>
-
-                    <span>
-                        Freelance
-                    </span>
+                    <span>Freelance</span>
 
                 </div>
-
 
             </div>
-
 
         </div>
 
@@ -2967,42 +1425,121 @@ footer {
 </section>
 
 
-<!-- =========================================================
-   SKILLS
-========================================================= -->
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number"
+                 data-ar="02 / الخدمات"
+                 data-en="02 / SERVICES">
+                02 / الخدمات
+            </div>
+
+            <h2 data-ar="ما الذي أعمل عليه؟"
+                data-en="What I Do">
+                ما الذي أعمل عليه؟
+            </h2>
+
+            <p data-ar="مجالات التطوير التي أركز عليها."
+               data-en="The development areas I focus on.">
+                مجالات التطوير التي أركز عليها.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+            <article class="service">
+
+                <div class="service-number">01</div>
+
+                <h3 data-ar="تطبيقات الموبايل"
+                    data-en="Mobile Applications">
+                    تطبيقات الموبايل
+                </h3>
+
+                <p data-ar="تطوير تطبيقات Android وiOS باستخدام Flutter وربطها بالخوادم وواجهات API."
+                   data-en="Building Android and iOS applications using Flutter and integrating them with APIs and backend services.">
+                    تطوير تطبيقات Android وiOS باستخدام Flutter
+                    وربطها بالخوادم وواجهات API.
+                </p>
+
+            </article>
+
+
+            <article class="service">
+
+                <div class="service-number">02</div>
+
+                <h3 data-ar="تطوير Backend"
+                    data-en="Backend Development">
+                    تطوير Backend
+                </h3>
+
+                <p data-ar="بناء REST APIs وأنظمة المصادقة وقواعد البيانات والخدمات الخلفية باستخدام Laravel."
+                   data-en="Building REST APIs, authentication systems, databases and backend services using Laravel.">
+                    بناء REST APIs وأنظمة المصادقة وقواعد البيانات
+                    والخدمات الخلفية باستخدام Laravel.
+                </p>
+
+            </article>
+
+
+            <article class="service">
+
+                <div class="service-number">03</div>
+
+                <h3 data-ar="أنظمة الأعمال"
+                    data-en="Business Systems">
+                    أنظمة الأعمال
+                </h3>
+
+                <p data-ar="تطوير أنظمة نقاط البيع وإدارة المخزون والفواتير والموظفين وحلول SaaS."
+                   data-en="Developing POS, inventory, invoicing, employee management and SaaS solutions.">
+                    تطوير أنظمة نقاط البيع وإدارة المخزون والفواتير
+                    والموظفين وحلول SaaS.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     SKILLS
+========================================= -->
 
 <section id="skills">
 
     <div class="container">
 
-
         <div class="section-heading">
 
-            <div
-                class="section-number"
-                data-ar="02 / المهارات"
-                data-en="02 / SKILLS">
-
-                02 / المهارات
-
+            <div class="section-number"
+                 data-ar="03 / المهارات"
+                 data-en="03 / SKILLS">
+                03 / المهارات
             </div>
 
-
-            <h2
-                data-ar="المهارات"
-                data-en="Skills">
-
-                المهارات
-
+            <h2 data-ar="التقنيات والمهارات"
+                data-en="Technologies & Skills">
+                التقنيات والمهارات
             </h2>
 
-
-            <p
-                data-ar="أهم التقنيات التي أستخدمها في عملي."
-                data-en="The main technologies I use in my work.">
-
+            <p data-ar="أهم التقنيات التي أستخدمها في عملي."
+               data-en="Technologies I use in my work.">
                 أهم التقنيات التي أستخدمها في عملي.
-
             </p>
 
         </div>
@@ -3010,69 +1547,25 @@ footer {
 
         <div class="skills">
 
-            <span class="skill">
-                Flutter
-            </span>
+            <span class="skill">Flutter</span>
+            <span class="skill">Dart</span>
+            <span class="skill">Laravel</span>
+            <span class="skill">PHP</span>
+            <span class="skill">Django</span>
+            <span class="skill">Python</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">PostgreSQL</span>
+            <span class="skill">SQLite</span>
+            <span class="skill">REST API</span>
+            <span class="skill">Firebase</span>
+            <span class="skill">Git</span>
+            <span class="skill">GitHub</span>
+            <span class="skill">Linux</span>
 
-            <span class="skill">
-                Dart
-            </span>
-
-            <span class="skill">
-                Laravel
-            </span>
-
-            <span class="skill">
-                PHP
-            </span>
-
-            <span class="skill">
-                Django
-            </span>
-
-            <span class="skill">
-                Python
-            </span>
-
-            <span class="skill">
-                MySQL
-            </span>
-
-            <span class="skill">
-                PostgreSQL
-            </span>
-
-            <span class="skill">
-                SQLite
-            </span>
-
-            <span class="skill">
-                REST API
-            </span>
-
-            <span class="skill">
-                Firebase
-            </span>
-
-            <span class="skill">
-                Git
-            </span>
-
-            <span class="skill">
-                GitHub
-            </span>
-
-            <span class="skill">
-                Linux
-            </span>
-
-            <span
-                class="skill"
-                data-ar="إدارة الخوادم"
-                data-en="Server Management">
-
+            <span class="skill"
+                  data-ar="إدارة الخوادم"
+                  data-en="Server Management">
                 إدارة الخوادم
-
             </span>
 
         </div>
@@ -3082,42 +1575,30 @@ footer {
 </section>
 
 
-<!-- =========================================================
-   PROJECTS
-========================================================= -->
+<!-- =========================================
+     PROJECTS
+========================================= -->
 
 <section id="projects">
 
     <div class="container">
 
-
         <div class="section-heading">
 
-            <div
-                class="section-number"
-                data-ar="03 / المشاريع"
-                data-en="03 / PROJECTS">
-
-                03 / المشاريع
-
+            <div class="section-number"
+                 data-ar="04 / المشاريع"
+                 data-en="04 / PROJECTS">
+                04 / المشاريع
             </div>
 
-
-            <h2
-                data-ar="المشاريع"
-                data-en="Projects">
-
+            <h2 data-ar="المشاريع"
+                data-en="Selected Projects">
                 المشاريع
-
             </h2>
 
-
-            <p
-                data-ar="بعض المشاريع التي عملت عليها خلال الفترة الماضية."
-                data-en="Some of the projects I have worked on.">
-
-                بعض المشاريع التي عملت عليها خلال الفترة الماضية.
-
+            <p data-ar="نماذج من الأنظمة والتطبيقات التي عملت عليها."
+               data-en="A selection of systems and applications I have worked on.">
+                نماذج من الأنظمة والتطبيقات التي عملت عليها.
             </p>
 
         </div>
@@ -3132,63 +1613,17 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/1==.PNG"
-                        alt="POS System"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/2==.PNG"
-                        alt="POS System"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/3==.PNG"
-                        alt="POS System"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/4==.PNG"
-                        alt="POS System"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/5==.PNG"
-                        alt="POS System"
-                        loading="lazy">
-
+                    <img class="slide active" src="images/1==.PNG" alt="POS System" loading="lazy">
+                    <img class="slide" src="images/2==.PNG" alt="POS System" loading="lazy">
+                    <img class="slide" src="images/3==.PNG" alt="POS System" loading="lazy">
+                    <img class="slide" src="images/4==.PNG" alt="POS System" loading="lazy">
+                    <img class="slide" src="images/5==.PNG" alt="POS System" loading="lazy">
 
                     <div class="slider-controls">
 
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="prevSlide(this)"
-                            aria-label="Previous image"
-                            data-aria-ar="الصورة السابقة"
-                            data-aria-en="Previous image">
+                        <button type="button" class="slider-button" onclick="changeSlide(this,-1)" aria-label="Previous image">❮</button>
 
-                            ❮
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="nextSlide(this)"
-                            aria-label="Next image"
-                            data-aria-ar="الصورة التالية"
-                            data-aria-en="Next image">
-
-                            ❯
-
-                        </button>
+                        <button type="button" class="slider-button" onclick="changeSlide(this,1)" aria-label="Next image">❯</button>
 
                     </div>
 
@@ -3197,52 +1632,29 @@ footer {
 
                 <div class="project-content">
 
-                    <h3
-                        data-ar="نظام كاشير ونقاط بيع POS"
+                    <h3 data-ar="نظام كاشير ونقاط بيع POS"
                         data-en="POS & Cashier System">
-
                         نظام كاشير ونقاط بيع POS
-
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="نظام لإدارة المبيعات والمنتجات والمخزون والفواتير."
-                        data-en="A system for managing sales, products, inventory and invoices.">
-
-                        نظام لإدارة المبيعات والمنتجات
-                        والمخزون والفواتير.
-
+                    <p class="project-description"
+                       data-ar="نظام لإدارة المبيعات والمنتجات والمخزون والفواتير وحسابات العملاء."
+                       data-en="A system for managing sales, products, inventory, invoices and customer accounts.">
+                        نظام لإدارة المبيعات والمنتجات والمخزون والفواتير وحسابات العملاء.
                     </p>
 
-
                     <div class="project-tech">
-
-                        <span class="tech">
-                            Flutter
-                        </span>
-
-                        <span class="tech">
-                            Laravel
-                        </span>
-
-                        <span class="tech">
-                            MySQL
-                        </span>
-
+                        <span class="tech">Flutter</span>
+                        <span class="tech">Laravel</span>
+                        <span class="tech">MySQL</span>
                     </div>
-
 
                     <div class="project-footer">
 
-                        <span
-                            class="status status-live"
-                            data-ar="مكتمل"
-                            data-en="Completed">
-
+                        <span class="status status-live"
+                              data-ar="مكتمل"
+                              data-en="Completed">
                             مكتمل
-
                         </span>
 
                     </div>
@@ -3258,89 +1670,63 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/dzbac_screens.png"
-                        alt="Baccalaureate Platform"
-                        loading="lazy">
+                    <img class="slide active"
+                         src="images/dzbac_screens.png"
+                         alt="Baccalaureate Platform"
+                         loading="lazy">
 
                 </div>
 
-
                 <div class="project-content">
 
-                    <h3
-                        data-ar="منصة SaaS لطلبة البكالوريا"
-                        data-en="SaaS Platform for Baccalaureate Students">
-
-                        منصة SaaS لطلبة البكالوريا
-
+                    <h3 data-ar="منصة تعليمية لطلبة البكالوريا"
+                        data-en="Baccalaureate Learning Platform">
+                        منصة تعليمية لطلبة البكالوريا
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="منصة مخصصة لطلبة البكالوريا لتوفير المحتوى والموارد التعليمية."
-                        data-en="A platform for baccalaureate students providing educational content and learning resources.">
-
-                        منصة مخصصة لطلبة البكالوريا
-                        لتوفير المحتوى والموارد التعليمية.
-
+                    <p class="project-description"
+                       data-ar="منصة مخصصة لطلبة البكالوريا لتوفير المحتوى والموارد التعليمية."
+                       data-en="An educational platform for baccalaureate students providing learning content and resources.">
+                        منصة مخصصة لطلبة البكالوريا لتوفير المحتوى والموارد التعليمية.
                     </p>
 
-
                     <div class="project-tech">
+                        <span class="tech">Laravel</span>
+                        <span class="tech">MySQL</span>
+                        <span class="tech">SaaS</span>
+                    </div>
 
-                        <span class="tech">
-                            Laravel
-                        </span>
+                    <div class="project-footer">
 
-                        <span class="tech">
-                            SaaS
-                        </span>
+                        <div class="project-links">
 
-                        <span class="tech">
-                            MySQL
+                            <a href="https://dz-bac.com/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="project-link"
+                               data-ar="زيارة المشروع ←"
+                               data-en="Visit Project →">
+                                زيارة المشروع ←
+                            </a>
+
+                            <a href="https://play.google.com/store/apps/details?id=com.dzbac.app"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="project-link">
+                                Google Play ↗
+                            </a>
+
+                        </div>
+
+                        <span class="status status-live"
+                              data-ar="متاح"
+                              data-en="Available">
+                            متاح
                         </span>
 
                     </div>
 
-
-                   
-<div class="project-footer">
-
-    <div class="project-links">
-
-        <a
-            href="https://dz-bac.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-            data-ar="زيارة المشروع ←"
-            data-en="Visit Project →">
-            زيارة المشروع ←
-        </a>
-
-        <a
-            href="https://play.google.com/store/apps/details?id=com.dzbac.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-            data-ar="Google Play ↗"
-            data-en="Google Play ↗">
-            Google Play ↗
-        </a>
-
-    </div>
-
-    <span
-        class="status status-live"
-        data-ar="متاح"
-        data-en="Available">
-        متاح
-    </span>
-
-</div>
+                </div>
 
             </article>
 
@@ -3351,47 +1737,29 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/flexi_fath_collage.png"
-                        alt="Recharge Card Management"
-                        loading="lazy">
+                    <img class="slide active"
+                         src="images/flexi_fath_collage.png"
+                         alt="Recharge Card Management"
+                         loading="lazy">
 
                 </div>
 
-
                 <div class="project-content">
 
-                    <h3
-                        data-ar="SaaS لإدارة بطاقات الشحن"
-                        data-en="SaaS Recharge Card Management">
-
-                        SaaS لإدارة بطاقات الشحن
-
+                    <h3 data-ar="نظام إدارة بطاقات الشحن"
+                        data-en="Recharge Card Management">
+                        نظام إدارة بطاقات الشحن
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="نظام لإدارة بطاقات الشحن والمبيعات والمخزون."
-                        data-en="A system for managing recharge cards, sales and inventory.">
-
-                        نظام لإدارة بطاقات الشحن
-                        والمبيعات والمخزون.
-
+                    <p class="project-description"
+                       data-ar="نظام لإدارة بطاقات الشحن والمبيعات والمخزون."
+                       data-en="A system for managing recharge cards, sales and inventory.">
+                        نظام لإدارة بطاقات الشحن والمبيعات والمخزون.
                     </p>
 
-
                     <div class="project-tech">
-
-                        <span class="tech">
-                            Flutter
-                        </span>
-
-                        <span class="tech">
-                            Laravel
-                        </span>
-
+                        <span class="tech">Flutter</span>
+                        <span class="tech">Laravel</span>
                     </div>
 
                 </div>
@@ -3405,126 +1773,51 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/3.PNG"
-                        alt="Employee Management"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/4.PNG"
-                        alt="Employee Management"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/5.PNG"
-                        alt="Employee Details"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/photo_2026-06-08_13-33-47.jpg"
-                        alt="Employees"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/7.PNG"
-                        alt="System Statistics"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/9.PNG"
-                        alt="System Settings"
-                        loading="lazy">
-
+                    <img class="slide active" src="images/3.PNG" alt="Employee Management" loading="lazy">
+                    <img class="slide" src="images/4.PNG" alt="Employee Management" loading="lazy">
+                    <img class="slide" src="images/5.PNG" alt="Employee Details" loading="lazy">
+                    <img class="slide" src="images/photo_2026-06-08_13-33-47.jpg" alt="Employees" loading="lazy">
+                    <img class="slide" src="images/7.PNG" alt="System Statistics" loading="lazy">
+                    <img class="slide" src="images/9.PNG" alt="System Settings" loading="lazy">
 
                     <div class="slider-controls">
 
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="prevSlide(this)"
-                            aria-label="Previous image"
-                            data-aria-ar="الصورة السابقة"
-                            data-aria-en="Previous image">
+                        <button type="button" class="slider-button" onclick="changeSlide(this,-1)" aria-label="Previous image">❮</button>
 
-                            ❮
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="nextSlide(this)"
-                            aria-label="Next image"
-                            data-aria-ar="الصورة التالية"
-                            data-aria-en="Next image">
-
-                            ❯
-
-                        </button>
+                        <button type="button" class="slider-button" onclick="changeSlide(this,1)" aria-label="Next image">❯</button>
 
                     </div>
 
                 </div>
 
-
                 <div class="project-content">
 
-                    <h3
-                        data-ar="SaaS لإدارة الموظفين"
-                        data-en="Employee Management SaaS">
-
-                        SaaS لإدارة الموظفين
-
+                    <h3 data-ar="نظام إدارة الموظفين"
+                        data-en="Employee Management System">
+                        نظام إدارة الموظفين
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="نظام لإدارة الموظفين والبيانات والإحصائيات والإعدادات."
-                        data-en="A system for managing employees, data, statistics and settings.">
-
-                        نظام لإدارة الموظفين والبيانات
-                        والإحصائيات والإعدادات.
-
+                    <p class="project-description"
+                       data-ar="نظام لإدارة الموظفين والبيانات والإحصائيات والإعدادات."
+                       data-en="A system for managing employees, data, statistics and settings.">
+                        نظام لإدارة الموظفين والبيانات والإحصائيات والإعدادات.
                     </p>
 
-
                     <div class="project-tech">
-
-                        <span class="tech">
-                            Laravel
-                        </span>
-
-                        <span class="tech">
-                            PHP
-                        </span>
-
-                        <span class="tech">
-                            MySQL
-                        </span>
-
+                        <span class="tech">Laravel</span>
+                        <span class="tech">PHP</span>
+                        <span class="tech">MySQL</span>
                     </div>
-
 
                     <div class="project-footer">
 
-                        <a
-                            href="https://optipaie-dz.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                            data-ar="زيارة المشروع ←"
-                            data-en="Visit Project →">
-
+                        <a href="https://optipaie-dz.com"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link"
+                           data-ar="زيارة المشروع ←"
+                           data-en="Visit Project →">
                             زيارة المشروع ←
-
                         </a>
 
                     </div>
@@ -3540,99 +1833,38 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/Screenshot_28-7-2025_34625_127.0.0.1.jpeg"
-                        alt="Multi Service Platform"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot_28-7-2025_33212_127.0.0.1.jpeg"
-                        alt="User Interface"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot_28-7-2025_33228_127.0.0.1.jpeg"
-                        alt="News System"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot_28-7-2025_3337_127.0.0.1.jpeg"
-                        alt="Dashboard"
-                        loading="lazy">
-
+                    <img class="slide active" src="images/Screenshot_28-7-2025_34625_127.0.0.1.jpeg" alt="Multi Service Platform" loading="lazy">
+                    <img class="slide" src="images/Screenshot_28-7-2025_33212_127.0.0.1.jpeg" alt="User Interface" loading="lazy">
+                    <img class="slide" src="images/Screenshot_28-7-2025_33228_127.0.0.1.jpeg" alt="News System" loading="lazy">
+                    <img class="slide" src="images/Screenshot_28-7-2025_3337_127.0.0.1.jpeg" alt="Dashboard" loading="lazy">
 
                     <div class="slider-controls">
 
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="prevSlide(this)"
-                            aria-label="Previous image"
-                            data-aria-ar="الصورة السابقة"
-                            data-aria-en="Previous image">
+                        <button type="button" class="slider-button" onclick="changeSlide(this,-1)" aria-label="Previous image">❮</button>
 
-                            ❮
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="nextSlide(this)"
-                            aria-label="Next image"
-                            data-aria-ar="الصورة التالية"
-                            data-aria-en="Next image">
-
-                            ❯
-
-                        </button>
+                        <button type="button" class="slider-button" onclick="changeSlide(this,1)" aria-label="Next image">❯</button>
 
                     </div>
 
                 </div>
 
-
                 <div class="project-content">
 
-                    <h3
-                        data-ar="منصة متعددة الخدمات"
+                    <h3 data-ar="منصة متعددة الخدمات"
                         data-en="Multi-Service Platform">
-
                         منصة متعددة الخدمات
-
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="منصة تجمع التعليم والتجارة والتواصل داخل نظام واحد."
-                        data-en="A platform combining education, commerce and communication in one system.">
-
-                        منصة تجمع التعليم والتجارة
-                        والتواصل داخل نظام واحد.
-
+                    <p class="project-description"
+                       data-ar="منصة تجمع التعليم والتجارة والتواصل داخل نظام واحد."
+                       data-en="A platform combining education, commerce and communication in one system.">
+                        منصة تجمع التعليم والتجارة والتواصل داخل نظام واحد.
                     </p>
 
-
                     <div class="project-tech">
-
-                        <span class="tech">
-                            Laravel
-                        </span>
-
-                        <span class="tech">
-                            Flutter
-                        </span>
-
-                        <span class="tech">
-                            API
-                        </span>
-
+                        <span class="tech">Laravel</span>
+                        <span class="tech">Flutter</span>
+                        <span class="tech">REST API</span>
                     </div>
 
                 </div>
@@ -3646,108 +1878,48 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/Screenshot_18-6-2025_62713_elitelibrarydz12.com.jpeg"
-                        alt="University Library"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot_18-6-2025_62928_elitelibrarydz12.com.jpeg"
-                        alt="University Library"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot_18-6-2025_62914_elitelibrarydz12.com.jpeg"
-                        alt="University Library"
-                        loading="lazy">
-
+                    <img class="slide active" src="images/Screenshot_18-6-2025_62713_elitelibrarydz12.com.jpeg" alt="University Library" loading="lazy">
+                    <img class="slide" src="images/Screenshot_18-6-2025_62928_elitelibrarydz12.com.jpeg" alt="University Library" loading="lazy">
+                    <img class="slide" src="images/Screenshot_18-6-2025_62914_elitelibrarydz12.com.jpeg" alt="University Library" loading="lazy">
 
                     <div class="slider-controls">
 
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="prevSlide(this)"
-                            aria-label="Previous image"
-                            data-aria-ar="الصورة السابقة"
-                            data-aria-en="Previous image">
+                        <button type="button" class="slider-button" onclick="changeSlide(this,-1)" aria-label="Previous image">❮</button>
 
-                            ❮
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="nextSlide(this)"
-                            aria-label="Next image"
-                            data-aria-ar="الصورة التالية"
-                            data-aria-en="Next image">
-
-                            ❯
-
-                        </button>
+                        <button type="button" class="slider-button" onclick="changeSlide(this,1)" aria-label="Next image">❯</button>
 
                     </div>
 
                 </div>
 
-
                 <div class="project-content">
 
-                    <h3
-                        data-ar="موقع المكتبة الجامعية"
+                    <h3 data-ar="موقع المكتبة الجامعية"
                         data-en="University Library Website">
-
                         موقع المكتبة الجامعية
-
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="موقع يسمح للطلاب بتحميل البحوث والمحاضرات والمحتوى الدراسي."
-                        data-en="A website where students can download research papers, lectures and educational content.">
-
-                        موقع يسمح للطلاب بتحميل
-                        البحوث والمحاضرات والمحتوى الدراسي.
-
+                    <p class="project-description"
+                       data-ar="موقع يسمح للطلاب بتحميل البحوث والمحاضرات والمحتوى الدراسي."
+                       data-en="A website where students can download research papers, lectures and educational content.">
+                        موقع يسمح للطلاب بتحميل البحوث والمحاضرات والمحتوى الدراسي.
                     </p>
 
-
                     <div class="project-tech">
-
-                        <span class="tech">
-                            Laravel
-                        </span>
-
-                        <span class="tech">
-                            PHP
-                        </span>
-
-                        <span class="tech">
-                            MySQL
-                        </span>
-
+                        <span class="tech">Laravel</span>
+                        <span class="tech">PHP</span>
+                        <span class="tech">MySQL</span>
                     </div>
-
 
                     <div class="project-footer">
 
-                        <a
-                            href="https://elitelibrarydz12.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link"
-                            data-ar="زيارة الموقع ←"
-                            data-en="Visit Website →">
-
+                        <a href="https://elitelibrarydz12.com"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link"
+                           data-ar="زيارة الموقع ←"
+                           data-en="Visit Website →">
                             زيارة الموقع ←
-
                         </a>
 
                     </div>
@@ -3763,124 +1935,49 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/Screenshot (125).png"
-                        alt="Craftsmen E-Commerce"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (124).png"
-                        alt="Products"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (121).png"
-                        alt="E-Commerce"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (119).png"
-                        alt="Orders"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (15).png"
-                        alt="Craftsmen"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (11).png"
-                        alt="Craftsmen"
-                        loading="lazy">
-
+                    <img class="slide active" src="images/Screenshot (125).png" alt="Craftsmen E-Commerce" loading="lazy">
+                    <img class="slide" src="images/Screenshot (124).png" alt="Products" loading="lazy">
+                    <img class="slide" src="images/Screenshot (121).png" alt="E-Commerce" loading="lazy">
+                    <img class="slide" src="images/Screenshot (119).png" alt="Orders" loading="lazy">
+                    <img class="slide" src="images/Screenshot (15).png" alt="Craftsmen" loading="lazy">
+                    <img class="slide" src="images/Screenshot (11).png" alt="Craftsmen" loading="lazy">
 
                     <div class="slider-controls">
 
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="prevSlide(this)"
-                            aria-label="Previous image"
-                            data-aria-ar="الصورة السابقة"
-                            data-aria-en="Previous image">
+                        <button type="button" class="slider-button" onclick="changeSlide(this,-1)" aria-label="Previous image">❮</button>
 
-                            ❮
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="nextSlide(this)"
-                            aria-label="Next image"
-                            data-aria-ar="الصورة التالية"
-                            data-aria-en="Next image">
-
-                            ❯
-
-                        </button>
+                        <button type="button" class="slider-button" onclick="changeSlide(this,1)" aria-label="Next image">❯</button>
 
                     </div>
 
                 </div>
 
-
                 <div class="project-content">
 
-                    <h3
-                        data-ar="تطبيق تجارة إلكترونية للحرفيين"
+                    <h3 data-ar="تطبيق تجارة إلكترونية للحرفيين"
                         data-en="E-Commerce App for Craftsmen">
-
                         تطبيق تجارة إلكترونية للحرفيين
-
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="تطبيق يسمح للحرفيين بعرض منتجاتهم وبيعها عبر الإنترنت، مع لوحة تحكم لإدارة المنتجات والطلبات."
-                        data-en="An application that allows craftsmen to showcase and sell their products online, with a dashboard for managing products and orders.">
-
-                        تطبيق يسمح للحرفيين بعرض
-                        منتجاتهم وبيعها عبر الإنترنت،
+                    <p class="project-description"
+                       data-ar="تطبيق يسمح للحرفيين بعرض منتجاتهم وبيعها عبر الإنترنت، مع لوحة تحكم لإدارة المنتجات والطلبات."
+                       data-en="An application that allows craftsmen to showcase and sell products online, with a dashboard for managing products and orders.">
+                        تطبيق يسمح للحرفيين بعرض منتجاتهم وبيعها عبر الإنترنت،
                         مع لوحة تحكم لإدارة المنتجات والطلبات.
-
                     </p>
 
-
                     <div class="project-tech">
-
-                        <span class="tech">
-                            Flutter
-                        </span>
-
-                        <span class="tech">
-                            Laravel
-                        </span>
-
-                        <span class="tech">
-                            REST API
-                        </span>
-
+                        <span class="tech">Flutter</span>
+                        <span class="tech">Laravel</span>
+                        <span class="tech">REST API</span>
                     </div>
-
 
                     <div class="project-footer">
 
-                        <span
-                            class="status status-development"
-                            data-ar="قيد التطوير"
-                            data-en="In Development">
-
+                        <span class="status status-development"
+                              data-ar="قيد التطوير"
+                              data-en="In Development">
                             قيد التطوير
-
                         </span>
 
                     </div>
@@ -3896,101 +1993,44 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/Screenshot (320).png"
-                        alt="Interactive Quiz"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (317).png"
-                        alt="Quiz Results"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (315).png"
-                        alt="User Page"
-                        loading="lazy">
-
+                    <img class="slide active" src="images/Screenshot (320).png" alt="Interactive Quiz" loading="lazy">
+                    <img class="slide" src="images/Screenshot (317).png" alt="Quiz Results" loading="lazy">
+                    <img class="slide" src="images/Screenshot (315).png" alt="User Page" loading="lazy">
 
                     <div class="slider-controls">
 
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="prevSlide(this)"
-                            aria-label="Previous image"
-                            data-aria-ar="الصورة السابقة"
-                            data-aria-en="Previous image">
+                        <button type="button" class="slider-button" onclick="changeSlide(this,-1)" aria-label="Previous image">❮</button>
 
-                            ❮
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="nextSlide(this)"
-                            aria-label="Next image"
-                            data-aria-ar="الصورة التالية"
-                            data-aria-en="Next image">
-
-                            ❯
-
-                        </button>
+                        <button type="button" class="slider-button" onclick="changeSlide(this,1)" aria-label="Next image">❯</button>
 
                     </div>
 
                 </div>
 
-
                 <div class="project-content">
 
-                    <h3
-                        data-ar="تطبيق اختبارات تفاعلية"
+                    <h3 data-ar="تطبيق اختبارات تفاعلية"
                         data-en="Interactive Quiz App">
-
                         تطبيق اختبارات تفاعلية
-
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="تطبيق لإجراء الاختبارات أونلاين مع التصحيح الفوري وعرض النتائج."
-                        data-en="An application for taking online quizzes with instant correction and results.">
-
-                        تطبيق لإجراء الاختبارات أونلاين
-                        مع التصحيح الفوري وعرض النتائج.
-
+                    <p class="project-description"
+                       data-ar="تطبيق لإجراء الاختبارات أونلاين مع التصحيح الفوري وعرض النتائج."
+                       data-en="An application for taking online quizzes with instant correction and results.">
+                        تطبيق لإجراء الاختبارات أونلاين مع التصحيح الفوري وعرض النتائج.
                     </p>
 
-
                     <div class="project-tech">
-
-                        <span class="tech">
-                            Flutter
-                        </span>
-
-                        <span class="tech">
-                            Laravel
-                        </span>
-
+                        <span class="tech">Flutter</span>
+                        <span class="tech">Laravel</span>
                     </div>
-
 
                     <div class="project-footer">
 
-                        <span
-                            class="status status-development"
-                            data-ar="قيد التطوير"
-                            data-en="In Development">
-
+                        <span class="status status-development"
+                              data-ar="قيد التطوير"
+                              data-en="In Development">
                             قيد التطوير
-
                         </span>
 
                     </div>
@@ -4006,106 +2046,46 @@ footer {
 
                 <div class="slider">
 
-                    <img
-                        class="slide active"
-                        src="images/Screenshot (167).png"
-                        alt="Livestock Marketplace"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (157).png"
-                        alt="Animal Listings"
-                        loading="lazy">
-
-                    <img
-                        class="slide"
-                        src="images/Screenshot (152).png"
-                        alt="Contact Page"
-                        loading="lazy">
-
+                    <img class="slide active" src="images/Screenshot (167).png" alt="Livestock Marketplace" loading="lazy">
+                    <img class="slide" src="images/Screenshot (157).png" alt="Animal Listings" loading="lazy">
+                    <img class="slide" src="images/Screenshot (152).png" alt="Contact Page" loading="lazy">
 
                     <div class="slider-controls">
 
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="prevSlide(this)"
-                            aria-label="Previous image"
-                            data-aria-ar="الصورة السابقة"
-                            data-aria-en="Previous image">
+                        <button type="button" class="slider-button" onclick="changeSlide(this,-1)" aria-label="Previous image">❮</button>
 
-                            ❮
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="slider-button"
-                            onclick="nextSlide(this)"
-                            aria-label="Next image"
-                            data-aria-ar="الصورة التالية"
-                            data-aria-en="Next image">
-
-                            ❯
-
-                        </button>
+                        <button type="button" class="slider-button" onclick="changeSlide(this,1)" aria-label="Next image">❯</button>
 
                     </div>
 
                 </div>
 
-
                 <div class="project-content">
 
-                    <h3
-                        data-ar="تطبيق الموارد الحيوانية"
+                    <h3 data-ar="تطبيق سوق المواشي"
                         data-en="Livestock Marketplace App">
-
-                        تطبيق الموارد الحيوانية
-
+                        تطبيق سوق المواشي
                     </h3>
 
-
-                    <p
-                        class="project-description"
-                        data-ar="تطبيق لبيع وشراء المواشي والطيور والمنتجات المرتبطة بها، مع إمكانية إضافة الإعلانات والتواصل مع البائعين."
-                        data-en="An application for buying and selling livestock, birds and related products, with the ability to publish listings and communicate with sellers.">
-
-                        تطبيق لبيع وشراء المواشي والطيور
-                        والمنتجات المرتبطة بها، مع إمكانية
-                        إضافة الإعلانات والتواصل مع البائعين.
-
+                    <p class="project-description"
+                       data-ar="تطبيق لبيع وشراء المواشي والطيور والمنتجات المرتبطة بها، مع إمكانية إضافة الإعلانات والتواصل مع البائعين."
+                       data-en="An application for buying and selling livestock, birds and related products, with listing and seller communication features.">
+                        تطبيق لبيع وشراء المواشي والطيور والمنتجات المرتبطة بها،
+                        مع إمكانية إضافة الإعلانات والتواصل مع البائعين.
                     </p>
 
-
                     <div class="project-tech">
-
-                        <span class="tech">
-                            Flutter
-                        </span>
-
-                        <span class="tech">
-                            Laravel
-                        </span>
-
-                        <span class="tech">
-                            API
-                        </span>
-
+                        <span class="tech">Flutter</span>
+                        <span class="tech">Laravel</span>
+                        <span class="tech">REST API</span>
                     </div>
-
 
                     <div class="project-footer">
 
-                        <span
-                            class="status status-development"
-                            data-ar="قيد التطوير"
-                            data-en="In Development">
-
+                        <span class="status status-development"
+                              data-ar="قيد التطوير"
+                              data-en="In Development">
                             قيد التطوير
-
                         </span>
 
                     </div>
@@ -4122,42 +2102,30 @@ footer {
 </section>
 
 
-<!-- =========================================================
-   CERTIFICATES
-========================================================= -->
+<!-- =========================================
+     CERTIFICATES
+========================================= -->
 
 <section id="certificates">
 
     <div class="container">
 
-
         <div class="section-heading">
 
-            <div
-                class="section-number"
-                data-ar="04 / الشهادات"
-                data-en="04 / CERTIFICATES">
-
-                04 / الشهادات
-
+            <div class="section-number"
+                 data-ar="05 / الشهادات"
+                 data-en="05 / CERTIFICATES">
+                05 / الشهادات
             </div>
 
-
-            <h2
-                data-ar="الشهادات"
-                data-en="Certificates">
-
-                الشهادات
-
+            <h2 data-ar="الشهادات والدورات"
+                data-en="Certificates & Courses">
+                الشهادات والدورات
             </h2>
 
-
-            <p
-                data-ar="بعض الشهادات والدورات التي حصلت عليها."
-                data-en="Some of the certificates and courses I have completed.">
-
+            <p data-ar="بعض الشهادات والدورات التي حصلت عليها."
+               data-en="Some certificates and courses I have completed.">
                 بعض الشهادات والدورات التي حصلت عليها.
-
             </p>
 
         </div>
@@ -4165,20 +2133,15 @@ footer {
 
         <div class="certificates">
 
-
             <div class="certificate">
 
-                <img
-                    src="images/fgfg.PNG"
-                    alt="Problem Solving Level 2"
-                    loading="lazy">
+                <img src="images/fgfg.PNG"
+                     alt="Problem Solving Level 2"
+                     loading="lazy">
 
-                <h3
-                    data-ar="Problem Solving المستوى 2"
+                <h3 data-ar="Problem Solving المستوى 2"
                     data-en="Problem Solving Level 2">
-
                     Problem Solving المستوى 2
-
                 </h3>
 
             </div>
@@ -4186,17 +2149,13 @@ footer {
 
             <div class="certificate">
 
-                <img
-                    src="images/ccpsc.PNG"
-                    alt="C++ Level 2"
-                    loading="lazy">
+                <img src="images/ccpsc.PNG"
+                     alt="C++ Level 2"
+                     loading="lazy">
 
-                <h3
-                    data-ar="C++ المستوى 2"
+                <h3 data-ar="C++ المستوى 2"
                     data-en="C++ Level 2">
-
                     C++ المستوى 2
-
                 </h3>
 
             </div>
@@ -4204,17 +2163,13 @@ footer {
 
             <div class="certificate">
 
-                <img
-                    src="images/alg.PNG"
-                    alt="Problem Solving Level 3"
-                    loading="lazy">
+                <img src="images/alg.PNG"
+                     alt="Problem Solving Level 3"
+                     loading="lazy">
 
-                <h3
-                    data-ar="Problem Solving المستوى 3"
+                <h3 data-ar="Problem Solving المستوى 3"
                     data-en="Problem Solving Level 3">
-
                     Problem Solving المستوى 3
-
                 </h3>
 
             </div>
@@ -4222,21 +2177,16 @@ footer {
 
             <div class="certificate">
 
-                <img
-                    src="images/1.PNG"
-                    alt="Problem Solving Level 4"
-                    loading="lazy">
+                <img src="images/1.PNG"
+                     alt="Problem Solving Level 4"
+                     loading="lazy">
 
-                <h3
-                    data-ar="Problem Solving المستوى 4"
+                <h3 data-ar="Problem Solving المستوى 4"
                     data-en="Problem Solving Level 4">
-
                     Problem Solving المستوى 4
-
                 </h3>
 
             </div>
-
 
         </div>
 
@@ -4245,48 +2195,33 @@ footer {
 </section>
 
 
-<!-- =========================================================
-   CONTACT
-========================================================= -->
+<!-- =========================================
+     CONTACT
+========================================= -->
 
 <section id="contact">
 
     <div class="container">
 
-
         <div class="contact">
-
 
             <div class="contact-text">
 
-                <div
-                    class="section-number"
-                    data-ar="05 / تواصل"
-                    data-en="05 / CONTACT">
-
-                    05 / تواصل
-
+                <div class="section-number"
+                     data-ar="06 / تواصل"
+                     data-en="06 / CONTACT">
+                    06 / تواصل
                 </div>
 
-
-                <h2
-                    data-ar="تواصل معي"
-                    data-en="Get In Touch">
-
-                    تواصل معي
-
+                <h2 data-ar="لنعمل معاً"
+                    data-en="Let's Work Together">
+                    لنعمل معاً
                 </h2>
 
-
-                <p
-                    data-ar="إذا كنت تعمل على مشروع وتحتاج إلى تطوير تطبيق أو موقع أو API، يمكنك التواصل معي عبر البريد الإلكتروني أو الهاتف."
-                    data-en="If you are working on a project and need an application, website or API, feel free to contact me by email or phone.">
-
-                    إذا كنت تعمل على مشروع وتحتاج
-                    إلى تطوير تطبيق أو موقع أو API،
-                    يمكنك التواصل معي عبر البريد
-                    الإلكتروني أو الهاتف.
-
+                <p data-ar="إذا كنت تعمل على مشروع وتحتاج إلى تطوير تطبيق أو موقع أو API، يمكنك التواصل معي عبر البريد الإلكتروني أو الهاتف."
+                   data-en="If you have a project and need a mobile application, website or API, feel free to contact me by email or phone.">
+                    إذا كنت تعمل على مشروع وتحتاج إلى تطوير تطبيق أو موقع أو API،
+                    يمكنك التواصل معي عبر البريد الإلكتروني أو الهاتف.
                 </p>
 
             </div>
@@ -4294,39 +2229,26 @@ footer {
 
             <div class="contact-links">
 
-
-                <a
-                    href="mailto:bachirtoaba@gmail.com"
-                    class="contact-link">
-
+                <a href="mailto:bachirtoaba@gmail.com"
+                   class="contact-link">
                     bachirtoaba@gmail.com
-
                 </a>
 
-
-                <a
-                    href="tel:0773990319"
-                    class="contact-link">
-
+                <a href="tel:0773990319"
+                   class="contact-link"
+                   dir="ltr">
                     0773990319
-
                 </a>
 
-
-                <a
-                    href="files/Bachir_Toaba_CV (1).pdf"
-                    download
-                    class="contact-link"
-                    data-ar="تحميل السيرة الذاتية"
-                    data-en="Download CV">
-
+                <a href="files/Bachir_Toaba_CV (1).pdf"
+                   download
+                   class="contact-link"
+                   data-ar="تحميل السيرة الذاتية"
+                   data-en="Download CV">
                     تحميل السيرة الذاتية
-
                 </a>
-
 
             </div>
-
 
         </div>
 
@@ -4338,9 +2260,9 @@ footer {
 </main>
 
 
-<!-- =========================================================
-   FOOTER
-========================================================= -->
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer>
 
@@ -4359,290 +2281,118 @@ footer {
 </footer>
 
 
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
-/* =========================================================
-   SLIDER
-========================================================= */
-
-function changeSlide(button, direction) {
-
-    const slider =
-        button.closest('.slider');
-
-    if (!slider) {
-        return;
-    }
-
-
-    const slides =
-        slider.querySelectorAll('.slide');
-
-    if (slides.length <= 1) {
-        return;
-    }
-
-
-    let currentIndex = 0;
-
-
-    slides.forEach(
-        (slide, index) => {
-
-            if (
-                slide.classList.contains('active')
-            ) {
-
-                currentIndex = index;
-
-            }
-
-        }
-    );
-
-
-    slides[currentIndex]
-        .classList.remove('active');
-
-
-    let newIndex =
-        currentIndex + direction;
-
-
-    if (newIndex >= slides.length) {
-
-        newIndex = 0;
-
-    }
-
-
-    if (newIndex < 0) {
-
-        newIndex = slides.length - 1;
-
-    }
-
-
-    slides[newIndex]
-        .classList.add('active');
-
-}
-
-
-function nextSlide(button) {
-
-    changeSlide(
-        button,
-        1
-    );
-
-}
-
-
-function prevSlide(button) {
-
-    changeSlide(
-        button,
-        -1
-    );
-
-}
-
-
-/* =========================================================
-   SLIDER KEYBOARD
-========================================================= */
-
-let activeSlider = null;
-
-
-document
-    .querySelectorAll('.slider')
-    .forEach(slider => {
-
-
-        slider.addEventListener(
-            'mouseenter',
-            () => {
-
-                activeSlider =
-                    slider;
-
-            }
-        );
-
-
-        slider.addEventListener(
-            'mouseleave',
-            () => {
-
-                activeSlider =
-                    null;
-
-            }
-        );
-
-
-        slider.addEventListener(
-            'focusin',
-            () => {
-
-                activeSlider =
-                    slider;
-
-            }
-        );
-
-    });
-
-
-document.addEventListener(
-    'keydown',
-    event => {
-
-        if (
-            event.key !== 'ArrowLeft' &&
-            event.key !== 'ArrowRight'
-        ) {
-
-            return;
-
-        }
-
-
-        if (!activeSlider) {
-
-            return;
-
-        }
-
-
-        const button =
-            activeSlider.querySelector(
-                event.key === 'ArrowLeft'
-                    ? '.slider-button:last-child'
-                    : '.slider-button:first-child'
-            );
-
-
-        if (button) {
-
-            button.click();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
+/* =========================================
    LANGUAGE
-========================================================= */
+========================================= */
 
 const translations = {
-ar: {
-    title: 'Bachir Toaba | Portfolio',
-    description: 'Bachir Toaba | Personal Portfolio'
-},
 
-en: {
-    title: 'Bachir Toaba | Portfolio',
-    description: 'Bachir Toaba | Personal Portfolio'
-}
+    ar: {
+        title: 'Bachir Toaba | مطور برمجيات',
+        description: 'بشير طعابة - مطور Flutter و Laravel. تطوير تطبيقات الموبايل وأنظمة الويب وواجهات API.'
+    },
+
+    en: {
+        title: 'Bachir Toaba | Software Developer',
+        description: 'Bachir Toaba - Flutter and Laravel Developer. Mobile applications, web systems and REST APIs.'
+    }
 
 };
 
 
-let currentLanguage =
-    localStorage.getItem('language') || 'ar';
+let currentLanguage = 'ar';
+
+
+try {
+
+    const savedLanguage = localStorage.getItem('language');
+
+    if (savedLanguage === 'ar' || savedLanguage === 'en') {
+        currentLanguage = savedLanguage;
+    }
+
+} catch (error) {
+
+    console.warn('Local storage is unavailable.');
+
+}
 
 
 function applyLanguage(language) {
 
-    currentLanguage =
-        language;
-
-
-    document.documentElement.lang =
-        language;
-
-
-    document.documentElement.dir =
-        language === 'ar'
-            ? 'rtl'
-            : 'ltr';
-
-
-    document
-        .querySelectorAll(
-            '[data-ar][data-en]'
-        )
-        .forEach(element => {
-
-            element.textContent =
-                language === 'ar'
-                    ? element.dataset.ar
-                    : element.dataset.en;
-
-        });
-
-
-    document
-        .querySelectorAll(
-            '[data-aria-ar][data-aria-en]'
-        )
-        .forEach(element => {
-
-            element.setAttribute(
-                'aria-label',
-                language === 'ar'
-                    ? element.dataset.ariaAr
-                    : element.dataset.ariaEn
-            );
-
-        });
-
-
-    document.title =
-        translations[language].title;
-
-
-    const description =
-        document.querySelector(
-            'meta[name="description"]'
-        );
-
-
-    if (description) {
-
-        description.setAttribute(
-            'content',
-            translations[language].description
-        );
-
+    if (!['ar', 'en'].includes(language)) {
+        return;
     }
 
+    currentLanguage = language;
 
-    const languageText =
-        document.getElementById(
-            'languageText'
-        );
+    document.documentElement.lang = language;
 
+    document.documentElement.dir =
+        language === 'ar' ? 'rtl' : 'ltr';
+
+
+    document.querySelectorAll('[data-ar][data-en]').forEach(element => {
+
+        element.textContent =
+            language === 'ar'
+                ? element.dataset.ar
+                : element.dataset.en;
+
+    });
+
+
+    const languageText = document.getElementById('languageText');
 
     if (languageText) {
 
         languageText.textContent =
-            language === 'ar'
-                ? 'English'
-                : 'العربية';
+            language === 'ar' ? 'English' : 'العربية';
 
     }
 
 
-    localStorage.setItem(
-        'language',
-        language
-    );
+    const menuToggle = document.getElementById('menuToggle');
+
+    if (menuToggle) {
+
+        const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+
+        menuToggle.setAttribute(
+            'aria-label',
+            isOpen
+                ? (language === 'ar' ? 'إغلاق القائمة' : 'Close menu')
+                : (language === 'ar' ? 'فتح القائمة' : 'Open menu')
+        );
+
+    }
+
+
+    document.title = translations[language].title;
+
+
+    const description = document.querySelector('meta[name="description"]');
+
+    if (description) {
+        description.setAttribute('content', translations[language].description);
+    }
+
+
+    try {
+
+        localStorage.setItem('language', language);
+
+    } catch (error) {
+
+        console.warn('Could not save language preference.');
+
+    }
 
 }
 
@@ -4650,115 +2400,130 @@ function applyLanguage(language) {
 function toggleLanguage() {
 
     applyLanguage(
-        currentLanguage === 'ar'
-            ? 'en'
-            : 'ar'
+        currentLanguage === 'ar' ? 'en' : 'ar'
     );
 
 }
 
 
-/* =========================================================
+document.getElementById('languageSwitch').addEventListener(
+    'click',
+    toggleLanguage
+);
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+function changeSlide(button, direction) {
+
+    const slider = button.closest('.slider');
+
+    if (!slider) {
+        return;
+    }
+
+    const slides = slider.querySelectorAll('.slide');
+
+    if (slides.length <= 1) {
+        return;
+    }
+
+    let currentIndex = Array.from(slides).findIndex(
+        slide => slide.classList.contains('active')
+    );
+
+    if (currentIndex === -1) {
+        currentIndex = 0;
+    }
+
+    slides[currentIndex].classList.remove('active');
+
+    const newIndex =
+        (currentIndex + direction + slides.length) % slides.length;
+
+    slides[newIndex].classList.add('active');
+
+}
+
+
+/* =========================================
    MOBILE MENU
-========================================================= */
+========================================= */
 
-const menuToggle =
-    document.getElementById(
-        'menuToggle'
+const menuToggle = document.getElementById('menuToggle');
+
+const mobileMenu = document.getElementById('mobileMenu');
+
+
+function closeMobileMenu() {
+
+    mobileMenu.classList.remove('open');
+
+    menuToggle.setAttribute('aria-expanded', 'false');
+
+    menuToggle.setAttribute(
+        'aria-label',
+        currentLanguage === 'ar' ? 'فتح القائمة' : 'Open menu'
     );
-
-
-const mobileMenu =
-    document.getElementById(
-        'mobileMenu'
-    );
-
-
-if (
-    menuToggle &&
-    mobileMenu
-) {
-
-    menuToggle.addEventListener(
-        'click',
-        () => {
-
-            const isOpen =
-                mobileMenu.classList.toggle(
-                    'open'
-                );
-
-
-            menuToggle.setAttribute(
-                'aria-expanded',
-                String(isOpen)
-            );
-
-
-            menuToggle.setAttribute(
-                'aria-label',
-                isOpen
-                    ? (
-                        currentLanguage === 'ar'
-                            ? 'إغلاق القائمة'
-                            : 'Close menu'
-                    )
-                    : (
-                        currentLanguage === 'ar'
-                            ? 'فتح القائمة'
-                            : 'Open menu'
-                    )
-            );
-
-        }
-    );
-
-
-    mobileMenu
-        .querySelectorAll('a')
-        .forEach(link => {
-
-            link.addEventListener(
-                'click',
-                () => {
-
-                    mobileMenu.classList.remove(
-                        'open'
-                    );
-
-                    menuToggle.setAttribute(
-                        'aria-expanded',
-                        'false'
-                    );
-
-                }
-            );
-
-        });
 
 }
 
 
-/* =========================================================
-   INITIALIZE
-========================================================= */
+menuToggle.addEventListener('click', () => {
 
-document.addEventListener(
-    'DOMContentLoaded',
-    () => {
+    const isOpen = mobileMenu.classList.toggle('open');
 
-        applyLanguage(
-            currentLanguage
-        );
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+
+    menuToggle.setAttribute(
+        'aria-label',
+        isOpen
+            ? (currentLanguage === 'ar' ? 'إغلاق القائمة' : 'Close menu')
+            : (currentLanguage === 'ar' ? 'فتح القائمة' : 'Open menu')
+    );
+
+});
+
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', closeMobileMenu);
+
+});
+
+
+document.addEventListener('click', event => {
+
+    if (
+        !mobileMenu.contains(event.target) &&
+        !menuToggle.contains(event.target)
+    ) {
+
+        closeMobileMenu();
 
     }
-);
+
+});
+
+
+document.addEventListener('keydown', event => {
+
+    if (event.key === 'Escape') {
+        closeMobileMenu();
+    }
+
+});
+
+
+/* =========================================
+   INITIALIZATION
+========================================= */
+
+applyLanguage(currentLanguage);
 
 </script>
 
-
 </body>
-
 </html>
-
-
